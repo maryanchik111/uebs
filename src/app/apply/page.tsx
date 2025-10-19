@@ -19,24 +19,36 @@ export default function ApplyPage() {
     setForm((s) => ({ ...s, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!form.fullName || !form.email) {
-      setStatus("error");
-      return;
-    }
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  if (!form.fullName || !form.email) {
+    setStatus("error");
+    return;
+  }
 
-    setStatus("sending");
+  setStatus("sending");
 
-    // Temporary client-side "submission" — replace with real API endpoint as needed.
-    try {
-      await new Promise((r) => setTimeout(r, 700)); // simulate network
+  try {
+    const res = await fetch("/api/apply", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
       setStatus("success");
       setForm({ fullName: "", email: "", phone: "", city: "Рівне", format: "очний", note: "" });
-    } catch {
+    } else {
       setStatus("error");
     }
-  };
+  } catch (err) {
+    console.error(err);
+    setStatus("error");
+  }
+};
+
 
   return (
     <>
