@@ -22,7 +22,7 @@ export default function Header() {
           <Link href="/" className="text-slate-700 hover:text-slate-900 font-medium">
             Головна
           </Link>
-          <Link href="/contact" className="text-slate-600 hover:text-slate-800">
+          <Link href="/contacts" className="text-slate-600 hover:text-slate-800">
             Контакти
           </Link>
           <Link
@@ -68,7 +68,7 @@ export default function Header() {
           <Link href="/" onClick={() => setOpen(false)} className="block py-2 text-slate-800 font-medium">
             Головна
           </Link>
-          <Link href="/contact" onClick={() => setOpen(false)} className="block py-2 text-slate-700">
+          <Link href="/contacts" onClick={() => setOpen(false)} className="block py-2 text-slate-700">
             Контакти
           </Link>
           <Link
