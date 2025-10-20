@@ -166,7 +166,7 @@ export default function ApplyPage() {
                     </button>
 
                     <div className="text-sm text-slate-600">
-                      {status === "error" && <span className="text-rose-600">Помилка. Перевірте поля та спробуйте знову.</span>}
+                      {status === "error" && <span className="text-rose-600">Помилка. Перевірте поля та спробуйте знову. <a href="https://t.me/maryanishere" className="underline">Зв язатися</a> з нами</span>}
                     </div>
                   </div>
                 </form>
