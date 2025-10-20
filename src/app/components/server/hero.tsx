@@ -614,7 +614,6 @@ export default function Hero() {
 
         <div
           style={{
-            marginTop: "1.5rem",
             background:
               "linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))",
             padding: "1.25rem",
