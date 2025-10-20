@@ -41,7 +41,7 @@ export default function Hero() {
                 textShadow: "0 6px 18px rgba(3,10,23,0.6)",
               }}
             >
-              UEBSchool — Біблійна школа в Рівному
+              UEBSchool — Біблійна школа
             </h1>
 
             <p
