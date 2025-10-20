@@ -23,7 +23,8 @@ const OnlineLecturePage: NextPage = () => {
   const LECTURE_LINK = process.env.NEXT_PUBLIC_LECTURE_LINK ?? ""; // приклад: "https://zoom.example/lecture"
 
   return (
-    <main style={{ padding: "2rem", maxWidth: 900, margin: "0 auto", color: "#061425" }}>
+    <div className="px-2">
+      <main style={{ padding: "1rem", maxWidth: 900, margin: "0 auto", color: "#061425", background: "rgba(255,255,255,0.9)", borderRadius: 12, marginTop: "2rem", boxShadow: "0 4px 12px rgba(0,0,0,0.1)" }}>
         <img src="/logo-black.svg" alt="" />
       <h1 style={{ margin: 0, fontSize: "1.6rem" }}>Онлайн лекція</h1>
       <p style={{ marginTop: ".6rem", color: "rgba(0,0,0,0.7)" }}>
@@ -113,6 +114,7 @@ const OnlineLecturePage: NextPage = () => {
         )}
       </section>
     </main>
+    </div>
   );
 };
 

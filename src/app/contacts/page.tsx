@@ -33,7 +33,7 @@ export default function ApplyPage() {
               </div>
 
               <div className="text-sm text-slate-600">
-                Питання? <Link href="/contact" className="text-amber-500 font-semibold">Зв`&apos;`яжіться з нами</Link>.
+                Питання? <Link href="/contact" className="text-amber-500 font-semibold">Зв&apos;яжіться з нами</Link>.
               </div>
 
             </aside>
