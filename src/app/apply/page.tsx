@@ -145,7 +145,7 @@ export default function ApplyPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-slate-700">Коротко про мотивацію (необов'язково)</label>
+                    <label className="block text-sm font-medium text-slate-700">Коротко про мотивацію (необов&apos;язково)</label>
                     <textarea
                       name="note"
                       value={form.note}
@@ -177,7 +177,7 @@ export default function ApplyPage() {
                   <h3 className="text-lg font-semibold text-slate-800">Коротко про курс</h3>
                   <p className="mt-2 text-sm text-slate-700">
                     Повна програма — 50 зустрічей. Формат: вечірні заняття по 2 години. Теми: Основи віри, Біблійне дослідження,
-                    учнівство, служіння, сім'я, церква та майбутнє.
+                    учнівство, служіння, сім&apos;я, церква та майбутнє.
                   </p>
                 </div>
 
@@ -191,7 +191,7 @@ export default function ApplyPage() {
                 </div>
 
                 <div className="text-sm text-slate-600">
-                  Питання? <Link href="/contact" className="text-amber-500 font-semibold">Зв'яжіться з нами</Link>.
+                  Питання? <Link href="/contact" className="text-amber-500 font-semibold">Зв&apos;яжіться з нами</Link>.
                 </div>
               </aside>
             </div>
