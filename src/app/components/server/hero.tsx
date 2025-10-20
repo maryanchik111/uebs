@@ -12,7 +12,7 @@ export default function Hero() {
       style={{
         padding: "3rem 1.5rem",
         background:
-          "linear-gradient(180deg, rgba(6,24,38,0.95) 0%, rgba(15,46,70,0.88) 50%, rgba(255,255,255,0) 100%)",
+          "rgba(2, 24, 40, 1)",
         color: "#fff",
       }}
     >
@@ -73,6 +73,22 @@ export default function Hero() {
               >
                 Записатися
               </Link>
+              <Link
+                href="/online-lecture"
+                style={{
+                  display: "inline-block",
+                  padding: ".65rem 1rem",
+                  background: "linear-gradient(90deg,#f79e0b,#ef4554)",
+                  color: "#061425",
+                  fontWeight: 700,
+                  borderRadius: 10,
+                  boxShadow: "0 8px 24px rgba(239,68,68,0.18)",
+                  transition: "transform .12s ease",
+                  textDecoration: "none",
+                }}
+              >
+                Онлайн лекція
+              </Link>
             </div>
 
             <ul style={{ display: "flex", gap: "1rem", marginTop: "1.25rem", padding: 0, listStyle: "none", color: "rgba(255,255,255,0.9)" }}>
@@ -99,9 +115,9 @@ export default function Hero() {
             </ul>
           </div>
 
-          <div
+          <div className="w-full"
             style={{
-              flex: "0 0 360px",
+              maxWidth: 512,
               minWidth: 260,
               borderRadius: 16,
               overflow: "hidden",
