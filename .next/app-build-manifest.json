@@ -1,6 +1,6 @@
 {
   "pages": {
-    "/apply/page": [
+    "/page": [
       "static/chunks/node_modules_next_dist_8db7fb1f._.js",
       "static/chunks/src_app_favicon_ico_mjs_243aa161._.js",
       "static/chunks/[root-of-the-server]__0f0ba101._.css",
@@ -8,8 +8,8 @@
       "static/chunks/src_app_components_client_header_tsx_7a349916._.js",
       "static/chunks/src_app_layout_tsx_0a548d63._.js",
       "static/chunks/node_modules_next_dist_client_components_builtin_global-error_423dc2ab.js",
-      "static/chunks/src_app_apply_page_tsx_534f4658._.js",
-      "static/chunks/src_app_apply_page_tsx_423dc2ab._.js",
+      "static/chunks/src_app_components_server_hero_tsx_fee1c1bc._.js",
+      "static/chunks/src_app_page_tsx_423dc2ab._.js",
       "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_57d40746._.js",
       "static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
       "static/chunks/node_modules_next_dist_compiled_next-devtools_index_a9cb0712.js",

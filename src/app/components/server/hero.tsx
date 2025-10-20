@@ -412,6 +412,18 @@ export default function Hero() {
           </article>
         </div>
 
+        <video
+          src="/video.MP4"
+          className="rounded-lg"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+          style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
+        />
+
         <div style={{ display: "grid", gap: "2rem" }}>
           {/* Values Container */}
           <div
