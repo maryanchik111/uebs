@@ -77,7 +77,7 @@ export default function ApplyPage() {
                 <img src="/logo-black.svg" alt="" />
                 <h1 className="text-2xl font-bold text-slate-900">Записатися</h1>
                 <p className="mt-2 text-slate-700">
-                  Заповніть коротку заявку — ми зв'яжемося з вами для підтвердження. Заняття у Рівному, вечірній формат,
+                  Заповніть коротку заявку. Заняття у Рівному, вечірній формат,
                   2 рази на місяць.
                 </p>
 
