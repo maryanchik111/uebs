@@ -62,7 +62,7 @@ export default function Hero() {
           }}
         >
           <div style={{ flex: "1 1 480px", minWidth: 280 }}>
-            <img src="/logo-white.svg" alt="" />
+            <Image src="/logo-white.svg" alt="" width={1} height={1} className="w-auto h-auto"/>
             <h1
               id="uebs-vision"
               style={{
@@ -289,10 +289,11 @@ export default function Hero() {
                   "linear-gradient(135deg,#0ea5e9 0%, #7c3aed 100%)",
               }}
             >
-              <img
+               <Image
                 src="/24nov.jpeg"
-                alt=""
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                alt="Logo"
+                fill
+                className="object-fill"
               />
 
               <div
