@@ -302,6 +302,7 @@ export default function Hero() {
                   bottom: 16,
                   color: "#fff",
                 }}
+                className="bg-black/70 px-3 py-1 rounded-md"
               >
                 <div style={{ fontSize: ".9rem", fontWeight: 700 }}>
                   UEBSchool • Рівне

@@ -434,6 +434,7 @@ function Hero() {
                                                 bottom: 16,
                                                 color: "#fff"
                                             },
+                                            className: "bg-black/70 px-3 py-1 rounded-md",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     style: {
@@ -443,7 +444,7 @@ function Hero() {
                                                     children: "UEBSchool • Рівне"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                                    lineNumber: 306,
+                                                    lineNumber: 307,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -455,7 +456,7 @@ function Hero() {
                                                     children: "50 зустрічей · Вечірні заняття"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                                    lineNumber: 309,
+                                                    lineNumber: 310,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
@@ -484,7 +485,7 @@ function Hero() {
                                             children: "Формат — очний / змішаний"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/server/hero.tsx",
-                                            lineNumber: 327,
+                                            lineNumber: 328,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -495,13 +496,13 @@ function Hero() {
                                             children: "Програма: Основи віри, служіння, лідерство та практика. Підготовка для служіння в церкві й громаді."
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/server/hero.tsx",
-                                            lineNumber: 330,
+                                            lineNumber: 331,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                    lineNumber: 321,
+                                    lineNumber: 322,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -539,7 +540,7 @@ function Hero() {
                                     children: "СЛОВО"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                    lineNumber: 358,
+                                    lineNumber: 359,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -552,13 +553,13 @@ function Hero() {
                                     children: "Усе навчання укорінене в Святому Письмі — щоб жити й служити згідно з Божою волею."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                    lineNumber: 359,
+                                    lineNumber: 360,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/server/hero.tsx",
-                            lineNumber: 351,
+                            lineNumber: 352,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
@@ -576,7 +577,7 @@ function Hero() {
                                     children: "ДУХ"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                    lineNumber: 379,
+                                    lineNumber: 380,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -589,13 +590,13 @@ function Hero() {
                                     children: "Напрямок практики та формування характеру через життя під керівництвом Духа Святого."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                    lineNumber: 380,
+                                    lineNumber: 381,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/server/hero.tsx",
-                            lineNumber: 372,
+                            lineNumber: 373,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
@@ -613,7 +614,7 @@ function Hero() {
                                     children: "СЛУЖІННЯ"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                    lineNumber: 400,
+                                    lineNumber: 401,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -626,19 +627,19 @@ function Hero() {
                                     children: "Підготовка для практичного служіння в церкві, сім'ї та громаді — служити з любов`'`ю та істинністю."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                    lineNumber: 401,
+                                    lineNumber: 402,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/server/hero.tsx",
-                            lineNumber: 393,
+                            lineNumber: 394,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/server/hero.tsx",
-                    lineNumber: 343,
+                    lineNumber: 344,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("video", {
@@ -658,7 +659,7 @@ function Hero() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/server/hero.tsx",
-                    lineNumber: 415,
+                    lineNumber: 416,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -684,7 +685,7 @@ function Hero() {
                                 children: "Цінності UEBSchool"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                lineNumber: 439,
+                                lineNumber: 440,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -713,7 +714,7 @@ function Hero() {
                                                                 children: "1. Заява про віру"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 466,
+                                                                lineNumber: 467,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -730,26 +731,26 @@ function Hero() {
                                                                                 children: "Підтвердження з Писання"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                                lineNumber: 476,
+                                                                                lineNumber: 477,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             ": 2 Тим. 3:16–17; Пс. 119:105; Ів. 17:17"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                        lineNumber: 475,
+                                                                        lineNumber: 476,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 467,
+                                                                lineNumber: 468,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 465,
+                                                        lineNumber: 466,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -762,7 +763,7 @@ function Hero() {
                                                                 children: "2. Мораль"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 483,
+                                                                lineNumber: 484,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -779,26 +780,26 @@ function Hero() {
                                                                                 children: "Підтвердження з Писання"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                                lineNumber: 493,
+                                                                                lineNumber: 494,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             ": 1 Пет. 1:15–16; Гал. 5:22–23; Мих. 6:8"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                        lineNumber: 492,
+                                                                        lineNumber: 493,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 484,
+                                                                lineNumber: 485,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 482,
+                                                        lineNumber: 483,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -811,7 +812,7 @@ function Hero() {
                                                                 children: "3. Святість життя"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 500,
+                                                                lineNumber: 501,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -828,32 +829,32 @@ function Hero() {
                                                                                 children: "Підтвердження з Писання"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                                lineNumber: 509,
+                                                                                lineNumber: 510,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             ": Бут. 1:27; Пс. 138:13–14; Іов 33:4"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                        lineNumber: 508,
+                                                                        lineNumber: 509,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 501,
+                                                                lineNumber: 502,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 499,
+                                                        lineNumber: 500,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                lineNumber: 464,
+                                                lineNumber: 465,
                                                 columnNumber: 17
                                             }, this),
                                             expanded && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -864,7 +865,7 @@ function Hero() {
                                                                 children: "4. Святість шлюбу"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 520,
+                                                                lineNumber: 521,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -881,26 +882,26 @@ function Hero() {
                                                                                 children: "Підтвердження з Писання"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                                lineNumber: 530,
+                                                                                lineNumber: 531,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             ": Бут. 2:24; Мт. 19:4–6; Євр. 13:4"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                        lineNumber: 529,
+                                                                        lineNumber: 530,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 521,
+                                                                lineNumber: 522,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 519,
+                                                        lineNumber: 520,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -913,7 +914,7 @@ function Hero() {
                                                                 children: "5. Командна робота"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 537,
+                                                                lineNumber: 538,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -930,26 +931,26 @@ function Hero() {
                                                                                 children: "Підтвердження з Писання"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                                lineNumber: 547,
+                                                                                lineNumber: 548,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             ": Еккл. 4:9–10; 1 Кор. 12:12; Фил. 2:2"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                        lineNumber: 546,
+                                                                        lineNumber: 547,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 538,
+                                                                lineNumber: 539,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 536,
+                                                        lineNumber: 537,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -962,7 +963,7 @@ function Hero() {
                                                                 children: "6. Досконалість в освіті"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 554,
+                                                                lineNumber: 555,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -979,26 +980,26 @@ function Hero() {
                                                                                 children: "Підтвердження з Писання"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                                lineNumber: 564,
+                                                                                lineNumber: 565,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             ": Кол. 3:23; Прип. 22:29; 2 Пет. 1:5–7"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                        lineNumber: 563,
+                                                                        lineNumber: 564,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 555,
+                                                                lineNumber: 556,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 553,
+                                                        lineNumber: 554,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1011,7 +1012,7 @@ function Hero() {
                                                                 children: "7. Взаємна повага"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 571,
+                                                                lineNumber: 572,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1028,26 +1029,26 @@ function Hero() {
                                                                                 children: "Підтвердження з Писання"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                                lineNumber: 581,
+                                                                                lineNumber: 582,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             ": Рим. 12:10; Фил. 2:3–4; 1 Пет. 3:8"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                        lineNumber: 580,
+                                                                        lineNumber: 581,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 572,
+                                                                lineNumber: 573,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 570,
+                                                        lineNumber: 571,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1060,7 +1061,7 @@ function Hero() {
                                                                 children: "8. Лідерство-служіння"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 588,
+                                                                lineNumber: 589,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1077,26 +1078,26 @@ function Hero() {
                                                                                 children: "Підтвердження з Писання"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                                lineNumber: 598,
+                                                                                lineNumber: 599,
                                                                                 columnNumber: 27
                                                                             }, this),
                                                                             ": Мт. 20:26–28; Ів. 13:14–15; 1 Пет. 5:2–3"
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                        lineNumber: 597,
+                                                                        lineNumber: 598,
                                                                         columnNumber: 25
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 589,
+                                                                lineNumber: 590,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 587,
+                                                        lineNumber: 588,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
@@ -1104,7 +1105,7 @@ function Hero() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                        lineNumber: 456,
+                                        lineNumber: 457,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1123,24 +1124,24 @@ function Hero() {
                                         children: expanded ? "Згорнути" : "Читати далі..."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                        lineNumber: 607,
+                                        lineNumber: 608,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                lineNumber: 449,
+                                lineNumber: 450,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/components/server/hero.tsx",
-                        lineNumber: 429,
+                        lineNumber: 430,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/server/hero.tsx",
-                    lineNumber: 427,
+                    lineNumber: 428,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1171,7 +1172,7 @@ function Hero() {
                                     children: "СТРУКТУРА ТА ПРИНЦИПИ НАВЧАННЯ UEBSchool"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                    lineNumber: 648,
+                                    lineNumber: 649,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1191,7 +1192,7 @@ function Hero() {
                                                     children: "1. Загальна концепція"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                                    lineNumber: 660,
+                                                    lineNumber: 661,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1202,13 +1203,13 @@ function Hero() {
                                                     children: "UEBSchool — це духовно‑освітня програма для формування зрілих учнів Христа, укорінених у Слові Божому, оснащених для служіння й впливу на покоління в дусі любові та істини. Навчання не лише передає знання, а й трансформує життя, розвиває характер та відкриває дію благодаті Святого Духа."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                                    lineNumber: 661,
+                                                    lineNumber: 662,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/server/hero.tsx",
-                                            lineNumber: 659,
+                                            lineNumber: 660,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1221,7 +1222,7 @@ function Hero() {
                                                     children: "2. Формат навчання"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                                    lineNumber: 677,
+                                                    lineNumber: 678,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1235,27 +1236,27 @@ function Hero() {
                                                             children: "Заняття два рази на місяць (через тиждень), вечірній час — 19:00 (п’ятниця)."
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/server/hero.tsx",
-                                                            lineNumber: 685,
+                                                            lineNumber: 686,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             children: "Формат: очний або змішаний (онлайн/офлайн)."
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/server/hero.tsx",
-                                                            lineNumber: 689,
+                                                            lineNumber: 690,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                             children: "Структура дозволяє поєднувати служіння, роботу та сім'ю з регулярним духовним і академічним зростанням."
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/components/server/hero.tsx",
-                                                            lineNumber: 690,
+                                                            lineNumber: 691,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                                    lineNumber: 678,
+                                                    lineNumber: 679,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1267,13 +1268,13 @@ function Hero() {
                                                     children: "Біблійне підґрунтя: Пс. 1:2–3; 2 Тим. 2:15"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                                    lineNumber: 696,
+                                                    lineNumber: 697,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/server/hero.tsx",
-                                            lineNumber: 676,
+                                            lineNumber: 677,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1286,7 +1287,7 @@ function Hero() {
                                                     children: "3. Мета навчання"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                                    lineNumber: 708,
+                                                    lineNumber: 709,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1297,25 +1298,25 @@ function Hero() {
                                                     children: "Виховати покоління лідерів, які: знають Слово Божe й застосовують його, мають характер Христа, готові служити в Церкві, суспільстві й світі, несуть світло Євангелії з мудрістю та любов’ю."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                                    lineNumber: 709,
+                                                    lineNumber: 710,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/server/hero.tsx",
-                                            lineNumber: 707,
+                                            lineNumber: 708,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                    lineNumber: 658,
+                                    lineNumber: 659,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/server/hero.tsx",
-                            lineNumber: 637,
+                            lineNumber: 638,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1346,7 +1347,7 @@ function Hero() {
                                                     children: "Повна програма — 50 зустрічей"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                                    lineNumber: 743,
+                                                    lineNumber: 744,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1358,13 +1359,13 @@ function Hero() {
                                                     children: "Формат: 50 зустрічей по 2 години. Кожна зустріч: тема, біблійний текст, практична дискусія, молитва та застосування."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                                    lineNumber: 752,
+                                                    lineNumber: 753,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/components/server/hero.tsx",
-                                            lineNumber: 742,
+                                            lineNumber: 743,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1383,18 +1384,18 @@ function Hero() {
                                                 children: expanded ? "Згорнути" : "Читати далі"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                lineNumber: 765,
+                                                lineNumber: 766,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/components/server/hero.tsx",
-                                            lineNumber: 764,
+                                            lineNumber: 765,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                    lineNumber: 734,
+                                    lineNumber: 735,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1428,7 +1429,7 @@ function Hero() {
                                                         children: "I. ОСНОВИ ВІРИ ТА СПАСІННЯ (1–10)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 801,
+                                                        lineNumber: 802,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -1441,82 +1442,82 @@ function Hero() {
                                                                 children: "Вступ до Біблії — натхнення, авторитет і непомильність (2 Тим. 3:16–17)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 810,
+                                                                lineNumber: 811,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Бог у трьох Особах — Трійця (Матв. 28:19)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 814,
+                                                                lineNumber: 815,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Бог-Творець і образ Божий у людині (Бут. 1:26–27)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 815,
+                                                                lineNumber: 816,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Гріхопадіння і його наслідки (Бут. 3; Рим. 3:23)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 818,
+                                                                lineNumber: 819,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Спасіння через Христа — план викуплення (Ів. 3:16; Еф. 2:8–9)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 819,
+                                                                lineNumber: 820,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Покаяння, віра і нове народження (Ів. 3:3; Дії 2:38)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 822,
+                                                                lineNumber: 823,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Хрещення водою і Духом Святим (Матв. 28:19; Дії 1:8)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 823,
+                                                                lineNumber: 824,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Освячення — процес уподібнення Христу (1 Сол. 4:3)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 826,
+                                                                lineNumber: 827,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Благодать і закон — старий і новий завіт (Рим. 6:14; Євр. 8:6– 13)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 829,
+                                                                lineNumber: 830,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Християнин і впевненість у спасінні (1 Ів. 5:11–13)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 833,
+                                                                lineNumber: 834,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 804,
+                                                        lineNumber: 805,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                lineNumber: 794,
+                                                lineNumber: 795,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1534,7 +1535,7 @@ function Hero() {
                                                         children: "II. БІБЛІЙНЕ ДОСЛІДЖЕННЯ (11–20)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 846,
+                                                        lineNumber: 847,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -1547,82 +1548,82 @@ function Hero() {
                                                                 children: "Структура Біблії: Старий і Новий Завіт."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 855,
+                                                                lineNumber: 856,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "П’ятикнижжя Мойсеєве — закон і благодать."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 856,
+                                                                lineNumber: 857,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Пророки і месіанські передвістя (Іс. 53; Мих. 5:2)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 857,
+                                                                lineNumber: 858,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Євангелія — життя і вчення Ісуса."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 860,
+                                                                lineNumber: 861,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Дії апостолів — народження Церкви."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 861,
+                                                                lineNumber: 862,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Послання Павла — благодать у дії."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 862,
+                                                                lineNumber: 863,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Послання Якова, Петра, Івана, Юди — практичне християнство."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 863,
+                                                                lineNumber: 864,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Об’явлення Івана — вічність і Царство Боже."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 866,
+                                                                lineNumber: 867,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Біблійна географія і історія спасіння."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 867,
+                                                                lineNumber: 868,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Як досліджувати Біблію самостійно (Єр. 15:16; 2 Тим. 2:15)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 868,
+                                                                lineNumber: 869,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 849,
+                                                        lineNumber: 850,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                lineNumber: 839,
+                                                lineNumber: 840,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1640,7 +1641,7 @@ function Hero() {
                                                         children: "III. ДУХОВНЕ ФОРМУВАННЯ І ХАРАКТЕР (21–30)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 881,
+                                                        lineNumber: 882,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -1653,82 +1654,82 @@ function Hero() {
                                                                 children: "Учнівство — поклик до наслідування Христа (Матв. 4:19)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 890,
+                                                                lineNumber: 891,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Молитва як дихання духу (Матв. 6:9–13)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 893,
+                                                                lineNumber: 894,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Піст і духовна дисципліна."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 894,
+                                                                lineNumber: 895,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Святість у повсякденному житті (1 Пет. 1:15–16)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 895,
+                                                                lineNumber: 896,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Плід Духа Святого (Гал. 5:22–25)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 898,
+                                                                lineNumber: 899,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Христоподібний характер (Фил. 2:5–8)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 899,
+                                                                lineNumber: 900,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Перемога над гріхом і спокусами (1 Кор. 10:13)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 902,
+                                                                lineNumber: 903,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Віра, надія і любов (1 Кор. 13)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 905,
+                                                                lineNumber: 906,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Прощення і внутрішнє зцілення (Матв. 18:21–35)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 906,
+                                                                lineNumber: 907,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Розпізнавання духовних атак і захист вірою (Еф. 6:10–18)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 909,
+                                                                lineNumber: 910,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 884,
+                                                        lineNumber: 885,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                lineNumber: 874,
+                                                lineNumber: 875,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1746,7 +1747,7 @@ function Hero() {
                                                         children: "IV. СЛУЖІННЯ І ЛІДЕРСТВО (31–38)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 922,
+                                                        lineNumber: 923,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -1759,68 +1760,68 @@ function Hero() {
                                                                 children: "Покликання — Божий план для мого життя (Єр. 1:5)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 931,
+                                                                lineNumber: 932,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Дари Духа Святого (1 Кор. 12; Рим. 12:6–8)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 934,
+                                                                lineNumber: 935,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Лідерство-служіння (Ів. 13:14–15)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 937,
+                                                                lineNumber: 938,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Проповідництво і сила Слова (2 Тим. 4:2)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 940,
+                                                                lineNumber: 941,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Євангелізація — серце Божої місії (Матв. 28:19–20)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 943,
+                                                                lineNumber: 944,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Навчання і наставництво (2 Тим. 2:2)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 946,
+                                                                lineNumber: 947,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Командна робота і єдність (Еф. 4:3–13)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 949,
+                                                                lineNumber: 950,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Практика служіння: молитва, поклоніння, взаємопідтримка (Кол. 3:16–17)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 952,
+                                                                lineNumber: 953,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 925,
+                                                        lineNumber: 926,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                lineNumber: 915,
+                                                lineNumber: 916,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1838,7 +1839,7 @@ function Hero() {
                                                         children: "V. СІМ’Я І ХРИСТИЯНСЬКЕ ЖИТТЯ (39–43)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 966,
+                                                        lineNumber: 967,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -1851,47 +1852,47 @@ function Hero() {
                                                                 children: "Божий задум для шлюбу (Бут. 2:24)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 975,
+                                                                lineNumber: 976,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Роль чоловіка і дружини (Еф. 5:22–33)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 976,
+                                                                lineNumber: 977,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Виховання дітей у Господі (Еф. 6:4)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 977,
+                                                                lineNumber: 978,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Мораль і чистота у XXI столітті."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 978,
+                                                                lineNumber: 979,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Домашня церква — сім’я як духовна спільнота (Іс.Нав. 24:15)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 979,
+                                                                lineNumber: 980,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 969,
+                                                        lineNumber: 970,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                lineNumber: 959,
+                                                lineNumber: 960,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1909,7 +1910,7 @@ function Hero() {
                                                         children: "VI. ЦЕРКВА І СУСПІЛЬСТВО (44–47)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 992,
+                                                        lineNumber: 993,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -1922,40 +1923,40 @@ function Hero() {
                                                                 children: "Церква як тіло Христове (1 Кор. 12:27)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 1001,
+                                                                lineNumber: 1002,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Єдність у різноманітті (Ів. 17:21)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 1002,
+                                                                lineNumber: 1003,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Християнин у суспільстві: сіль і світло (Матв. 5:13–16)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 1003,
+                                                                lineNumber: 1004,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Християнська етика, відповідальність і вплив на культуру (Рим. 12:1–2)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 1006,
+                                                                lineNumber: 1007,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 995,
+                                                        lineNumber: 996,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                lineNumber: 985,
+                                                lineNumber: 986,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1973,7 +1974,7 @@ function Hero() {
                                                         children: "VII. ПРОРОЧЕ СЛОВО І МАЙБУТНЄ (48–50)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 1020,
+                                                        lineNumber: 1021,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ol", {
@@ -1986,56 +1987,56 @@ function Hero() {
                                                                 children: "Ознаки часу і духовне розпізнання подій (Матв. 24)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 1029,
+                                                                lineNumber: 1030,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Другий прихід Христа і воскресіння мертвих (1 Сол. 4:16–17)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 1032,
+                                                                lineNumber: 1033,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                                 children: "Нове небо, нова земля і вічне Царство Божє (Об. 21:1–5)."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                                lineNumber: 1035,
+                                                                lineNumber: 1036,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                                        lineNumber: 1023,
+                                                        lineNumber: 1024,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/components/server/hero.tsx",
-                                                lineNumber: 1013,
+                                                lineNumber: 1014,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/components/server/hero.tsx",
-                                        lineNumber: 793,
+                                        lineNumber: 794,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/server/hero.tsx",
-                                    lineNumber: 783,
+                                    lineNumber: 784,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/components/server/hero.tsx",
-                            lineNumber: 725,
+                            lineNumber: 726,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/server/hero.tsx",
-                    lineNumber: 627,
+                    lineNumber: 628,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2046,7 +2047,7 @@ function Hero() {
                             children: "Фотогалерея"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/server/hero.tsx",
-                            lineNumber: 1046,
+                            lineNumber: 1047,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2054,7 +2055,7 @@ function Hero() {
                             children: "Перший урок - 24 листопада 2025"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/server/hero.tsx",
-                            lineNumber: 1048,
+                            lineNumber: 1049,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
@@ -2063,13 +2064,13 @@ function Hero() {
                             alt: ""
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/server/hero.tsx",
-                            lineNumber: 1049,
+                            lineNumber: 1050,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/server/hero.tsx",
-                    lineNumber: 1045,
+                    lineNumber: 1046,
                     columnNumber: 9
                 }, this)
             ]
