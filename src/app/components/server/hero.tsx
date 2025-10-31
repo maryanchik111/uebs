@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-const NEXT_LECTURE = new Date("2025-10-24T19:00:00"); // Set your next lecture date here
+const NEXT_LECTURE = new Date("2025-11-07T19:00:00"); // Set your next lecture date here
 
 export default function Hero() {
   const [expanded, setExpanded] = useState(false);
@@ -1040,6 +1040,13 @@ export default function Hero() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="flex flex-col">
+          <p className="text-bold text-center text-[48px] mb-2">Фотогалерея</p>
+
+          <p className="text-center mb-1">Перший урок - 24 листопада 2025</p>
+          <img src="/24nov.jpeg" className="rounded-xl" alt="" />
         </div>
       </div>
     </section>

@@ -8,7 +8,14 @@ type Lecture = {
 };
 
 const PREVIOUS_LECTURES: Lecture[] = [
+  {
+    id: "lecture-01",
+    title: "'ХАРАКТЕР БОГА' ЄВАНГЕЛІСТ- МУЗИКАНТ ~ ОЛЕГ НАЗАРЧУК",
+    date: "2025-10-24", // ISO формат
+    link: "https://youtube.com/watch?v=d1fM8Fl52qc&t=4984s", // твоє посилання на запис
+  }
 ];
+
 
 function formatDate(iso: string) {
   try {

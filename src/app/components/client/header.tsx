@@ -25,6 +25,9 @@ export default function Header() {
           <Link href="/contacts" className="text-slate-600 hover:text-slate-800">
             Контакти
           </Link>
+          <Link href="https://www.facebook.com/share/1EXzxy7934/?mibextid=wwXIfr" className="text-slate-600 hover:text-slate-800">
+            FaceBook
+          </Link>
           <Link
             href="/apply"
             className="inline-block px-3 py-2 bg-amber-500 text-slate-900 font-semibold rounded-md shadow-sm hover:scale-[1.02] transition-transform"
@@ -70,6 +73,9 @@ export default function Header() {
           </Link>
           <Link href="/contacts" onClick={() => setOpen(false)} className="block py-2 text-slate-700">
             Контакти
+          </Link>
+          <Link href="https://www.facebook.com/share/1EXzxy7934/?mibextid=wwXIfr" className="text-slate-600 hover:text-slate-800">
+            FaceBook
           </Link>
           <Link
             href="/apply"
