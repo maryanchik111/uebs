@@ -290,7 +290,7 @@ export default function Hero() {
               }}
             >
               <img
-                src="/hero.jpeg"
+                src="/24nov.jpeg"
                 alt=""
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
