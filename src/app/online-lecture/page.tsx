@@ -81,13 +81,11 @@ const OnlineLecturePage: NextPage = () => {
               <li
                 key={lec.id}
                 style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
                   padding: ".65rem",
                   borderRadius: 8,
                   background: "rgba(0,0,0,0.03)",
                 }}
+                className="flex flex-col justify-start md:flex-row md:justify-between md:items-center gap-3"
               >
                 <div>
                   <div style={{ fontWeight: 700 }}>{lec.title}</div>

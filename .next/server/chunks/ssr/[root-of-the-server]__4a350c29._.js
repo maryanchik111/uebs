@@ -162,13 +162,11 @@ const OnlineLecturePage = ()=>{
                             },
                             children: PREVIOUS_LECTURES.map((lec)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                     style: {
-                                        display: "flex",
-                                        justifyContent: "space-between",
-                                        alignItems: "center",
                                         padding: ".65rem",
                                         borderRadius: 8,
                                         background: "rgba(0,0,0,0.03)"
                                     },
+                                    className: "flex flex-col justify-start md:flex-row md:justify-between md:items-center gap-3",
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             children: [
@@ -179,7 +177,7 @@ const OnlineLecturePage = ()=>{
                                                     children: lec.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/online-lecture/page.tsx",
-                                                    lineNumber: 93,
+                                                    lineNumber: 91,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -190,13 +188,13 @@ const OnlineLecturePage = ()=>{
                                                     children: formatDate(lec.date)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/online-lecture/page.tsx",
-                                                    lineNumber: 94,
+                                                    lineNumber: 92,
                                                     columnNumber: 19
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/online-lecture/page.tsx",
-                                            lineNumber: 92,
+                                            lineNumber: 90,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -215,7 +213,7 @@ const OnlineLecturePage = ()=>{
                                                 children: "Переглянути"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/online-lecture/page.tsx",
-                                                lineNumber: 99,
+                                                lineNumber: 97,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0)) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 style: {
@@ -225,12 +223,12 @@ const OnlineLecturePage = ()=>{
                                                 children: "Запис зʼявиться згодом"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/online-lecture/page.tsx",
-                                                lineNumber: 115,
+                                                lineNumber: 113,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/online-lecture/page.tsx",
-                                            lineNumber: 97,
+                                            lineNumber: 95,
                                             columnNumber: 17
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
