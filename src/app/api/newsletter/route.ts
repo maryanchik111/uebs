@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { sendEmail, emailTemplates } from '@/lib/email';
 
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
@@ -47,6 +48,28 @@ export async function POST(request: NextRequest) {
       if (!telegramResponse.ok) {
         console.error('Failed to send to Telegram');
       }
+    }
+
+    // Send confirmation email to subscriber
+    if (process.env.SMTP_USER) {
+      const confirmationTemplate = emailTemplates.newsletterConfirmation(email);
+      
+      await sendEmail({
+        to: email,
+        subject: confirmationTemplate.subject,
+        html: confirmationTemplate.html,
+      });
+    }
+
+    // Send notification email to admin
+    if (process.env.ADMIN_EMAIL && process.env.SMTP_USER) {
+      const adminTemplate = emailTemplates.adminNotification('newsletter', { email });
+      
+      await sendEmail({
+        to: process.env.ADMIN_EMAIL,
+        subject: adminTemplate.subject,
+        html: adminTemplate.html,
+      });
     }
 
     return NextResponse.json(

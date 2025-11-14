@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { sendEmail, emailTemplates } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
   try {
@@ -46,6 +47,40 @@ export async function POST(request: NextRequest) {
       const errorData = await response.json();
       console.error('Telegram API error:', errorData);
       throw new Error('Failed to send to Telegram');
+    }
+
+    // Send confirmation email to applicant
+    if (email && process.env.SMTP_USER) {
+      const confirmationTemplate = emailTemplates.applicationConfirmation({
+        firstName,
+        lastName,
+        city,
+        format,
+      });
+      
+      await sendEmail({
+        to: email,
+        subject: confirmationTemplate.subject,
+        html: confirmationTemplate.html,
+      });
+    }
+
+    // Send notification email to admin
+    if (process.env.ADMIN_EMAIL && process.env.SMTP_USER) {
+      const adminTemplate = emailTemplates.adminNotification('application', {
+        firstName,
+        lastName,
+        email,
+        phone,
+        city,
+        format,
+      });
+      
+      await sendEmail({
+        to: process.env.ADMIN_EMAIL,
+        subject: adminTemplate.subject,
+        html: adminTemplate.html,
+      });
     }
 
     return NextResponse.json({ 
