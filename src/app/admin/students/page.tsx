@@ -5,7 +5,7 @@ import { useAuth } from '@/contexts/auth-context';
 import { isUserAdmin } from '@/lib/user-utils';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Users, Plus, Mail, Phone, User, X, Calendar, Trash2, Edit, FileText, Search } from 'lucide-react';
+import { Users, Plus, Mail, Phone, User, X, Calendar, Trash2, Edit, FileText, Search, Send, BookOpen, Loader2 } from 'lucide-react';
 import { ref, onValue, push, set, remove } from 'firebase/database';
 import { database } from '@/lib/firebase';
 
@@ -35,6 +35,24 @@ export default function StudentsPage() {
     email: '',
     phone: '',
     format: 'очно' as 'очно' | 'онлайн'
+  });
+
+  // Messaging state
+  const [showMessageModal, setShowMessageModal] = useState(false);
+  const [showHomeworkModal, setShowHomeworkModal] = useState(false);
+  const [selectedStudents, setSelectedStudents] = useState<string[]>([]);
+  const [selectAll, setSelectAll] = useState(false);
+  const [sendingMessage, setSendingMessage] = useState(false);
+  const [messageData, setMessageData] = useState({
+    title: '',
+    message: '',
+    type: 'info' as 'info' | 'success' | 'warning' | 'homework'
+  });
+  const [homeworkData, setHomeworkData] = useState({
+    title: '',
+    description: '',
+    dueDate: '',
+    fileUrl: ''
   });
 
   useEffect(() => {
@@ -134,6 +152,120 @@ export default function StudentsPage() {
     setShowAddModal(false);
   };
 
+  const handleSelectStudent = (studentId: string) => {
+    setSelectedStudents(prev => 
+      prev.includes(studentId) 
+        ? prev.filter(id => id !== studentId)
+        : [...prev, studentId]
+    );
+  };
+
+  const handleSelectAll = () => {
+    if (selectAll) {
+      setSelectedStudents([]);
+    } else {
+      setSelectedStudents(filteredStudents.map(s => s.id));
+    }
+    setSelectAll(!selectAll);
+  };
+
+  const handleSendMessage = async () => {
+    if (!messageData.title || !messageData.message) {
+      alert('Заповніть заголовок та повідомлення');
+      return;
+    }
+
+    if (selectedStudents.length === 0) {
+      alert('Виберіть хоча б одного студента');
+      return;
+    }
+
+    setSendingMessage(true);
+    try {
+      const selectedEmails = students
+        .filter(s => selectedStudents.includes(s.id))
+        .map(s => s.email);
+
+      const response = await fetch('/api/students/send-notification', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          studentEmails: selectedEmails,
+          title: messageData.title,
+          message: messageData.message,
+          type: messageData.type,
+          adminKey: 'uebs-admin-2025'
+        })
+      });
+
+      const result = await response.json();
+      
+      if (response.ok) {
+        alert(result.message);
+        setShowMessageModal(false);
+        setMessageData({ title: '', message: '', type: 'info' });
+        setSelectedStudents([]);
+        setSelectAll(false);
+      } else {
+        alert(`Помилка: ${result.error}`);
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      alert('Помилка відправки повідомлення');
+    } finally {
+      setSendingMessage(false);
+    }
+  };
+
+  const handleSendHomework = async () => {
+    if (!homeworkData.title || !homeworkData.description || !homeworkData.dueDate) {
+      alert('Заповніть всі обов\'язкові поля');
+      return;
+    }
+
+    if (selectedStudents.length === 0) {
+      alert('Виберіть хоча б одного студента');
+      return;
+    }
+
+    setSendingMessage(true);
+    try {
+      const selectedEmails = students
+        .filter(s => selectedStudents.includes(s.id))
+        .map(s => s.email);
+
+      const response = await fetch('/api/students/send-homework', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          studentEmails: selectedEmails,
+          title: homeworkData.title,
+          description: homeworkData.description,
+          dueDate: homeworkData.dueDate,
+          fileUrl: homeworkData.fileUrl,
+          adminKey: 'uebs-admin-2025'
+        })
+      });
+
+      const result = await response.json();
+      
+      if (response.ok) {
+        alert(result.message);
+        setShowHomeworkModal(false);
+        setHomeworkData({ title: '', description: '', dueDate: '', fileUrl: '' });
+        setSelectedStudents([]);
+        setSelectAll(false);
+      } else {
+        alert(`Помилка: ${result.error}`);
+      }
+    } catch (error) {
+      console.error('Error sending homework:', error);
+      alert('Помилка відправки домашнього завдання');
+    } finally {
+      setSendingMessage(false);
+    }
+  };
+
   const filteredStudents = students.filter(student => {
     const query = searchQuery.toLowerCase();
     return (
@@ -174,13 +306,31 @@ export default function StudentsPage() {
               <p className="text-sm sm:text-base text-slate-600">Всього: {students.length}</p>
             </div>
           </div>
-          <button
-            onClick={() => setShowAddModal(true)}
-            className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl hover:shadow-lg transition-shadow text-sm sm:text-base"
-          >
-            <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="whitespace-nowrap">Додати студента</span>
-          </button>
+          <div className="flex flex-wrap gap-2">
+            <button
+              onClick={() => setShowMessageModal(true)}
+              disabled={selectedStudents.length === 0}
+              className="flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2.5 rounded-xl hover:shadow-lg transition-shadow disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+            >
+              <Send className="w-4 h-4" />
+              Повідомлення ({selectedStudents.length})
+            </button>
+            <button
+              onClick={() => setShowHomeworkModal(true)}
+              disabled={selectedStudents.length === 0}
+              className="flex items-center gap-2 bg-gradient-to-r from-orange-600 to-red-600 text-white px-4 py-2.5 rounded-xl hover:shadow-lg transition-shadow disabled:opacity-50 disabled:cursor-not-allowed text-sm"
+            >
+              <BookOpen className="w-4 h-4" />
+              Д/З ({selectedStudents.length})
+            </button>
+            <button
+              onClick={() => setShowAddModal(true)}
+              className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2.5 rounded-xl hover:shadow-lg transition-shadow text-sm"
+            >
+              <Plus className="w-4 h-4" />
+              Додати
+            </button>
+          </div>
         </motion.div>
 
         {/* Search */}
@@ -190,6 +340,19 @@ export default function StudentsPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
+          <div className="flex gap-2 mb-4">
+            <button
+              onClick={handleSelectAll}
+              className="px-4 py-2 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-all text-sm"
+            >
+              {selectAll ? 'Зняти вибір з усіх' : 'Вибрати всіх'}
+            </button>
+            {selectedStudents.length > 0 && (
+              <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-lg text-sm font-medium flex items-center">
+                Вибрано: {selectedStudents.length}
+              </span>
+            )}
+          </div>
           <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
             <input
@@ -221,7 +384,13 @@ export default function StudentsPage() {
               transition={{ delay: index * 0.05 }}
             >
               <div className="flex flex-col gap-4">
-                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                <div className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    checked={selectedStudents.includes(student.id)}
+                    onChange={() => handleSelectStudent(student.id)}
+                    className="mt-1 w-5 h-5 text-blue-600 rounded focus:ring-blue-500 flex-shrink-0"
+                  />
                   <div className="flex-1 min-w-0 overflow-hidden">
                     <div className="flex items-start gap-3 mb-3">
                       <div className="bg-blue-100 p-2 rounded-lg flex-shrink-0">
@@ -438,6 +607,220 @@ export default function StudentsPage() {
                 </button>
               </div>
             </form>
+          </motion.div>
+        </div>
+      )}
+
+      {/* Send Message Modal */}
+      {showMessageModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <motion.div
+            className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+          >
+            <div className="bg-white p-4 sm:p-6 border-b border-slate-200 rounded-t-2xl">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <Send className="w-6 h-6 text-purple-600" />
+                  <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+                    Відправити повідомлення
+                  </h2>
+                </div>
+                <button
+                  onClick={() => setShowMessageModal(false)}
+                  className="p-2 hover:bg-slate-100 rounded-lg transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              <p className="text-sm text-slate-600 mt-2">
+                Вибрано студентів: {selectedStudents.length}
+              </p>
+            </div>
+
+            <div className="p-4 sm:p-6 space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Заголовок *
+                </label>
+                <input
+                  type="text"
+                  value={messageData.title}
+                  onChange={(e) => setMessageData({ ...messageData, title: e.target.value })}
+                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  placeholder="Важливе оголошення"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Повідомлення *
+                </label>
+                <textarea
+                  value={messageData.message}
+                  onChange={(e) => setMessageData({ ...messageData, message: e.target.value })}
+                  rows={5}
+                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  placeholder="Текст повідомлення..."
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Тип повідомлення
+                </label>
+                <select
+                  value={messageData.type}
+                  onChange={(e) => setMessageData({ ...messageData, type: e.target.value as any })}
+                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                >
+                  <option value="info">Інформація</option>
+                  <option value="success">Успіх</option>
+                  <option value="warning">Важливо</option>
+                </select>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 pt-4">
+                <button
+                  type="button"
+                  onClick={() => setShowMessageModal(false)}
+                  disabled={sendingMessage}
+                  className="flex-1 px-4 py-2.5 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors disabled:opacity-50"
+                >
+                  Скасувати
+                </button>
+                <button
+                  onClick={handleSendMessage}
+                  disabled={sendingMessage}
+                  className="flex-1 px-4 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:shadow-lg transition-shadow disabled:opacity-50 flex items-center justify-center gap-2"
+                >
+                  {sendingMessage ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Відправка...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      Відправити
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+
+      {/* Send Homework Modal */}
+      {showHomeworkModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <motion.div
+            className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+          >
+            <div className="bg-white p-4 sm:p-6 border-b border-slate-200 rounded-t-2xl">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <BookOpen className="w-6 h-6 text-orange-600" />
+                  <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+                    Відправити Д/З
+                  </h2>
+                </div>
+                <button
+                  onClick={() => setShowHomeworkModal(false)}
+                  className="p-2 hover:bg-slate-100 rounded-lg transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              <p className="text-sm text-slate-600 mt-2">
+                Вибрано студентів: {selectedStudents.length}
+              </p>
+            </div>
+
+            <div className="p-4 sm:p-6 space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Назва завдання *
+                </label>
+                <input
+                  type="text"
+                  value={homeworkData.title}
+                  onChange={(e) => setHomeworkData({ ...homeworkData, title: e.target.value })}
+                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  placeholder="Вивчення Біблії"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Опис завдання *
+                </label>
+                <textarea
+                  value={homeworkData.description}
+                  onChange={(e) => setHomeworkData({ ...homeworkData, description: e.target.value })}
+                  rows={5}
+                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  placeholder="Детальний опис завдання..."
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Термін здачі *
+                </label>
+                <input
+                  type="datetime-local"
+                  value={homeworkData.dueDate}
+                  onChange={(e) => setHomeworkData({ ...homeworkData, dueDate: e.target.value })}
+                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-2">
+                  Посилання на файл (необов'язково)
+                </label>
+                <input
+                  type="url"
+                  value={homeworkData.fileUrl}
+                  onChange={(e) => setHomeworkData({ ...homeworkData, fileUrl: e.target.value })}
+                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                  placeholder="https://..."
+                />
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 pt-4">
+                <button
+                  type="button"
+                  onClick={() => setShowHomeworkModal(false)}
+                  disabled={sendingMessage}
+                  className="flex-1 px-4 py-2.5 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors disabled:opacity-50"
+                >
+                  Скасувати
+                </button>
+                <button
+                  onClick={handleSendHomework}
+                  disabled={sendingMessage}
+                  className="flex-1 px-4 py-2.5 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-lg hover:shadow-lg transition-shadow disabled:opacity-50 flex items-center justify-center gap-2"
+                >
+                  {sendingMessage ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Відправка...
+                    </>
+                  ) : (
+                    <>
+                      <BookOpen className="w-4 h-4" />
+                      Відправити
+                    </>
+                  )}
+                </button>
+              </div>
+            </div>
           </motion.div>
         </div>
       )}
