@@ -13,7 +13,7 @@ export default function Hero() {
   const [isMounted, setIsMounted] = useState(false);
   const controls = useAnimation();
   const { t, language } = useLanguage();
-  const { user } = useAuth();
+  const { user, userProfile } = useAuth();
 
   // Generate consistent positions
   const backgroundElements = useMemo(() => 
@@ -176,7 +176,7 @@ export default function Hero() {
                 </motion.div>
 
                 {/* Cabinet button on mobile */}
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="md:hidden">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="md:hidden relative inline-block">
                   <Link
                     href={user ? "/cabinet" : "/login"}
                     className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
@@ -184,6 +184,11 @@ export default function Hero() {
                     {user ? <User className="w-5 h-5" /> : <LogIn className="w-5 h-5" />}
                     {user ? "Кабінет" : "Увійти"}
                   </Link>
+                  {user && userProfile && (userProfile.notifications?.filter(n => !n.read).length > 0 || userProfile.homework?.filter(h => !h.completed).length > 0) && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full min-w-[24px] h-6 flex items-center justify-center px-2 z-10 shadow-lg">
+                      {(userProfile.notifications?.filter(n => !n.read).length || 0) + (userProfile.homework?.filter(h => !h.completed).length || 0)}
+                    </span>
+                  )}
                 </motion.div>
               </motion.div>
 

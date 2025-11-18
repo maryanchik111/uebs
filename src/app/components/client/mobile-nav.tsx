@@ -11,7 +11,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 export default function MobileNav() {
   const pathname = usePathname();
-  const { user } = useAuth();
+  const { user, userProfile } = useAuth();
   const { t } = useLanguage();
   const [isAdmin, setIsAdmin] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -21,6 +21,17 @@ export default function MobileNav() {
       isUserAdmin(user.uid).then(setIsAdmin);
     }
   }, [user]);
+
+  useEffect(() => {
+    if (userProfile) {
+      console.log('Mobile Nav - userProfile updated:', {
+        notifications: userProfile.notifications?.length || 0,
+        unread: userProfile.notifications?.filter(n => !n.read).length || 0,
+        homework: userProfile.homework?.length || 0,
+        pending: userProfile.homework?.filter(h => !h.completed).length || 0,
+      });
+    }
+  }, [userProfile]);
 
   // Don't show navbar on login/register pages
   if (pathname === '/login' || pathname === '/register') {
@@ -180,7 +191,14 @@ export default function MobileNav() {
                 isActive('/cabinet') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
               }`}
             >
-              <User className="w-6 h-6" />
+              <div className="relative inline-block">
+                <User className="w-6 h-6" />
+                {userProfile && (userProfile.notifications?.filter(n => !n.read).length > 0 || userProfile.homework?.filter(h => !h.completed).length > 0) && (
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold rounded-full min-w-[16px] h-4 flex items-center justify-center px-1 z-10">
+                    {(userProfile.notifications?.filter(n => !n.read).length || 0) + (userProfile.homework?.filter(h => !h.completed).length || 0)}
+                  </span>
+                )}
+              </div>
               <span className="text-xs mt-1 truncate max-w-[60px]">{user.displayName || user.email?.split('@')[0] || 'Кабінет'}</span>
             </Link>
           ) : (

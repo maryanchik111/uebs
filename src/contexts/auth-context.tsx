@@ -11,7 +11,7 @@ import {
   sendPasswordResetEmail,
   sendEmailVerification,
 } from 'firebase/auth';
-import { ref, set, get, update } from 'firebase/database';
+import { ref, set, get, update, onValue } from 'firebase/database';
 import { ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { auth, database, storage } from '@/lib/firebase';
 import { generateUserId } from '@/lib/user-utils';
@@ -99,41 +99,65 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       return;
     }
 
+    let profileUnsubscribe: (() => void) | undefined;
+
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       setUser(user);
       
       if (user) {
-        // Завантажуємо профіль користувача з Realtime Database
+        // Використовуємо onValue для автоматичного оновлення профілю в реальному часі
         const userRef = ref(database, `users/${user.uid}`);
-        const snapshot = await get(userRef);
         
+        // Спочатку оновлюємо час останнього входу
+        const snapshot = await get(userRef);
         if (snapshot.exists()) {
-          const userData = snapshot.val();
-          
-          // Забезпечуємо наявність всіх полів для старих користувачів
-          const completeUserProfile: UserProfile = {
-            ...userData,
-            notifications: userData.notifications || [],
-            homework: userData.homework || [],
-            photoURL: userData.photoURL || '',
-            userId: userData.userId || `UEB-${Date.now()}`, // Fallback для старих користувачів
-          };
-          
-          setUserProfile(completeUserProfile);
-          
-          // Оновлюємо час останнього входу
           await update(userRef, {
             lastLogin: new Date().toISOString(),
           });
         }
+        
+        // Підписуємось на зміни профілю в реальному часі
+        profileUnsubscribe = onValue(userRef, (snapshot) => {
+          if (snapshot.exists()) {
+            const userData = snapshot.val();
+            
+            // Забезпечуємо наявність всіх полів для старих користувачів
+            const completeUserProfile: UserProfile = {
+              ...userData,
+              notifications: userData.notifications || [],
+              homework: userData.homework || [],
+              photoURL: userData.photoURL || '',
+              userId: userData.userId || `UEB-${Date.now()}`, // Fallback для старих користувачів
+            };
+            
+            console.log('Auth Context - userProfile updated:', {
+              notifications: completeUserProfile.notifications.length,
+              unread: completeUserProfile.notifications.filter(n => !n.read).length,
+              homework: completeUserProfile.homework.length,
+              pending: completeUserProfile.homework.filter(h => !h.completed).length,
+            });
+            
+            setUserProfile(completeUserProfile);
+          }
+          setLoading(false);
+        });
       } else {
         setUserProfile(null);
+        setLoading(false);
+        // Відписуємось від попереднього слухача, якщо він існує
+        if (profileUnsubscribe) {
+          profileUnsubscribe();
+          profileUnsubscribe = undefined;
+        }
       }
-      
-      setLoading(false);
     });
 
-    return unsubscribe;
+    return () => {
+      unsubscribe();
+      if (profileUnsubscribe) {
+        profileUnsubscribe();
+      }
+    };
   }, []);
 
   const register = async (email: string, password: string, displayName: string) => {

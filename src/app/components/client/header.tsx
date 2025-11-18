@@ -14,7 +14,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { t } = useLanguage();
-  const { user } = useAuth();
+  const { user, userProfile } = useAuth();
 
   const navigation = [
     { name: t("nav.home"), href: "/" },
@@ -106,6 +106,7 @@ export default function Header() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                className="relative inline-block"
               >
                 <Link
                   href="/cabinet"
@@ -114,6 +115,11 @@ export default function Header() {
                   <User className="w-4 h-4" />
                   Кабінет
                 </Link>
+                {userProfile && (userProfile.notifications?.filter(n => !n.read).length > 0 || userProfile.homework?.filter(h => !h.completed).length > 0) && (
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full min-w-[20px] h-5 flex items-center justify-center px-1.5 z-10 shadow-lg">
+                    {(userProfile.notifications?.filter(n => !n.read).length || 0) + (userProfile.homework?.filter(h => !h.completed).length || 0)}
+                  </span>
+                )}
               </motion.div>
             ) : (
               <motion.div
@@ -141,13 +147,20 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-3">
             {user ? (
-              <Link
-                href="/cabinet"
-                className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold px-4 py-2 rounded-lg text-sm flex items-center gap-2"
-              >
-                <User className="w-4 h-4" />
-                Кабінет
-              </Link>
+              <div className="relative inline-block">
+                <Link
+                  href="/cabinet"
+                  className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold px-4 py-2 rounded-lg text-sm flex items-center gap-2"
+                >
+                  <User className="w-4 h-4" />
+                  Кабінет
+                </Link>
+                {userProfile && (userProfile.notifications?.filter(n => !n.read).length > 0 || userProfile.homework?.filter(h => !h.completed).length > 0) && (
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full min-w-[20px] h-5 flex items-center justify-center px-1.5 z-10 shadow-lg">
+                    {(userProfile.notifications?.filter(n => !n.read).length || 0) + (userProfile.homework?.filter(h => !h.completed).length || 0)}
+                  </span>
+                )}
+              </div>
             ) : (
               <Link
                 href="/apply"

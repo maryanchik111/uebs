@@ -186,29 +186,28 @@ export default function CabinetPage() {
 
       {/* Tabs */}
       <div className="max-w-6xl mx-auto px-4 mt-6">
-        <div className="bg-white rounded-lg shadow-md p-1 inline-flex gap-1 flex-wrap">
+        <div className="bg-white rounded-lg shadow-md p-2 flex gap-2">
           <button
             onClick={() => setActiveTab('profile')}
-            className={`px-4 sm:px-6 py-3 rounded-md font-medium transition-all flex items-center gap-2 ${
+            className={`flex-1 py-3 px-4 rounded-md font-medium transition-all flex items-center justify-center gap-2 min-h-[48px] ${
               activeTab === 'profile'
-                ? 'bg-blue-600 text-white'
+                ? 'bg-blue-600 text-white shadow-md'
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            <User className="w-5 h-5" />
-            Профіль
+            <User className="w-5 h-5 flex-shrink-0" />
+            <span className="hidden sm:inline">Профіль</span>
           </button>
           <button
             onClick={() => setActiveTab('notifications')}
-            className={`px-4 sm:px-6 py-3 rounded-md font-medium transition-all flex items-center gap-2 relative ${
+            className={`flex-1 py-3 px-4 rounded-md font-medium transition-all flex items-center justify-center gap-2 relative min-h-[48px] ${
               activeTab === 'notifications'
-                ? 'bg-blue-600 text-white'
+                ? 'bg-blue-600 text-white shadow-md'
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            <Bell className="w-5 h-5" />
+            <Bell className="w-5 h-5 flex-shrink-0" />
             <span className="hidden sm:inline">Повідомлення</span>
-            <span className="sm:hidden">Повід.</span>
             {unreadNotifications > 0 && (
               <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                 {unreadNotifications}
@@ -217,15 +216,14 @@ export default function CabinetPage() {
           </button>
           <button
             onClick={() => setActiveTab('homework')}
-            className={`px-4 sm:px-6 py-3 rounded-md font-medium transition-all flex items-center gap-2 relative ${
+            className={`flex-1 py-3 px-4 rounded-md font-medium transition-all flex items-center justify-center gap-2 relative min-h-[48px] ${
               activeTab === 'homework'
-                ? 'bg-blue-600 text-white'
+                ? 'bg-blue-600 text-white shadow-md'
                 : 'text-gray-600 hover:bg-gray-100'
             }`}
           >
-            <BookOpen className="w-5 h-5" />
+            <BookOpen className="w-5 h-5 flex-shrink-0" />
             <span className="hidden sm:inline">Домашнє завдання</span>
-            <span className="sm:hidden">Д/З</span>
             {pendingHomework > 0 && (
               <span className="absolute -top-1 -right-1 bg-orange-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                 {pendingHomework}
@@ -442,7 +440,9 @@ export default function CabinetPage() {
               </div>
             ) : (
               <div className="space-y-3">
-                {userProfile.notifications.map((notification) => (
+                {[...userProfile.notifications]
+                  .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+                  .map((notification) => (
                   <div
                     key={notification.id}
                     onClick={() => handleNotificationClick(notification)}
@@ -499,7 +499,9 @@ export default function CabinetPage() {
               </div>
             ) : (
               <div className="space-y-4">
-                {userProfile.homework.map((hw) => (
+                {[...userProfile.homework]
+                  .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
+                  .map((hw) => (
                   <div
                     key={hw.id}
                     className={`p-4 sm:p-6 rounded-lg border ${
