@@ -35,10 +35,7 @@ export default function Header() {
   return (
     <motion.header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled 
-          ? "bg-white/98 backdrop-blur-lg shadow-xl border-b border-slate-200/50" 
-          : "bg-white/90 backdrop-blur-md shadow-lg"
+        "absolute top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg"
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -54,24 +51,18 @@ export default function Header() {
             <Link href="/" className="flex items-center gap-3">
               <div className="relative w-36 h-10">
                 <Image
-                  src={scrolled ? "/logo-black.svg" : "/logo-white.svg"}
+                  src="/logo-black.svg"
                   alt="UEBSchool logo"
                   fill
-                  className="object-contain transition-opacity duration-300"
+                  className="object-contain"
                   priority
                 />
               </div>
               <div className="hidden sm:block">
-                <div className={cn(
-                  "text-sm font-semibold transition-colors duration-300",
-                  scrolled ? "text-slate-800" : "text-white"
-                )}>
+                <div className="text-sm font-semibold text-slate-800">
                   UEBSchool
                 </div>
-                <div className={cn(
-                  "text-xs -mt-0.5 transition-colors duration-300",
-                  scrolled ? "text-slate-500" : "text-white/80"
-                )}>
+                <div className="text-xs -mt-0.5 text-slate-500">
                   Біблійна школа • Рівне
                 </div>
               </div>
@@ -89,12 +80,7 @@ export default function Header() {
               >
                 <Link
                   href={item.href}
-                  className={cn(
-                    "font-medium transition-colors duration-300 hover:scale-105 transform",
-                    scrolled 
-                      ? "text-slate-700 hover:text-blue-600" 
-                      : "text-white/90 hover:text-white"
-                  )}
+                  className="font-medium text-slate-700 hover:text-blue-600 transition-colors duration-300 hover:scale-105 transform"
                 >
                   {item.name}
                 </Link>
@@ -106,26 +92,20 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-6">
             <div className="flex items-center gap-4 text-sm">
               <motion.div
-                className={cn(
-                  "flex items-center gap-2 transition-colors duration-300",
-                  scrolled ? "text-slate-600" : "text-white/80"
-                )}
+                className="flex items-center gap-2 text-slate-600"
                 whileHover={{ scale: 1.05 }}
               >
                 <Phone className="w-4 h-4" />
                 <span className="hidden xl:block">+380 63 344 4555</span>
               </motion.div>
               <motion.div
-                className={cn(
-                  "flex items-center gap-2 transition-colors duration-300",
-                  scrolled ? "text-slate-600" : "text-white/80"
-                )}
+                className="flex items-center gap-2 text-slate-600"
                 whileHover={{ scale: 1.05 }}
               >
                 <MapPin className="w-4 h-4" />
                 <span className="hidden xl:block">Рівне</span>
               </motion.div>
-              <LanguageSwitcher scrolled={scrolled} />
+              <LanguageSwitcher scrolled={true} />
             </div>
 
             {user ? (
@@ -185,12 +165,7 @@ export default function Header() {
 
             <button
               onClick={() => setOpen(!open)}
-              className={cn(
-                "p-2 rounded-lg transition-colors duration-300",
-                scrolled 
-                  ? "text-slate-700 hover:bg-slate-100" 
-                  : "text-white hover:bg-white/10"
-              )}
+              className="p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors duration-300"
               aria-label="Toggle menu"
             >
               {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

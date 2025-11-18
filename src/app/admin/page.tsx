@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/auth-context';
 import { isUserAdmin } from '@/lib/user-utils';
-import { Bell, BookOpen, Mail, Users, BarChart3, Shield, Loader2 } from 'lucide-react';
+import { Bell, BookOpen, Mail, Users, BarChart3, Shield, Loader2, MessageCircle } from 'lucide-react';
 
 export default function AdminPage() {
   const { user } = useAuth();
@@ -42,7 +42,7 @@ export default function AdminPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50 pt-28 pb-24">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50 py-8 pb-24">
       <div className="max-w-4xl mx-auto px-4">
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
@@ -96,6 +96,21 @@ export default function AdminPage() {
               <div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-1">Email розсилка</h3>
                 <p className="text-gray-600 text-sm">Масова розсилка на пошту</p>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            href="/admin/questions"
+            className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 border-2 border-transparent hover:border-orange-200"
+          >
+            <div className="flex items-start gap-4">
+              <div className="p-3 bg-orange-100 rounded-lg group-hover:bg-orange-200 transition-colors">
+                <MessageCircle className="w-6 h-6 text-orange-600" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-1">Питання</h3>
+                <p className="text-gray-600 text-sm">Відповісти на питання користувачів</p>
               </div>
             </div>
           </Link>

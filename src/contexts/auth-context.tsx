@@ -36,6 +36,20 @@ export interface Homework {
   fileUrl?: string;
 }
 
+export interface Question {
+  id: string;
+  question: string;
+  createdAt: string;
+  userId?: string; // Якщо авторизований користувач
+  userEmail?: string; // Для авторизованих
+  userName?: string; // Для авторизованих
+  isAnonymous: boolean;
+  answered: boolean;
+  answer?: string;
+  answeredAt?: string;
+  answeredBy?: string; // Admin userId
+}
+
 export interface UserProfile {
   userId: string; // Читабельний ID (UEB-00001)
   email: string;
@@ -60,6 +74,7 @@ interface AuthContextType {
   uploadProfilePhoto: (file: File) => Promise<string>;
   markNotificationAsRead: (notificationId: string) => Promise<void>;
   markHomeworkAsCompleted: (homeworkId: string) => Promise<void>;
+  submitQuestion: (question: string, userId?: string, userEmail?: string, userName?: string) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -219,6 +234,29 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     await updateUserProfile({ homework: updatedHomework });
   };
 
+  const submitQuestion = async (
+    question: string,
+    userId?: string,
+    userEmail?: string,
+    userName?: string
+  ) => {
+    const questionId = `q-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
+    const questionData: Question = {
+      id: questionId,
+      question,
+      createdAt: new Date().toISOString(),
+      isAnonymous: !userId,
+      answered: false,
+      ...(userId && { userId }),
+      ...(userEmail && { userEmail }),
+      ...(userName && { userName }),
+    };
+
+    // Зберігаємо питання в загальній базі питань
+    const questionRef = ref(database, `questions/${questionId}`);
+    await set(questionRef, questionData);
+  };
+
   const value: AuthContextType = {
     user,
     userProfile,
@@ -232,6 +270,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     uploadProfilePhoto,
     markNotificationAsRead,
     markHomeworkAsCompleted,
+    submitQuestion,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
