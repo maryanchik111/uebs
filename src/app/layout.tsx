@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/client/header";
 import Footer from "./components/client/footer";
 import MobileNav from "./components/client/mobile-nav";
+import PWAInstallPrompt from "./components/client/pwa-install-prompt";
 import { LanguageProvider } from "@/contexts/language-context";
 import { AuthProvider } from "@/contexts/auth-context";
 import { Analytics } from "@vercel/analytics/react";
@@ -26,6 +27,22 @@ export const metadata: Metadata = {
   authors: [{ name: "UEBSchool" }],
   creator: "UEBSchool",
   publisher: "UEBSchool",
+  manifest: '/manifest.webmanifest',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'UEBSchool',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   openGraph: {
     title: "UEBSchool м. Рівне — Біблійна школа",
     description: "Повна біблійна програма у м. Рівне. Вивчайте Писання, розвивайте служіння та зростайте у вірі разом з нами.",
@@ -59,6 +76,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+        <meta name="theme-color" content="#3b82f6" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <link rel="manifest" href="/manifest.webmanifest" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -68,6 +93,7 @@ export default function RootLayout({
             {children}
             <Footer />
             <MobileNav />
+            <PWAInstallPrompt />
           </LanguageProvider>
         </AuthProvider>
         <Analytics />
