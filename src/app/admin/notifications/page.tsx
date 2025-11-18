@@ -425,7 +425,7 @@ export default function AdminNotificationsPage() {
 
           {/* Right side - Users */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-2xl shadow-lg p-6 sticky top-6">
+            <div className="bg-white rounded-2xl shadow-lg p-6">
               <div 
                 className="flex items-center justify-between cursor-pointer lg:cursor-default"
                 onClick={() => setShowUserList(!showUserList)}
@@ -441,7 +441,7 @@ export default function AdminNotificationsPage() {
                 </button>
               </div>
 
-              <div className={`mt-4 space-y-3 ${showUserList ? 'block' : 'hidden lg:block'}`}>
+              <div className={`mt-4 space-y-3 pb-24 lg:pb-0 ${showUserList ? 'block' : 'hidden lg:block'}`}>
                 <button
                   onClick={handleSelectAll}
                   className="w-full px-4 py-2 border-2 border-purple-600 text-purple-600 font-medium rounded-lg hover:bg-purple-50 transition-all"

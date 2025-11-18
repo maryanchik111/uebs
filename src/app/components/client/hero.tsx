@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { ChevronDown, BookOpen, Heart, Users, Play, Star, Calendar, Clock, User, LogIn } from "lucide-react";
+import { ChevronDown, BookOpen, Heart, Users, Play, Star, Calendar, Clock, User, LogIn, Download } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/language-context";
@@ -14,6 +14,7 @@ export default function Hero() {
   const controls = useAnimation();
   const { t, language } = useLanguage();
   const { user, userProfile } = useAuth();
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
 
   // Generate consistent positions
   const backgroundElements = useMemo(() => 
@@ -60,6 +61,14 @@ export default function Hero() {
   useEffect(() => {
     controls.start("visible");
     setIsMounted(true);
+
+    // Listen for PWA install prompt
+    const handler = (e: Event) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+    };
+    window.addEventListener('beforeinstallprompt', handler);
+    return () => window.removeEventListener('beforeinstallprompt', handler);
   }, [controls]);
 
   const containerVariants = {
@@ -190,6 +199,27 @@ export default function Hero() {
                     </span>
                   )}
                 </motion.div>
+
+                {/* PWA Install button on mobile */}
+                {deferredPrompt && (
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="md:hidden">
+                    <button
+                      onClick={async () => {
+                        if (deferredPrompt) {
+                          deferredPrompt.prompt();
+                          const { outcome } = await deferredPrompt.userChoice;
+                          if (outcome === 'accepted') {
+                            setDeferredPrompt(null);
+                          }
+                        }
+                      }}
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      <Download className="w-5 h-5" />
+                      Завантажити додаток
+                    </button>
+                  </motion.div>
+                )}
               </motion.div>
 
               {/* Key features */}

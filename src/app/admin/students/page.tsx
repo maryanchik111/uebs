@@ -337,7 +337,7 @@ export default function StudentsPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
           >
-            <div className="sticky top-0 bg-white p-4 sm:p-6 border-b border-slate-200 rounded-t-2xl">
+            <div className="bg-white p-4 sm:p-6 border-b border-slate-200 rounded-t-2xl">
               <div className="flex items-center justify-between">
                 <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
                   {editingStudent ? 'Редагувати студента' : 'Додати студента'}

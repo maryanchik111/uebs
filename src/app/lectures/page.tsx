@@ -120,7 +120,7 @@ export default function LecturesPage() {
 
         {/* Lectures Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {lectures.map((lecture, index) => (
+          {[...lectures].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((lecture, index) => (
             <motion.div
               key={lecture.id}
               className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
