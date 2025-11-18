@@ -4,15 +4,17 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Phone, MapPin } from "lucide-react";
+import { Menu, X, Phone, MapPin, User, LogIn } from "lucide-react";
 import { cn } from "@/lib/utils";
 import LanguageSwitcher from "./language-switcher";
 import { useLanguage } from "@/contexts/language-context";
+import { useAuth } from "@/contexts/auth-context";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { t } = useLanguage();
+  const { user } = useAuth();
 
   const navigation = [
     { name: t("nav.home"), href: "/" },
@@ -126,27 +128,60 @@ export default function Header() {
               <LanguageSwitcher scrolled={scrolled} />
             </div>
 
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                href="/apply"
-                className="bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+            {user ? (
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                {t("nav.apply")}
-              </Link>
-            </motion.div>
+                <Link
+                  href="/cabinet"
+                  className="flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <User className="w-4 h-4" />
+                  Кабінет
+                </Link>
+              </motion.div>
+            ) : (
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-3"
+              >
+                <Link
+                  href="/login"
+                  className="flex items-center gap-2 text-slate-700 font-medium px-4 py-2 hover:text-blue-600 transition-colors"
+                >
+                  <LogIn className="w-4 h-4" />
+                  Вхід
+                </Link>
+                <Link
+                  href="/apply"
+                  className="bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  {t("nav.apply")}
+                </Link>
+              </motion.div>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-3">
-            <Link
-              href="/apply"
-              className="bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold px-4 py-2 rounded-lg text-sm"
-            >
-              {t("nav.apply")}
-            </Link>
+            {user ? (
+              <Link
+                href="/cabinet"
+                className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold px-4 py-2 rounded-lg text-sm flex items-center gap-2"
+              >
+                <User className="w-4 h-4" />
+                Кабінет
+              </Link>
+            ) : (
+              <Link
+                href="/apply"
+                className="bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold px-4 py-2 rounded-lg text-sm"
+              >
+                {t("nav.apply")}
+              </Link>
+            )}
 
             <button
               onClick={() => setOpen(!open)}
@@ -191,6 +226,23 @@ export default function Header() {
                   </Link>
                 </motion.div>
               ))}
+
+              {!user && (
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: navigation.length * 0.1 }}
+                >
+                  <Link
+                    href="/login"
+                    onClick={() => setOpen(false)}
+                    className="block py-2 text-blue-600 font-medium hover:text-blue-700 transition-colors flex items-center gap-2"
+                  >
+                    <LogIn className="w-4 h-4" />
+                    Вхід
+                  </Link>
+                </motion.div>
+              )}
               
               <motion.div
                 className="pt-4 border-t border-slate-200"
