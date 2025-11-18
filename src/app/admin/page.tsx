@@ -115,17 +115,20 @@ export default function AdminPage() {
             </div>
           </Link>
 
-          <div className="group bg-white rounded-xl shadow-md p-6 border-2 border-gray-200 opacity-60">
+          <Link
+            href="/admin/students"
+            className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 border-2 border-transparent hover:border-indigo-200"
+          >
             <div className="flex items-start gap-4">
-              <div className="p-3 bg-gray-100 rounded-lg">
-                <Users className="w-6 h-6 text-gray-400" />
+              <div className="p-3 bg-indigo-100 rounded-lg group-hover:bg-indigo-200 transition-colors">
+                <Users className="w-6 h-6 text-indigo-600" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-gray-400 mb-1">Користувачі</h3>
-                <p className="text-gray-400 text-sm">Скоро буде доступно</p>
+                <h3 className="text-xl font-semibold text-gray-800 mb-1">Студенти</h3>
+                <p className="text-gray-600 text-sm">Управління списком студентів</p>
               </div>
             </div>
-          </div>
+          </Link>
 
           <div className="group bg-white rounded-xl shadow-md p-6 border-2 border-gray-200 opacity-60">
             <div className="flex items-start gap-4">

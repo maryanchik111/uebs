@@ -1,10 +1,25 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sendEmail, emailTemplates } from '@/lib/email';
+import { ref, push } from 'firebase/database';
+import { database } from '@/lib/firebase';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const { firstName, lastName, email, phone, city, format } = body;
+
+    // Add student to database
+    const studentsRef = ref(database, 'students');
+    await push(studentsRef, {
+      firstName,
+      lastName,
+      email,
+      phone: phone || '',
+      format: format || 'очно',
+      addedAt: new Date().toISOString(),
+      source: 'application',
+      city
+    });
 
     // Telegram Bot Configuration (you'll need to set these)
     const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
