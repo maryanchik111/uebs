@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, BookOpen, Heart, Users, Crown, Home, Church, Zap } from "lucide-react";
+import Link from "next/link";
 import { useLanguage } from "@/contexts/language-context";
 import { programTranslations } from "@/contexts/program-translations";
 
@@ -189,13 +190,15 @@ export default function ProgramSection() {
             <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
               Приєднуйтесь до нашої спільноти учнів та розпочніть подорож духовного зростання вже сьогодні.
             </p>
-            <motion.button
-              className="bg-white text-blue-600 font-semibold px-8 py-3 rounded-xl hover:bg-blue-50 transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Записатися на навчання
-            </motion.button>
+            <Link href="/apply">
+              <motion.button
+                className="bg-white text-blue-600 font-semibold px-8 py-3 rounded-xl hover:bg-blue-50 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Записатися на навчання
+              </motion.button>
+            </Link>
           </div>
         </motion.div>
       </div>
