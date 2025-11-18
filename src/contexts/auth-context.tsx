@@ -93,8 +93,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Перевіряємо чи Firebase ініціалізовано та чи це клієнт
-    if (typeof window === 'undefined' || !auth || typeof auth.onAuthStateChanged !== 'function') {
+    // Чекаємо поки Firebase ініціалізується на клієнті
+    if (!auth) {
       setLoading(false);
       return;
     }
@@ -102,7 +102,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       setUser(user);
       
-      if (user) {
+      if (user && database) {
         // Завантажуємо профіль користувача з Realtime Database
         const userRef = ref(database, `users/${user.uid}`);
         const snapshot = await get(userRef);
@@ -163,7 +163,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       homework: [],
     };
 
-    await set(ref(database, `users/${user.uid}`), userProfile);
+    await set(ref(database!, `users/${user.uid}`), userProfile);
     setUserProfile(userProfile);
   };
 
