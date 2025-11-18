@@ -14,17 +14,10 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Ініціалізуємо Firebase тільки на клієнті
-let app: FirebaseApp | null = null;
-let auth: Auth | null = null;
-let database: Database | null = null;
-let storage: FirebaseStorage | null = null;
-
-if (typeof window !== 'undefined') {
-  app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-  auth = getAuth(app);
-  database = getDatabase(app);
-  storage = getStorage(app);
-}
+// Ініціалізація Firebase
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+const auth = getAuth(app);
+const database = getDatabase(app);
+const storage = getStorage(app);
 
 export { app, auth, database, storage };

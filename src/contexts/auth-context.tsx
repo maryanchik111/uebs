@@ -102,7 +102,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       setUser(user);
       
-      if (user && database) {
+      if (user) {
         // Завантажуємо профіль користувача з Realtime Database
         const userRef = ref(database, `users/${user.uid}`);
         const snapshot = await get(userRef);
@@ -137,7 +137,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const register = async (email: string, password: string, displayName: string) => {
-    if (!auth || !database) throw new Error('Firebase not initialized');
+    if (!auth) throw new Error('Firebase not initialized');
     
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
@@ -189,7 +189,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const updateUserProfile = async (data: Partial<UserProfile>) => {
-    if (!user || !userProfile || !database) throw new Error('No user logged in');
+    if (!user || !userProfile) throw new Error('No user logged in');
 
     const userRef = ref(database, `users/${user.uid}`);
     await update(userRef, data);
@@ -206,7 +206,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const uploadProfilePhoto = async (file: File): Promise<string> => {
-    if (!user || !storage || !database) throw new Error('No user logged in');
+    if (!user) throw new Error('No user logged in');
 
     // Використовуємо простіший шлях без спеціальних символів
     const timestamp = Date.now();
@@ -251,8 +251,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     userEmail?: string,
     userName?: string
   ) => {
-    if (!database) throw new Error('Firebase not initialized');
-    
     const questionId = `q-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
     const questionData: Question = {
       id: questionId,
