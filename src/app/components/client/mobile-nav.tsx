@@ -152,10 +152,10 @@ export default function MobileNav() {
 
       {/* Bottom Navbar */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 pb-safe">
-        <div className={`grid ${user && isAdmin ? 'grid-cols-5' : user ? 'grid-cols-4' : 'grid-cols-4'} gap-1 px-2 py-2`}>
+        <div className="flex justify-around items-center px-2 py-2">
           <Link
             href="/"
-            className={`flex flex-col items-center justify-center py-2 px-1 transition-colors ${
+            className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${
               isActive('/') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
             }`}
           >
@@ -165,7 +165,7 @@ export default function MobileNav() {
           
           <Link
             href="/lectures"
-            className={`flex flex-col items-center justify-center py-2 px-1 transition-colors ${
+            className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${
               isActive('/lectures') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
             }`}
           >
@@ -173,22 +173,30 @@ export default function MobileNav() {
             <span className="text-xs mt-1">Лекції</span>
           </Link>
           
-          {user && (
+          {user ? (
             <Link
               href="/cabinet"
-              className={`flex flex-col items-center justify-center py-2 px-1 transition-colors ${
+              className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${
                 isActive('/cabinet') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
               }`}
             >
               <User className="w-6 h-6" />
-              <span className="text-xs mt-1">Кабінет</span>
+              <span className="text-xs mt-1 truncate max-w-[60px]">{user.displayName || user.email?.split('@')[0] || 'Кабінет'}</span>
+            </Link>
+          ) : (
+            <Link
+              href="/login"
+              className="flex flex-col items-center justify-center py-2 px-3 transition-colors text-gray-600 hover:text-blue-600"
+            >
+              <LogIn className="w-6 h-6" />
+              <span className="text-xs mt-1">Увійти</span>
             </Link>
           )}
           
           {user && isAdmin && (
             <Link
               href="/admin"
-              className={`flex flex-col items-center justify-center py-2 px-1 transition-colors ${
+              className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${
                 isActive('/admin') || pathname.startsWith('/admin/') ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
               }`}
             >
@@ -199,7 +207,7 @@ export default function MobileNav() {
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`flex flex-col items-center justify-center py-2 px-1 transition-colors ${
+            className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${
               menuOpen ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
             }`}
           >

@@ -96,13 +96,6 @@ export default function Header() {
                 className="flex items-center gap-2 text-slate-600"
                 whileHover={{ scale: 1.05 }}
               >
-                <Phone className="w-4 h-4" />
-                <span className="hidden xl:block">+380 63 344 4555</span>
-              </motion.div>
-              <motion.div
-                className="flex items-center gap-2 text-slate-600"
-                whileHover={{ scale: 1.05 }}
-              >
                 <MapPin className="w-4 h-4" />
                 <span className="hidden xl:block">Рівне</span>
               </motion.div>

@@ -2,16 +2,18 @@
 
 import { useState, useEffect, useMemo } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { ChevronDown, BookOpen, Heart, Users, Play, Star, Calendar, Clock } from "lucide-react";
+import { ChevronDown, BookOpen, Heart, Users, Play, Star, Calendar, Clock, User, LogIn } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/language-context";
+import { useAuth } from "@/contexts/auth-context";
 
 export default function Hero() {
 
   const [isMounted, setIsMounted] = useState(false);
   const controls = useAnimation();
   const { t, language } = useLanguage();
+  const { user } = useAuth();
 
   // Generate consistent positions
   const backgroundElements = useMemo(() => 
@@ -170,6 +172,17 @@ export default function Hero() {
                   >
                     <BookOpen className="w-5 h-5" />
                     {t("hero.learn")}
+                  </Link>
+                </motion.div>
+
+                {/* Cabinet button on mobile */}
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="md:hidden">
+                  <Link
+                    href={user ? "/cabinet" : "/login"}
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                  >
+                    {user ? <User className="w-5 h-5" /> : <LogIn className="w-5 h-5" />}
+                    {user ? "Кабінет" : "Увійти"}
                   </Link>
                 </motion.div>
               </motion.div>

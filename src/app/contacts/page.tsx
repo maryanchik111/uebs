@@ -11,29 +11,29 @@ export default function ContactsPage() {
   const contactInfo = useMemo(() => [
     {
       icon: MapPin,
-      title: t("contacts.contact.address"),
-      details: [t("contacts.city"), t("contacts.center")],
+      title: "Адреса",
+      details: ["м. Рівне, Україна", "Центр міста"],
       color: "from-blue-500 to-indigo-600"
     },
     {
       icon: Phone,
-      title: t("contacts.contact.phone"),
-      details: ["+380 63 344 4555", t("contacts.hours")],
+      title: "Телефон",
+      details: ["+380 63 344 4555", "Пн-Пт: 9:00-18:00"],
       color: "from-emerald-500 to-teal-600"
     },
     {
       icon: Mail,
-      title: t("contacts.contact.email"),
-      details: ["uebs0633444555@gmail.com", t("contacts.main.email")],
+      title: "Email",
+      details: ["uebs0633444555@gmail.com", "Основна пошта"],
       color: "from-purple-500 to-pink-600"
     },
     {
       icon: Clock,
-      title: t("contacts.contact.schedule"),
-      details: [t("contacts.schedule"), t("contacts.frequency")],
+      title: "Розклад занять",
+      details: ["П'ятниця: 19:00-22:00", "2 рази на місяць"],
       color: "from-amber-500 to-orange-600"
     }
-  ], [t]);
+  ], []);
 
   const faqItems = useMemo(() => [
     {
@@ -289,11 +289,11 @@ export default function ContactsPage() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5" />
-                  <span>+380 XX XXX XXXX</span>
+                  <span>+380 63 344 4555</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5" />
-                  <span>info@uebschool.com</span>
+                  <span>uebs0633444555@gmail.com</span>
                 </div>
               </div>
               <motion.button
