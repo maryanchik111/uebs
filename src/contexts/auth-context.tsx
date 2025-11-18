@@ -93,8 +93,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Перевіряємо чи Firebase ініціалізовано
-    if (!auth) {
+    // Перевіряємо чи Firebase ініціалізовано та чи це клієнт
+    if (typeof window === 'undefined' || !auth || typeof auth.onAuthStateChanged !== 'function') {
       setLoading(false);
       return;
     }
