@@ -2,10 +2,13 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, Clock, Calendar, User, Play } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, User, Play, Eye, MessageCircle, Send } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 import { useParams } from "next/navigation";
 import { useState, useEffect } from "react";
+import { useAuth } from "@/contexts/auth-context";
+import { ref, get, set, push, onValue, increment } from "firebase/database";
+import { database } from "@/lib/firebase";
 
 // Real lectures data with full descriptions
 const lectures = [
@@ -255,10 +258,21 @@ export default function LecturePage() {
   const params = useParams();
   const lectureId = params.id as string;
   const [isMounted, setIsMounted] = useState(false);
+  const { user, userProfile } = useAuth();
+  const [views, setViews] = useState(0);
+  const [comments, setComments] = useState<any[]>([]);
+  const [newComment, setNewComment] = useState("");
+  const [submittingComment, setSubmittingComment] = useState(false);
 
   useEffect(() => {
     setIsMounted(true);
-  }, []);
+    // Track views and load comments when lecture changes
+    trackView();
+    const unsubscribe = loadComments();
+    return () => {
+      if (typeof unsubscribe === "function") unsubscribe();
+    };
+  }, [lectureId]);
   
   const lecture = lectures.find(l => l.id === lectureId);
 
@@ -290,6 +304,91 @@ export default function LecturePage() {
       month: 'long',
       day: 'numeric'
     });
+  };
+
+  // Increments view count for the lecture; prevents double count per user via localStorage
+  const trackView = async () => {
+    try {
+      if (!lectureId || !database) return;
+      const storageKey = `lecture_viewed_${lectureId}`;
+      const viewsRef = ref(database, `lectures/${lectureId}/views`);
+
+      // Get current value to display
+      const snap = await get(viewsRef);
+      const current = (snap.exists() ? Number(snap.val()) : 0) || 0;
+      setViews(current);
+
+      // Only increment once per browser
+      if (typeof window !== "undefined" && !localStorage.getItem(storageKey)) {
+        await set(viewsRef, increment(1));
+        localStorage.setItem(storageKey, "1");
+        setViews((v) => v + 1);
+      }
+    } catch (e) {
+      // Silent fail; keep UI responsive
+    }
+  };
+
+  // Subscribes to comments in real-time; returns unsubscribe function
+  const loadComments = () => {
+    if (!lectureId || !database) return undefined as unknown as (() => void);
+    const commentsRef = ref(database, `lectures/${lectureId}/comments`);
+    const unsub = onValue(commentsRef, (snapshot) => {
+      if (!snapshot.exists()) {
+        setComments([]);
+        return;
+      }
+      const data = snapshot.val() || {};
+      const list = Object.keys(data).map((key) => ({ id: key, ...data[key] }));
+      list.sort((a: any, b: any) => (b.createdAt || 0) - (a.createdAt || 0));
+      setComments(list);
+    });
+    return unsub;
+  };
+
+  const handleSubmitComment = async () => {
+    if (!user) return; // UI prevents, but double-guard
+    const text = newComment.trim();
+    if (!text) return;
+    try {
+      setSubmittingComment(true);
+      const commentsRef = ref(database, `lectures/${lectureId}/comments`);
+      const newRef = push(commentsRef);
+      const payload = {
+        text,
+        userId: user.uid,
+        userName: user.displayName || userProfile?.displayName || "Користувач",
+        userPhotoURL: (userProfile?.photoURL || user.photoURL || "") as string,
+        createdAt: Date.now(),
+      };
+      await set(newRef, payload);
+      setNewComment("");
+    } catch (e) {
+      // Silent fail for now
+    } finally {
+      setSubmittingComment(false);
+    }
+  };
+
+  const formatCommentDate = (ts: number) => {
+    const now = Date.now();
+    const diffMs = Math.max(0, now - ts);
+    const sec = Math.floor(diffMs / 1000);
+    const min = Math.floor(sec / 60);
+    const hr = Math.floor(min / 60);
+    const day = Math.floor(hr / 24);
+
+    if (language === 'uk') {
+      if (sec < 60) return `${sec} с тому`;
+      if (min < 60) return `${min} хв тому`;
+      if (hr < 24) return `${hr} год тому`;
+      return `${day} дн тому`;
+    } else {
+      if (sec < 60) return `${sec}s ago`;
+      if (min < 60) return `${min}m ago`;
+      if (hr < 24) return `${hr}h ago`;
+      return `${day}d ago`;
+    }
   };
 
   return (
@@ -359,6 +458,16 @@ export default function LecturePage() {
               <span className="font-medium">{t("lectures.duration")}:</span>
               <span>{getVideoDuration(lecture.youtubeId)}</span>
             </div>
+            <div className="flex items-center gap-2">
+              <Eye className="w-5 h-5" />
+              <span className="font-medium">Перегляди:</span>
+              <span>{views}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MessageCircle className="w-5 h-5" />
+              <span className="font-medium">Коментарі:</span>
+              <span>{comments.length}</span>
+            </div>
           </div>
 
           {/* Description */}
@@ -377,6 +486,90 @@ export default function LecturePage() {
                   .replace(/• (.*)/g, '<li class="ml-4">$1</li>')
                   .replace(/---/g, '<hr class="my-6 border-slate-300" />')
               }} />
+            </div>
+          </div>
+
+          {/* Comments Section */}
+          <div className="mt-10">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-bold text-slate-900">
+                Коментарі <span className="text-slate-500">({comments.length})</span>
+              </h2>
+            </div>
+
+            {user ? (
+              <div className="mb-6">
+                <div className="flex items-start gap-3">
+                  {((userProfile?.photoURL || user.photoURL)) ? (
+                    <img
+                      src={(userProfile?.photoURL || user.photoURL) as string}
+                      alt="avatar"
+                      className="w-10 h-10 rounded-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600">
+                      <User className="w-5 h-5" />
+                    </div>
+                  )}
+                  <div className="flex-1">
+                    <textarea
+                      className="w-full border border-slate-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-200 bg-white"
+                      rows={3}
+                      placeholder={language === 'uk' ? "Напишіть коментар..." : "Write a comment..."}
+                      value={newComment}
+                      onChange={(e) => setNewComment(e.target.value)}
+                    />
+                    <div className="flex justify-end mt-2">
+                      <button
+                        onClick={handleSubmitComment}
+                        disabled={submittingComment || !newComment.trim()}
+                        className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        <Send className="w-4 h-4" />
+                        {submittingComment ? (language === 'uk' ? 'Надсилання...' : 'Sending...') : (language === 'uk' ? 'Надіслати' : 'Send')}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="mb-6 p-4 border border-slate-200 rounded-lg bg-slate-50 text-slate-700">
+                {language === 'uk' ? (
+                  <span>
+                    Щоб залишити коментар, будь ласка, <Link href="/login" className="text-blue-600 hover:underline">увійдіть</Link>.
+                  </span>
+                ) : (
+                  <span>
+                    To leave a comment, please <Link href="/login" className="text-blue-600 hover:underline">log in</Link>.
+                  </span>
+                )}
+              </div>
+            )}
+
+            {/* Comments List */}
+            <div className="space-y-6">
+              {comments.length === 0 ? (
+                <div className="text-slate-500">{language === 'uk' ? 'Ще немає коментарів.' : 'No comments yet.'}</div>
+              ) : (
+                comments.map((c: any) => (
+                  <div key={c.id} className="flex items-start gap-3">
+                    {c.userPhotoURL ? (
+                      <img src={c.userPhotoURL} alt="avatar" className="w-10 h-10 rounded-full object-cover" />
+                    ) : (
+                      <div className="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-600">
+                        <User className="w-5 h-5" />
+                      </div>
+                    )}
+                    <div className="flex-1 bg-slate-50 border border-slate-200 rounded-lg p-3">
+                      <div className="flex items-center justify-between text-sm mb-1">
+                        <span className="font-medium text-slate-900">{c.userName || (language === 'uk' ? 'Користувач' : 'User')}</span>
+                        <span className="text-slate-500">{c.createdAt ? formatCommentDate(c.createdAt) : ''}</span>
+                      </div>
+                      <div className="text-slate-800 whitespace-pre-wrap">{c.text}</div>
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
           </div>
         </motion.div>

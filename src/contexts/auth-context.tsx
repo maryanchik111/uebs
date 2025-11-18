@@ -129,14 +129,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
               photoURL: userData.photoURL || '',
               userId: userData.userId || `UEB-${Date.now()}`, // Fallback для старих користувачів
             };
-            
-            console.log('Auth Context - userProfile updated:', {
-              notifications: completeUserProfile.notifications.length,
-              unread: completeUserProfile.notifications.filter(n => !n.read).length,
-              homework: completeUserProfile.homework.length,
-              pending: completeUserProfile.homework.filter(h => !h.completed).length,
-            });
-            
             setUserProfile(completeUserProfile);
           }
           setLoading(false);

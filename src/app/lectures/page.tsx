@@ -2,9 +2,11 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Play, Clock, Calendar, User } from "lucide-react";
+import { Play, Clock, Calendar, User, Eye, MessageCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 import { useState, useEffect } from "react";
+import { ref, get } from "firebase/database";
+import { database } from "@/lib/firebase";
 
 // Real lectures data
 const lectures = [
@@ -50,10 +52,36 @@ const getVideoDuration = (youtubeId: string) => {
 export default function LecturesPage() {
   const { t, language } = useLanguage();
   const [isMounted, setIsMounted] = useState(false);
+  const [lectureStats, setLectureStats] = useState<{[key: string]: {views: number, comments: number}}>({});
 
   useEffect(() => {
     setIsMounted(true);
+    loadLectureStats();
   }, []);
+
+  const loadLectureStats = async () => {
+    const stats: {[key: string]: {views: number, comments: number}} = {};
+    
+    for (const lecture of lectures) {
+      try {
+        const viewsRef = ref(database, `lectures/${lecture.id}/views`);
+        const viewsSnapshot = await get(viewsRef);
+        const views = viewsSnapshot.val() || 0;
+        
+        const commentsRef = ref(database, `lectures/${lecture.id}/comments`);
+        const commentsSnapshot = await get(commentsRef);
+        const commentsData = commentsSnapshot.val();
+        const commentsCount = commentsData ? Object.keys(commentsData).length : 0;
+        
+        stats[lecture.id] = { views, comments: commentsCount };
+      } catch (error) {
+        console.error(`Error loading stats for ${lecture.id}:`, error);
+        stats[lecture.id] = { views: 0, comments: 0 };
+      }
+    }
+    
+    setLectureStats(stats);
+  };
 
   const formatDate = (dateString: string) => {
     if (!isMounted) {
@@ -134,6 +162,16 @@ export default function LecturesPage() {
                   <div className="flex items-center gap-2 text-sm text-slate-500">
                     <Calendar className="w-4 h-4" />
                     {formatDate(lecture.date)}
+                                    <div className="flex items-center gap-4 text-sm text-slate-500">
+                                      <div className="flex items-center gap-1">
+                                        <Eye className="w-4 h-4" />
+                                        {lectureStats[lecture.id]?.views || 0}
+                                      </div>
+                                      <div className="flex items-center gap-1">
+                                        <MessageCircle className="w-4 h-4" />
+                                        {lectureStats[lecture.id]?.comments || 0}
+                                      </div>
+                                    </div>
                   </div>
                 </div>
 

@@ -22,17 +22,6 @@ export default function MobileNav() {
     }
   }, [user]);
 
-  useEffect(() => {
-    if (userProfile) {
-      console.log('Mobile Nav - userProfile updated:', {
-        notifications: userProfile.notifications?.length || 0,
-        unread: userProfile.notifications?.filter(n => !n.read).length || 0,
-        homework: userProfile.homework?.length || 0,
-        pending: userProfile.homework?.filter(h => !h.completed).length || 0,
-      });
-    }
-  }, [userProfile]);
-
   // Don't show navbar on login/register pages
   if (pathname === '/login' || pathname === '/register') {
     return null;
