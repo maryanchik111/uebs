@@ -93,6 +93,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Перевіряємо чи Firebase ініціалізовано
+    if (!auth) {
+      setLoading(false);
+      return;
+    }
+
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
       setUser(user);
       
@@ -131,6 +137,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const register = async (email: string, password: string, displayName: string) => {
+    if (!auth || !database) throw new Error('Firebase not initialized');
+    
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
@@ -160,15 +168,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const login = async (email: string, password: string) => {
+    if (!auth) throw new Error('Firebase not initialized');
     await signInWithEmailAndPassword(auth, email, password);
   };
 
   const logout = async () => {
+    if (!auth) throw new Error('Firebase not initialized');
     await signOut(auth);
     setUserProfile(null);
   };
 
   const resetPassword = async (email: string) => {
+    if (!auth) throw new Error('Firebase not initialized');
     await sendPasswordResetEmail(auth, email);
   };
 
@@ -195,7 +206,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const uploadProfilePhoto = async (file: File): Promise<string> => {
-    if (!user) throw new Error('No user logged in');
+    if (!user || !storage || !database) throw new Error('No user logged in');
 
     // Використовуємо простіший шлях без спеціальних символів
     const timestamp = Date.now();
@@ -240,6 +251,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     userEmail?: string,
     userName?: string
   ) => {
+    if (!database) throw new Error('Firebase not initialized');
+    
     const questionId = `q-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
     const questionData: Question = {
       id: questionId,
