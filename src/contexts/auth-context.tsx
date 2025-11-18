@@ -184,12 +184,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const sendVerificationEmail = async () => {
-    if (!user) throw new Error('No user logged in');
-    await sendEmailVerification(user);
+    if (!auth?.currentUser) throw new Error('No user logged in');
+    await sendEmailVerification(auth.currentUser);
   };
 
   const updateUserProfile = async (data: Partial<UserProfile>) => {
-    if (!user) throw new Error('No user logged in');
+    if (!user || !userProfile || !database) throw new Error('No user logged in');
 
     const userRef = ref(database, `users/${user.uid}`);
     await update(userRef, data);

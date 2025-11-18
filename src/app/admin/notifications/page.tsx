@@ -75,6 +75,7 @@ export default function AdminNotificationsPage() {
   const loadUsers = async () => {
     setLoadingUsers(true);
     try {
+      if (!database) return;
       const usersRef = ref(database, 'users');
       const snapshot = await get(usersRef);
       
@@ -120,6 +121,7 @@ export default function AdminNotificationsPage() {
       alert('Заповніть всі поля та виберіть користувачів');
       return;
     }
+    if (!database) return;
 
     setSending(true);
     try {
@@ -163,6 +165,7 @@ export default function AdminNotificationsPage() {
       alert('Заповніть всі поля та виберіть користувачів');
       return;
     }
+    if (!database) return;
 
     setSending(true);
     try {

@@ -44,6 +44,7 @@ export default function AdminQuestionsPage() {
 
   const loadQuestions = async () => {
     try {
+      if (!database) return;
       const questionsRef = ref(database, 'questions');
       const snapshot = await get(questionsRef);
       
@@ -67,7 +68,7 @@ export default function AdminQuestionsPage() {
   };
 
   const handleAnswerSubmit = async (questionId: string) => {
-    if (!answer.trim() || !user) return;
+    if (!answer.trim() || !user || !database) return;
 
     setAnswering(true);
     try {
@@ -84,7 +85,7 @@ export default function AdminQuestionsPage() {
       });
 
       // Якщо питання від зареєстрованого користувача, надсилаємо повідомлення
-      if (question.userId) {
+      if (question.userId && database) {
         const userRef = ref(database, `users/${question.userId}`);
         const userSnapshot = await get(userRef);
         

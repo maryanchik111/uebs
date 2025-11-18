@@ -5,6 +5,7 @@ import { database } from './firebase';
  * Генерує унікальний userId в форматі UEB-00001, UEB-00002 і т.д.
  */
 export async function generateUserId(): Promise<string> {
+  if (!database) throw new Error('Database not initialized');
   const counterRef = ref(database, 'counters/userIdCounter');
   
   try {
@@ -34,6 +35,7 @@ export async function generateUserId(): Promise<string> {
  */
 export async function isUserAdmin(uid: string): Promise<boolean> {
   try {
+    if (!database) return false;
     const adminRef = ref(database, `admins/${uid}`);
     const snapshot = await get(adminRef);
     return snapshot.exists() && snapshot.val() === true;
