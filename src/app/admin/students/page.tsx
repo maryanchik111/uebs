@@ -5,7 +5,7 @@ import { useAuth } from '@/contexts/auth-context';
 import { isUserAdmin } from '@/lib/user-utils';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Users, Plus, Mail, Phone, User, X, Calendar, Trash2, Edit, FileText } from 'lucide-react';
+import { Users, Plus, Mail, Phone, User, X, Calendar, Trash2, Edit, FileText, Search } from 'lucide-react';
 import { ref, onValue, push, set, remove } from 'firebase/database';
 import { database } from '@/lib/firebase';
 
@@ -26,6 +26,7 @@ export default function StudentsPage() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
   const [students, setStudents] = useState<Student[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
   const [showAddModal, setShowAddModal] = useState(false);
   const [editingStudent, setEditingStudent] = useState<Student | null>(null);
   const [formData, setFormData] = useState({
@@ -133,6 +134,17 @@ export default function StudentsPage() {
     setShowAddModal(false);
   };
 
+  const filteredStudents = students.filter(student => {
+    const query = searchQuery.toLowerCase();
+    return (
+      student.firstName.toLowerCase().includes(query) ||
+      student.lastName.toLowerCase().includes(query) ||
+      student.email.toLowerCase().includes(query) ||
+      student.phone.includes(query) ||
+      student.format.toLowerCase().includes(query)
+    );
+  });
+
   if (!isAdmin || loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
@@ -145,112 +157,167 @@ export default function StudentsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-24">
-      <div className="max-w-7xl mx-auto px-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-24 pb-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
-          className="flex items-center justify-between mb-8"
+          className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
           <div className="flex items-center gap-4">
             <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-3 rounded-xl">
-              <Users className="w-8 h-8 text-white" />
+              <Users className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold text-slate-900">Студенти</h1>
-              <p className="text-slate-600">Всього: {students.length}</p>
+              <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">Студенти</h1>
+              <p className="text-sm sm:text-base text-slate-600">Всього: {students.length}</p>
             </div>
           </div>
           <button
             onClick={() => setShowAddModal(true)}
-            className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl hover:shadow-lg transition-shadow"
+            className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl hover:shadow-lg transition-shadow text-sm sm:text-base"
           >
-            <Plus className="w-5 h-5" />
-            Додати студента
+            <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span className="whitespace-nowrap">Додати студента</span>
           </button>
         </motion.div>
 
+        {/* Search */}
+        <motion.div
+          className="mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+        >
+          <div className="relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+            <input
+              type="text"
+              placeholder="Пошук за ім'ям, прізвищем, email, телефоном або форматом..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all text-sm sm:text-base"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            )}
+          </div>
+        </motion.div>
+
         {/* Students List */}
-        <div className="grid gap-4">
-          {students.map((student, index) => (
+        <div className="grid gap-3 sm:gap-4">
+          {filteredStudents.map((student, index) => (
             <motion.div
               key={student.id}
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+              className="bg-white p-4 sm:p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05 }}
             >
-              <div className="flex items-start justify-between">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="bg-blue-100 p-2 rounded-lg">
-                      <User className="w-5 h-5 text-blue-600" />
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                  <div className="flex-1 min-w-0 overflow-hidden">
+                    <div className="flex items-start gap-3 mb-3">
+                      <div className="bg-blue-100 p-2 rounded-lg flex-shrink-0">
+                        <User className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
+                      </div>
+                      <div className="min-w-0 flex-1 overflow-hidden">
+                        <h3 className="text-lg sm:text-xl font-semibold text-slate-900 break-words">
+                          {student.firstName} {student.lastName}
+                        </h3>
+                        <div className="flex flex-wrap items-center gap-2 text-sm mt-1">
+                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                            student.format === 'очно' 
+                              ? 'bg-green-100 text-green-700' 
+                              : 'bg-blue-100 text-blue-700'
+                          }`}>
+                            {student.format}
+                          </span>
+                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                            student.source === 'manual' 
+                              ? 'bg-gray-100 text-gray-700' 
+                              : 'bg-amber-100 text-amber-700'
+                          }`}>
+                            {student.source === 'manual' ? 'Вручну' : 'Заявка'}
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-slate-900">
-                        {student.firstName} {student.lastName}
-                      </h3>
-                      <div className="flex items-center gap-2 text-sm">
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          student.format === 'очно' 
-                            ? 'bg-green-100 text-green-700' 
-                            : 'bg-blue-100 text-blue-700'
-                        }`}>
-                          {student.format}
-                        </span>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          student.source === 'manual' 
-                            ? 'bg-gray-100 text-gray-700' 
-                            : 'bg-amber-100 text-amber-700'
-                        }`}>
-                          {student.source === 'manual' ? 'Додано вручну' : 'Із заявки'}
+                    <div className="space-y-2 sm:grid sm:grid-cols-2 sm:gap-3 sm:space-y-0">
+                      <div className="flex items-center gap-2 text-slate-600 min-w-0 overflow-hidden">
+                        <Mail className="w-4 h-4 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm truncate break-all">{student.email}</span>
+                      </div>
+                      {student.phone && (
+                        <div className="flex items-center gap-2 text-slate-600 overflow-hidden">
+                          <Phone className="w-4 h-4 flex-shrink-0" />
+                          <span className="text-xs sm:text-sm break-all">{student.phone}</span>
+                        </div>
+                      )}
+                      <div className="flex items-center gap-2 text-slate-600 sm:col-span-2 overflow-hidden">
+                        <Calendar className="w-4 h-4 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm">
+                          {new Date(student.addedAt).toLocaleDateString('uk-UA', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          })}
                         </span>
                       </div>
                     </div>
                   </div>
-                  <div className="grid md:grid-cols-2 gap-3">
-                    <div className="flex items-center gap-2 text-slate-600">
-                      <Mail className="w-4 h-4" />
-                      <span className="text-sm">{student.email}</span>
-                    </div>
-                    {student.phone && (
-                      <div className="flex items-center gap-2 text-slate-600">
-                        <Phone className="w-4 h-4" />
-                        <span className="text-sm">{student.phone}</span>
-                      </div>
-                    )}
-                    <div className="flex items-center gap-2 text-slate-600">
-                      <Calendar className="w-4 h-4" />
-                      <span className="text-sm">
-                        {new Date(student.addedAt).toLocaleDateString('uk-UA', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric'
-                        })}
-                      </span>
-                    </div>
+                  <div className="hidden sm:flex sm:flex-col gap-2">
+                    <button
+                      onClick={() => handleEdit(student)}
+                      className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                      title="Редагувати"
+                    >
+                      <Edit className="w-5 h-5" />
+                    </button>
+                    <button
+                      onClick={() => handleDelete(student.id)}
+                      className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                      title="Видалити"
+                    >
+                      <Trash2 className="w-5 h-5" />
+                    </button>
                   </div>
                 </div>
-                <div className="flex gap-2">
+                
+                {/* Mobile buttons */}
+                <div className="flex flex-col sm:hidden gap-2 pt-2 border-t border-slate-100">
                   <button
                     onClick={() => handleEdit(student)}
-                    className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
-                    title="Редагувати"
+                    className="w-full flex items-center justify-center gap-2 p-2.5 text-blue-600 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors"
                   >
-                    <Edit className="w-5 h-5" />
+                    <Edit className="w-4 h-4" />
+                    <span className="text-sm font-medium">Редагувати</span>
                   </button>
                   <button
                     onClick={() => handleDelete(student.id)}
-                    className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                    title="Видалити"
+                    className="w-full flex items-center justify-center gap-2 p-2.5 text-red-600 bg-red-50 hover:bg-red-100 rounded-lg transition-colors"
                   >
-                    <Trash2 className="w-5 h-5" />
+                    <Trash2 className="w-4 h-4" />
+                    <span className="text-sm font-medium">Видалити</span>
                   </button>
                 </div>
               </div>
             </motion.div>
           ))}
+
+          {filteredStudents.length === 0 && students.length > 0 && (
+            <div className="text-center py-12 bg-white rounded-xl">
+              <Search className="w-16 h-16 text-slate-300 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">Нічого не знайдено</h3>
+              <p className="text-slate-600">Спробуйте змінити пошуковий запит</p>
+            </div>
+          )}
 
           {students.length === 0 && (
             <div className="text-center py-12 bg-white rounded-xl">
@@ -266,23 +333,25 @@ export default function StudentsPage() {
       {showAddModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <motion.div
-            className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6"
+            className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
           >
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-slate-900">
-                {editingStudent ? 'Редагувати студента' : 'Додати студента'}
-              </h2>
-              <button
-                onClick={resetForm}
-                className="p-2 hover:bg-slate-100 rounded-lg transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
+            <div className="sticky top-0 bg-white p-4 sm:p-6 border-b border-slate-200 rounded-t-2xl">
+              <div className="flex items-center justify-between">
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
+                  {editingStudent ? 'Редагувати студента' : 'Додати студента'}
+                </h2>
+                <button
+                  onClick={resetForm}
+                  className="p-2 hover:bg-slate-100 rounded-lg transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
@@ -293,7 +362,7 @@ export default function StudentsPage() {
                     required
                     value={formData.firstName}
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Іван"
                   />
                 </div>
@@ -306,7 +375,7 @@ export default function StudentsPage() {
                     required
                     value={formData.lastName}
                     onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="Іваненко"
                   />
                 </div>
@@ -321,7 +390,7 @@ export default function StudentsPage() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="email@example.com"
                 />
               </div>
@@ -334,7 +403,7 @@ export default function StudentsPage() {
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="+380 XX XXX XXXX"
                 />
               </div>
@@ -346,24 +415,24 @@ export default function StudentsPage() {
                 <select
                   value={formData.format}
                   onChange={(e) => setFormData({ ...formData, format: e.target.value as 'очно' | 'онлайн' })}
-                  className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-3 sm:px-4 py-2 text-sm sm:text-base border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="очно">Очно</option>
                   <option value="онлайн">Онлайн</option>
                 </select>
               </div>
 
-              <div className="flex gap-3 pt-4">
+              <div className="flex flex-col sm:flex-row gap-3 pt-4">
                 <button
                   type="button"
                   onClick={resetForm}
-                  className="flex-1 px-4 py-2 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
+                  className="flex-1 px-4 py-2.5 text-sm sm:text-base border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors"
                 >
                   Скасувати
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-shadow"
+                  className="flex-1 px-4 py-2.5 text-sm sm:text-base bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-shadow"
                 >
                   {editingStudent ? 'Зберегти' : 'Додати'}
                 </button>
