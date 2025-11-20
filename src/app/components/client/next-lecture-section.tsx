@@ -9,16 +9,16 @@ import { useState, useEffect } from "react";
 
 // Next upcoming lecture data
 const nextLecture = {
-  id: "christian-and-society",
-  title: "Християнин і суспільство: покликання впливу",
-  titleEn: "Christian and Society: The Calling of Influence",
-  speaker: "Ігор Плохой",
-  speakerEn: "Igor Plohoy",
-  speakerPhoto: "/ihorplohoy.jpg",
-  date: "2025-11-14",
+  id: "called-to-be-leader",
+  title: "Покликаний бути лідером",
+  titleEn: "Called to be a Leader",
+  speaker: "Тимонішин Антон",
+  speakerEn: "Antoniy Tymonishin",
+  speakerPhoto: "/antoniytymonishin.jpg",
+  date: "2025-11-21",
   time: "19:00",
-  description: "Християнин у силових структурах; Християнин у громадській діяльності;",
-  descriptionEn: "Christian in law enforcement; Christian in public activities;",
+  description: "Пастор церкви Слово Життя м.Луцьк\nВідповідальний в Україні за інститут індуктивного вивчення Біблії Пресепт",
+  descriptionEn: "Pastor of Slovo Zhyttya Church, Lutsk\nResponsible in Ukraine for the Precept Bible Inductive Study Institute",
   meetingLink: "", // Empty means no link available yet
   isLive: false
 };
