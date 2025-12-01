@@ -20,7 +20,6 @@ const lectures = [
     youtubeId: "d1fM8Fl52qc",
     description: "Тема відкриває глибини Божої природи — любов, святість, справедливість і милість. Спікер ділиться особистими переживаннями та біблійними істинами, що змінюють серце.",
     descriptionEn: "The topic reveals the depths of God's nature — love, holiness, justice and mercy. The speaker shares personal experiences and biblical truths that transform the heart.",
-    thumbnail: `https://img.youtube.com/vi/d1fM8Fl52qc/maxresdefault.jpg`,
     videoUrl: "https://www.youtube.com/embed/d1fM8Fl52qc"
   },
   {
@@ -33,8 +32,43 @@ const lectures = [
     youtubeId: "DN7ZAsYSq2s",
     description: "Глибоке занурення в одне з найпотужніших послань апостола Павла — лист, який відкриває велич Божої благодаті, покликання Церкви та силу єдності у Христі.",
     descriptionEn: "Deep dive into one of the apostle Paul's most powerful epistles — a letter that reveals the majesty of God's grace, the calling of the Church and the power of unity in Christ.",
-    thumbnail: `https://img.youtube.com/vi/DN7ZAsYSq2s/maxresdefault.jpg`,
     videoUrl: "https://www.youtube.com/embed/DN7ZAsYSq2s"
+  },
+  {
+    id: "believers-political-participation",
+    title: "«УЧАСТЬ ВІРУЮЧИХ У ПОЛІТИЧНОМУ ПРОЦЕСІ ДЕРЖАВИ» — ІГОР ПЛОХОЙ",
+    titleEn: "«BELIEVERS' PARTICIPATION IN THE STATE'S POLITICAL PROCESS» — IGOR PLOKHY",
+    speaker: "Ігор Плохой",
+    speakerEn: "Igor Plokhy",
+    date: "2025-11-16",
+    youtubeId: "XDRty1ClGjE",
+    description: "Розгляд важливої теми про роль віруючих у політичному житті держави, їхні обов'язки і можливості впливу на суспільство.",
+    descriptionEn: "Examination of the important topic of the role of believers in the political life of the state, their duties and opportunities to influence society.",
+    videoUrl: "https://www.youtube.com/embed/XDRty1ClGjE"
+  },
+  {
+    id: "civic-position-believers-power-functions",
+    title: "«ГРОМАДЯНСЬКА ПОЗИЦІЯ ВІРУЮЧИХ ТА ФУНКЦІЇ ВЛАДИ» — ІГОР ПЛОХОЙ",
+    titleEn: "«CIVIC POSITION OF BELIEVERS AND FUNCTIONS OF POWER» — IGOR PLOKHY",
+    speaker: "Ігор Плохой",
+    speakerEn: "Igor Plokhy",
+    date: "2025-11-16",
+    youtubeId: "0ak_EHjpIYA",
+    description: "Розуміння громадянської позиції віруючих та того, як функціонує влада в контексті розвитку демократичного суспільства.",
+    descriptionEn: "Understanding the civic position of believers and how power functions in the context of developing a democratic society.",
+    videoUrl: "https://www.youtube.com/embed/0ak_EHjpIYA"
+  },
+  {
+    id: "called-to-be-leader",
+    title: "«ПОКЛИКАНИЙ БУТИ ЛІДЕРОМ» — ТИМОНІШИН АНТОН",
+    titleEn: "«CALLED TO BE A LEADER» — TIMONISHIN ANTON",
+    speaker: "Тимонішин Антон",
+    speakerEn: "Timonishin Anton",
+    date: "2025-11-22",
+    youtubeId: "1DFuvUa-8NQ",
+    description: "Розгляд теми лідерства в контексті Божого покликання — як стати ефективним лідером, керуючись духовними принципами і служінням.",
+    descriptionEn: "Examination of leadership in the context of God's calling — how to become an effective leader guided by spiritual principles and service.",
+    videoUrl: "https://www.youtube.com/embed/1DFuvUa-8NQ"
   }
 ];
 
@@ -44,9 +78,19 @@ const getVideoDuration = (youtubeId: string) => {
   // For now, return placeholder durations
   const durations: { [key: string]: string } = {
     "d1fM8Fl52qc": "2:25:38",
-    "DN7ZAsYSq2s": "2:27:57"
+    "DN7ZAsYSq2s": "2:27:57",
+    "XDRty1ClGjE": "1:33:31",
+    "0ak_EHjpIYA": "1:12:25",
+    "1DFuvUa-8NQ": "2:01:17"
   };
   return durations[youtubeId] || "1:00:00";
+};
+
+// Function to get YouTube thumbnail with fallback
+const getYoutubeThumbnail = (youtubeId: string) => {
+  // Try different quality levels in order of preference
+  // maxresdefault (best) -> sddefault -> hqdefault (fallback)
+  return `https://img.youtube.com/vi/${youtubeId}/sddefault.jpg`;
 };
 
 export default function LecturesPage() {
@@ -132,7 +176,7 @@ export default function LecturesPage() {
               {/* Thumbnail */}
               <div 
                 className="relative aspect-video bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center bg-cover bg-center"
-                style={{ backgroundImage: `url(${lecture.thumbnail})` }}
+                style={{ backgroundImage: `url(${getYoutubeThumbnail(lecture.youtubeId)})` }}
               >
                 <div className="absolute inset-0 bg-black/30 flex items-center justify-center hover:bg-black/20 transition-colors">
                   <Play className="w-16 h-16 text-white drop-shadow-lg" />

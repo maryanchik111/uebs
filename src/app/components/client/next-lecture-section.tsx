@@ -7,21 +7,54 @@ import { Calendar, Clock, User, ArrowRight, Bell } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 import { useState, useEffect } from "react";
 
-// Next upcoming lecture data
-const nextLecture = {
-  id: "called-to-be-leader",
-  title: "Покликаний бути лідером",
-  titleEn: "Called to be a Leader",
-  speaker: "Тимонішин Антон",
-  speakerEn: "Antoniy Tymonishin",
-  speakerPhoto: "/antoniytymonishin.jpg",
-  date: "2025-11-21",
-  time: "19:00",
-  description: "Пастор церкви Слово Життя м.Луцьк\nВідповідальний в Україні за інститут індуктивного вивчення Біблії Пресепт",
-  descriptionEn: "Pastor of Slovo Zhyttya Church, Lutsk\nResponsible in Ukraine for the Precept Bible Inductive Study Institute",
-  meetingLink: "", // Empty means no link available yet
-  isLive: false
-};
+// All lectures data
+const lectures = [
+  {
+    id: "character-of-god",
+    title: "«ХАРАКТЕР БОГА» — ЄВАНГЕЛІСТ-МУЗИКАНТ ОЛЕГ НАЗАРЧУК",
+    titleEn: "«CHARACTER OF GOD» — EVANGELIST-MUSICIAN OLEG NAZARCHUK",
+    speaker: "Олег Назарчук",
+    speakerEn: "Oleg Nazarchuk",
+    date: "2025-10-24",
+    youtubeId: "d1fM8Fl52qc",
+  },
+  {
+    id: "to-ephesians",
+    title: "«ОГЛЯД ПОСЛАННЯ ДО ЄФЕСЯН» — КРУКОВСЬКИЙ ВОЛОДИМИР",
+    titleEn: "«OVERVIEW OF EPHESIANS» — KRUKOVSKY VOLODYMYR",
+    speaker: "Володимир Круковський",
+    speakerEn: "Volodymyr Krukovsky",
+    date: "2025-11-07",
+    youtubeId: "DN7ZAsYSq2s",
+  },
+  {
+    id: "believers-political-participation",
+    title: "«УЧАСТЬ ВІРУЮЧИХ У ПОЛІТИЧНОМУ ПРОЦЕСІ ДЕРЖАВИ» — ІГОР ПЛОХОЙ",
+    titleEn: "«BELIEVERS' PARTICIPATION IN THE STATE'S POLITICAL PROCESS» — IGOR PLOKHY",
+    speaker: "Ігор Плохой",
+    speakerEn: "Igor Plokhy",
+    date: "2025-11-16",
+    youtubeId: "XDRty1ClGjE",
+  },
+  {
+    id: "civic-position-believers-power-functions",
+    title: "«ГРОМАДЯНСЬКА ПОЗИЦІЯ ВІРУЮЧИХ ТА ФУНКЦІЇ ВЛАДИ» — ІГОР ПЛОХОЙ",
+    titleEn: "«CIVIC POSITION OF BELIEVERS AND FUNCTIONS OF POWER» — IGOR PLOKHY",
+    speaker: "Ігор Плохой",
+    speakerEn: "Igor Plokhy",
+    date: "2025-11-16",
+    youtubeId: "0ak_EHjpIYA",
+  },
+  {
+    id: "called-to-be-leader",
+    title: "«ПОКЛИКАНИЙ БУТИ ЛІДЕРОМ» — ТИМОНІШИН АНТОН",
+    titleEn: "«CALLED TO BE A LEADER» — TIMONISHIN ANTON",
+    speaker: "Тимонішин Антон",
+    speakerEn: "Timonishin Anton",
+    date: "2025-11-22",
+    youtubeId: "1DFuvUa-8NQ",
+  }
+];
 
 export default function NextLectureSection() {
   const { t, language } = useLanguage();
@@ -50,14 +83,14 @@ export default function NextLectureSection() {
     });
   };
 
-  const isUpcoming = () => {
-    const lectureDate = new Date(`${nextLecture.date}T${nextLecture.time}`);
-    return lectureDate > new Date();
+  const getNextLecture = () => {
+    const now = new Date();
+    const futureAndPastLectures = lectures.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+    const nextLecture = futureAndPastLectures.find(l => new Date(l.date) > now);
+    return nextLecture || null;
   };
 
-  const hasStreamLink = () => {
-    return nextLecture.meetingLink && nextLecture.meetingLink !== "" && nextLecture.meetingLink !== "#";
-  };
+  const nextLecture = getNextLecture();
 
   return (
     <section className="py-16 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700">
@@ -69,112 +102,71 @@ export default function NextLectureSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="grid lg:grid-cols-3 gap-8 items-center">
-            {/* Content */}
-            <div className="lg:col-span-2">
-              <motion.div
-                className="flex items-center gap-3 mb-4"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-              >
-                <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                <span className="text-white/90 font-medium uppercase tracking-wide text-sm">
-                  {t("lectures.next.title")}
-                </span>
-              </motion.div>
+          {nextLecture ? (
+            // Next lecture exists
+            <div className="grid lg:grid-cols-3 gap-8 items-center">
+              {/* Content */}
+              <div className="lg:col-span-2">
+                <motion.div
+                  className="flex items-center gap-3 mb-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                >
+                  <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                  <span className="text-white/90 font-medium uppercase tracking-wide text-sm">
+                    {t("lectures.next.title")}
+                  </span>
+                </motion.div>
 
-              <motion.h2
-                className="text-3xl lg:text-4xl font-bold text-white mb-4"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-              >
-                {language === 'uk' ? nextLecture.title : nextLecture.titleEn}
-              </motion.h2>
+                <motion.h2
+                  className="text-3xl lg:text-4xl font-bold text-white mb-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  {language === 'uk' ? nextLecture.title : nextLecture.titleEn}
+                </motion.h2>
 
-              <motion.p
-                className="text-white/80 text-lg mb-6 leading-relaxed"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                {language === 'uk' ? nextLecture.description : nextLecture.descriptionEn}
-              </motion.p>
+                <motion.p
+                  className="text-white/80 text-lg mb-6 leading-relaxed"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
+                  {language === 'uk' ? nextLecture.speaker : nextLecture.speakerEn}
+                </motion.p>
 
-              {/* Meta Info */}
-              <motion.div
-                className="flex flex-wrap gap-6 mb-8 text-white/90"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-5 h-5" />
-                  <span>{formatDate(nextLecture.date)}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5" />
-                  <span>{nextLecture.time}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <User className="w-5 h-5" />
-                  <span>{language === 'uk' ? nextLecture.speaker : nextLecture.speakerEn}</span>
-                </div>
-              </motion.div>
+                {/* Meta Info */}
+                <motion.div
+                  className="flex flex-wrap gap-6 mb-8 text-white/90"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-5 h-5" />
+                    <span>{formatDate(nextLecture.date)}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <User className="w-5 h-5" />
+                    <span>{language === 'uk' ? nextLecture.speaker : nextLecture.speakerEn}</span>
+                  </div>
+                </motion.div>
 
-              {/* Action Buttons */}
-              <motion.div
-                className="flex flex-wrap gap-4"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
-                {isUpcoming() ? (
-                  <>
-                    {hasStreamLink() ? (
-                      <Link href={nextLecture.meetingLink}>
-                        <motion.button
-                          className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-white/90 transition-colors flex items-center gap-2"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          {t("lectures.next.join")}
-                          <ArrowRight className="w-5 h-5" />
-                        </motion.button>
-                      </Link>
-                    ) : (
-                      <motion.button
-                        disabled
-                        className="bg-white/50 text-slate-400 font-semibold px-6 py-3 rounded-lg cursor-not-allowed flex items-center gap-2 opacity-60"
-                        title={t("lectures.next.link.unavailable")}
-                      >
-                        {t("lectures.next.join")}
-                        <ArrowRight className="w-5 h-5" />
-                      </motion.button>
-                    )}
-                    <a 
-                      href="https://t.me/uebschool" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      <motion.button
-                        className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition-colors flex items-center gap-2"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Bell className="w-5 h-5" />
-                        {t("lectures.next.remind")}
-                      </motion.button>
-                    </a>
-                  </>
-                ) : (
-                  <Link href="/lectures">
+                {/* Action Buttons */}
+                <motion.div
+                  className="flex flex-wrap gap-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
+                  <Link href={`/lectures/${nextLecture.id}`}>
                     <motion.button
                       className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-white/90 transition-colors flex items-center gap-2"
                       whileHover={{ scale: 1.05 }}
@@ -184,58 +176,75 @@ export default function NextLectureSection() {
                       <ArrowRight className="w-5 h-5" />
                     </motion.button>
                   </Link>
-                )}
+                  <a 
+                    href="https://t.me/uebschool" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <motion.button
+                      className="border-2 border-white/30 text-white font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition-colors flex items-center gap-2"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Bell className="w-5 h-5" />
+                      {t("lectures.next.remind")}
+                    </motion.button>
+                  </a>
+                </motion.div>
+              </div>
+
+              {/* Speaker Info */}
+              <motion.div
+                className="lg:col-span-1 flex justify-center lg:justify-end"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <div className="relative">
+                  <div className="w-48 h-48 rounded-full overflow-hidden backdrop-blur-sm border-4 border-white/30 shadow-2xl bg-white/10 flex items-center justify-center">
+                    <User className="w-20 h-20 text-white/60" />
+                  </div>
+                  {/* Speaker name badge */}
+                  <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 shadow-lg">
+                    <span className="text-slate-800 font-medium text-sm">
+                      {language === 'uk' ? nextLecture.speaker : nextLecture.speakerEn}
+                    </span>
+                  </div>
+                </div>
               </motion.div>
             </div>
-
-            {/* Speaker Photo */}
-            <motion.div
-              className="lg:col-span-1 flex justify-center lg:justify-end"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              <div className="relative">
-                <div className="w-48 h-48 rounded-full overflow-hidden backdrop-blur-sm border-4 border-white/30 shadow-2xl">
-                  {nextLecture.speakerPhoto ? (
-                    <Image
-                      src={nextLecture.speakerPhoto}
-                      alt={language === 'uk' ? nextLecture.speaker : nextLecture.speakerEn}
-                      width={192}
-                      height={192}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        // Fallback to icon if image fails to load
-                        const target = e.target as HTMLElement;
-                        target.style.display = 'none';
-                        const parent = target.parentElement;
-                        if (parent) {
-                          parent.innerHTML = `
-                            <div class="w-full h-full bg-white/20 flex items-center justify-center">
-                              <svg class="w-20 h-20 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                              </svg>
-                            </div>
-                          `;
-                        }
-                      }}
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-white/20 flex items-center justify-center">
-                      <User className="w-20 h-20 text-white/60" />
-                    </div>
-                  )}
-                </div>
-                {/* Speaker name badge */}
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 shadow-lg">
-                  <span className="text-slate-800 font-medium text-sm">
-                    {language === 'uk' ? nextLecture.speaker : nextLecture.speakerEn}
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+          ) : (
+            // No next lecture scheduled
+            <div className="text-center py-12">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                  {language === 'uk' ? 'Наступна лекція не запланована' : 'Next lecture not scheduled'}
+                </h2>
+                <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+                  {language === 'uk' 
+                    ? 'Наразі у нас немає запланованої наступної лекції, але ви можете переглянути архів всіх попередніх лекцій.'
+                    : 'There is no scheduled next lecture at the moment, but you can view the archive of all previous lectures.'
+                  }
+                </p>
+                <Link href="/lectures">
+                  <motion.button
+                    className="bg-white text-blue-600 font-semibold px-8 py-3 rounded-lg hover:bg-white/90 transition-colors inline-flex items-center gap-2"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    {t("lectures.watch")}
+                    <ArrowRight className="w-5 h-5" />
+                  </motion.button>
+                </Link>
+              </motion.div>
+            </div>
+          )}
         </motion.div>
       </div>
     </section>
