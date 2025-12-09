@@ -69,6 +69,18 @@ const lectures = [
     description: "Розгляд теми лідерства в контексті Божого покликання — як стати ефективним лідером, керуючись духовними принципами і служінням.",
     descriptionEn: "Examination of leadership in the context of God's calling — how to become an effective leader guided by spiritual principles and service.",
     videoUrl: "https://www.youtube.com/embed/1DFuvUa-8NQ"
+  },
+  {
+    id: "leadership-in-times-of-crisis",
+    title: "«ЛІДЕРСТВО В ЕПОХУ ВИКЛИКІВ» — ТИМОНІШИН АНТОН",
+    titleEn: "«LEADERSHIP IN TIMES OF CRISIS» — TIMONISHIN ANTON",
+    speaker: "Тимонішин Антон",
+    speakerEn: "Timonishin Anton",
+    date: "2025-12-05",
+    youtubeId: "w0cRCx5i3OY",
+    description: "Справжнє лідерство не народжується в тиші кабінетів — воно формується у вогні криз. Розгляд біблійних принципів лідерства в час викликів, через приклади Мойсея, Давида, Неемії та Ісуса.",
+    descriptionEn: "True leadership is not born in the silence of offices — it is formed in the fire of crises. Examination of biblical principles of leadership in times of crisis through examples of Moses, David, Nehemiah and Jesus.",
+    videoUrl: "https://www.youtube.com/embed/w0cRCx5i3OY"
   }
 ];
 
@@ -81,7 +93,8 @@ const getVideoDuration = (youtubeId: string) => {
     "DN7ZAsYSq2s": "2:27:57",
     "XDRty1ClGjE": "1:33:31",
     "0ak_EHjpIYA": "1:12:25",
-    "1DFuvUa-8NQ": "2:01:17"
+    "1DFuvUa-8NQ": "2:01:17",
+    "w0cRCx5i3OY": "1:25:02"
   };
   return durations[youtubeId] || "1:00:00";
 };

@@ -676,6 +676,141 @@ A leader called by God is not a person of power, but a servant guided by spiritu
 **"For the Spirit God gave us does not make us timid, but gives us power, love and a sound mind" (2 Tim. 1:7)**`,
     thumbnail: `https://img.youtube.com/vi/1DFuvUa-8NQ/maxresdefault.jpg`,
     videoUrl: "https://www.youtube.com/embed/1DFuvUa-8NQ"
+  },
+  {
+    id: "leadership-in-times-of-crisis",
+    title: "«ЛІДЕРСТВО В ЕПОХУ ВИКЛИКІВ» — ТИМОНІШИН АНТОН",
+    titleEn: "«LEADERSHIP IN TIMES OF CRISIS» — TIMONISHIN ANTON",
+    speaker: "Тимонішин Антон",
+    speakerEn: "Timonishin Anton",
+    date: "2025-12-05",
+    youtubeId: "w0cRCx5i3OY",
+    description: "Справжнє лідерство не народжується в тиші кабінетів — воно формується у вогні криз. Розгляд біблійних принципів лідерства в час викликів, через приклади Мойсея, Давида, Неемії та Ісуса.",
+    descriptionEn: "True leadership is not born in the silence of offices — it is formed in the fire of crises. Examination of biblical principles of leadership in times of crisis through examples of Moses, David, Nehemiah and Jesus.",
+    fullDescription: `✝️ **Лідерство в епоху викликів**
+
+Остання п'ятниця мінулого тижня для нашої духовної сім'ї **Скинія Любови-Істини** була навчальною — **БІБЛІЙНА ШКОЛА**. Разом з викладачем **Антоном Тимонішиним** ми роздумували про **#ЛІДЕРСТВО В ЕПОХУ ВИКЛИКІВ**.
+
+Справжнє **#лідерство** не народжується в тиші кабінетів — воно формується у вогні криз, у бурях, де інші мовчать, а лідери стоять.
+
+---
+
+📖 **1. Мойсей: #Лідерство починається з Божого голосу, а не людських оплесків**
+
+#Ізраїль не хотів лідера, а Мойсей не хотів вести. Але Бог сказав:
+
+*"Я буду з тобою." (Вих. 3:12)*
+
+**#Лідер у час викликів** — це не той, хто впевнений у собі, а той, хто впевнений у Бозі. 
+**#Лідери** народжуються не від амбіцій, а від **#покликання**. Той, кого **#Бог** посилає, ніколи не йде сам.
+
+---
+
+📖 **2. Давид: Виклик відкриває справжніх лідерів**
+
+Коли Саул ховався, Давид вийшов.
+Голіаф заговорив — і всі замовкли, окрім одного пастуха.
+
+*"Хто цей необрізаний, що так зневажає війська Бога Живого?" (1 Сам. 17:26)*
+
+**Виклик — це не катастрофа.** Це сцена, на якій Бог піднімає лідерів, яких готував у таємниці. Там, де всі бачать проблему — **#лідер** бачить можливість для Божої слави. Кризи розділяють амбітних і покликаних.
+
+---
+
+📖 **3. Неемія: #Лідерство — це не слова, а дія під тиском**
+
+Коли #Єрусалим лежав у руїнах, ніхто не рухався. Але Неемія сказав:
+
+*"Встаньмо та будуємо!" (Неем. 2:18)*
+
+І в час постійних нападів, погроз і змов, вони будували з мечем у руці (Неем. 4:17).
+
+**#Лідер** не плаче над руїнами — він піднімає тих, хто буде будувати. **#Лідерство** — це коли ти тримаєш цеглу однією рукою, а меч — іншою.
+
+---
+
+📖 **4. Ісус: Вершина лідерства — служити під натиском**
+
+У найтяжчий час, коли учні розбігалися, **#Ісус** став на коліна і умив їм ноги (Ів. 13:14-15).
+
+І водночас Він рухався до Хреста, де здобув найбільшу перемогу.
+**#Лідерство** — це не влада над людьми, а **#хрест** заради людей.
+Найвища позиція — це коліна.
+
+---
+
+☝🏻 **Висновок**
+
+**#Криза** — це Божий інструмент для відкриття справжніх лідерів. 
+**#Лідер** не тікає від бурі — він піднімається над нею. 
+Виклик не ламає лідера — він проявляє його. 
+**#Лідерство** — це коли твоє **"Так, Господи"** голосніше за чужі страхи. 
+**#Бог** ніколи не піднімає комфортних — Він піднімає готових померти для себе та свого.
+
+**#вивчення_писання**`,
+    fullDescriptionEn: `✝️ **Leadership in Times of Crisis**
+
+Last Friday of last week for our spiritual family **Tabernacle of Love-Truth** was educational — **BIBLE SCHOOL**. Together with teacher **Anton Timonishin**, we reflected on **#LEADERSHIP IN TIMES OF CRISIS**.
+
+True **#leadership** is not born in the silence of offices — it is formed in the fire of crises, in storms, where others remain silent, and leaders stand.
+
+---
+
+📖 **1. Moses: #Leadership Begins with God's Voice, Not Human Applause**
+
+#Israel didn't want a leader, and Moses didn't want to lead. But God said:
+
+*"I will be with you." (Ex. 3:12)*
+
+**#A leader in times of crisis** — is not one who is confident in himself, but one who is confident in God. 
+**#Leaders** are born not from ambitions, but from **#calling**. The one whom **#God** sends is never alone.
+
+---
+
+📖 **2. David: Crisis Reveals True Leaders**
+
+When Saul hid, David came out.
+Goliath spoke — and everyone fell silent, except one shepherd.
+
+*"Who is this uncircumcised who dares defy the armies of the living God?" (1 Sam. 17:26)*
+
+**Crisis is not a disaster.** It is the stage on which God raises up the leaders He has prepared in secret. Where everyone sees a problem — **#the leader** sees an opportunity for God's glory. Crises separate the ambitious from the called.
+
+---
+
+📖 **3. Nehemiah: #Leadership — It's Not Words, But Action Under Pressure**
+
+When #Jerusalem lay in ruins, no one moved. But Nehemiah said:
+
+*"Let us arise and build!" (Neh. 2:18)*
+
+And in a time of constant attacks, threats and plots, they built with a sword in their hand (Neh. 4:17).
+
+**#The leader** doesn't cry over ruins — he raises up those who will build. **#Leadership** — is when you hold a brick in one hand and a sword in the other.
+
+---
+
+📖 **4. Jesus: The Height of Leadership — Serving Under Pressure**
+
+In the darkest hour, when the disciples were fleeing, **#Jesus** knelt down and washed their feet (John 13:14-15).
+
+And at the same time, He moved toward the Cross, where He won the greatest victory.
+**#Leadership** — is not power over people, but **#the cross** for people.
+The highest position — is on your knees.
+
+---
+
+☝🏻 **Conclusion**
+
+**#Crisis** — is God's instrument for revealing true leaders. 
+**#The leader** doesn't flee from the storm — he rises above it. 
+Crisis doesn't break a leader — it reveals him. 
+**#Leadership** — is when your **"Yes, Lord"** is louder than others' fears. 
+**#God** never raises the comfortable — He raises those ready to die for themselves and their own.
+
+**#bible_study**`,
+    thumbnail: `https://img.youtube.com/vi/w0cRCx5i3OY/maxresdefault.jpg`,
+    videoUrl: "https://www.youtube.com/embed/w0cRCx5i3OY"
   }
 ];
 
@@ -686,7 +821,8 @@ const getVideoDuration = (youtubeId: string) => {
     "DN7ZAsYSq2s": "2:27:57",
     "XDRty1ClGjE": "1:33:31",
     "0ak_EHjpIYA": "1:12:25",
-    "1DFuvUa-8NQ": "2:01:17"
+    "1DFuvUa-8NQ": "2:01:17",
+    "w0cRCx5i3OY": "1:25:02"
   };
   return durations[youtubeId] || "1:00:00";
 };
