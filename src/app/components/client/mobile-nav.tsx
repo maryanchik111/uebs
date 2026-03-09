@@ -37,6 +37,7 @@ export default function MobileNav() {
   const navigation = [
     { name: t("nav.home"), href: "/" },
     { name: t("nav.lectures"), href: "/lectures" },
+    { name: t("nav.about"), href: "/about" },
     { name: t("contacts.faq"), href: "/faq" },
     { name: t("nav.contacts"), href: "/contacts" },
   ];
@@ -155,30 +156,27 @@ export default function MobileNav() {
         <div className="flex justify-around items-center px-2 py-2">
           <Link
             href="/"
-            className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${
-              isActive('/') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
-            }`}
+            className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${isActive('/') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+              }`}
           >
             <Home className="w-6 h-6" />
             <span className="text-xs mt-1">Головна</span>
           </Link>
-          
+
           <Link
             href="/lectures"
-            className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${
-              isActive('/lectures') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
-            }`}
+            className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${isActive('/lectures') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+              }`}
           >
             <GraduationCap className="w-6 h-6" />
             <span className="text-xs mt-1">Лекції</span>
           </Link>
-          
+
           {user ? (
             <Link
               href="/cabinet"
-              className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${
-                isActive('/cabinet') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
-              }`}
+              className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${isActive('/cabinet') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+                }`}
             >
               <div className="relative inline-block">
                 <User className="w-6 h-6" />
@@ -199,13 +197,12 @@ export default function MobileNav() {
               <span className="text-xs mt-1">Увійти</span>
             </Link>
           )}
-          
+
           {user && isAdmin && (
             <Link
               href="/admin"
-              className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${
-                isActive('/admin') || pathname.startsWith('/admin/') ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
-              }`}
+              className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${isActive('/admin') || pathname.startsWith('/admin/') ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
+                }`}
             >
               <Shield className="w-6 h-6" />
               <span className="text-xs mt-1">Адмін</span>
@@ -214,9 +211,8 @@ export default function MobileNav() {
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${
-              menuOpen ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
-            }`}
+            className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${menuOpen ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+              }`}
           >
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             <span className="text-xs mt-1">Меню</span>

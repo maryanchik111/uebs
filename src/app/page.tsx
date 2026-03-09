@@ -11,7 +11,6 @@ export default function Home() {
       <NextLectureSection />
       <FormatSection />
       <ProgramSection />
-      <QuestionsSection />
     </main>
   );
 }

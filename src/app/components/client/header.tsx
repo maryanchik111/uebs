@@ -19,6 +19,7 @@ export default function Header() {
   const navigation = [
     { name: t("nav.home"), href: "/" },
     { name: t("nav.lectures"), href: "/lectures" },
+    { name: t("nav.about"), href: "/about" },
     { name: t("contacts.faq"), href: "/faq" },
     { name: t("nav.contacts"), href: "/contacts" },
   ];
@@ -35,30 +36,20 @@ export default function Header() {
   return (
     <motion.header
       className={cn(
-        "absolute top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-lg",
-        "md:block hidden" // Hide header on mobile
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100"
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-6">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <Link href="/" className="flex items-center gap-3">
-              <div className="relative w-36 h-10">
-                <Image
-                  src="/logo-black.svg"
-                  alt="UEBSchool logo"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
+            <Link href="/" className="flex items-center gap-2 md:gap-3">
               <div className="hidden sm:block">
                 <div className="text-sm font-semibold text-slate-800">
                   UEBSchool
@@ -125,14 +116,14 @@ export default function Header() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center gap-3"
+                className="flex items-center gap-2 md:gap-3"
               >
                 <Link
                   href="/login"
                   className="flex items-center gap-2 text-slate-700 font-medium px-4 py-2 hover:text-blue-600 transition-colors"
                 >
                   <LogIn className="w-4 h-4" />
-                  Вхід
+                  <span className="hidden sm:inline">Вхід</span>
                 </Link>
                 <Link
                   href="/apply"
@@ -144,29 +135,26 @@ export default function Header() {
             )}
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center gap-3">
+          {/* Mobile Actions & Menu Button */}
+          <div className="lg:hidden flex items-center gap-2 md:gap-3">
             {user ? (
-              <div className="relative inline-block">
-                <Link
-                  href="/cabinet"
-                  className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold px-4 py-2 rounded-lg text-sm flex items-center gap-2"
-                >
-                  <User className="w-4 h-4" />
-                  Кабінет
-                </Link>
+              <Link
+                href="/cabinet"
+                className="relative bg-gradient-to-r from-blue-500 to-purple-600 text-white p-2 rounded-lg"
+              >
+                <User className="w-5 h-5" />
                 {userProfile && (userProfile.notifications?.filter(n => !n.read).length > 0 || userProfile.homework?.filter(h => !h.completed).length > 0) && (
-                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full min-w-[20px] h-5 flex items-center justify-center px-1.5 z-10 shadow-lg">
+                  <span className="absolute -top-1 -right-1 bg-red-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
                     {(userProfile.notifications?.filter(n => !n.read).length || 0) + (userProfile.homework?.filter(h => !h.completed).length || 0)}
                   </span>
                 )}
-              </div>
+              </Link>
             ) : (
               <Link
-                href="/apply"
-                className="bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold px-4 py-2 rounded-lg text-sm"
+                href="/login"
+                className="text-slate-700 hover:text-blue-600 p-2"
               >
-                {t("nav.apply")}
+                <LogIn className="w-6 h-6" />
               </Link>
             )}
 
@@ -225,7 +213,7 @@ export default function Header() {
                   </Link>
                 </motion.div>
               )}
-              
+
               <motion.div
                 className="pt-4 border-t border-slate-200"
                 initial={{ opacity: 0 }}

@@ -6,18 +6,18 @@ import { useAuth, Question } from '@/contexts/auth-context';
 import { isUserAdmin } from '@/lib/user-utils';
 import { ref, get, update } from 'firebase/database';
 import { database } from '@/lib/firebase';
-import { 
-  Loader2, 
-  MessageCircle, 
-  User as UserIcon, 
-  Clock, 
+import {
+  Loader2,
+  MessageCircle,
+  User as UserIcon,
+  Clock,
   Send,
   CheckCircle,
   AlertCircle
 } from 'lucide-react';
 
 export default function AdminQuestionsPage() {
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [admin, setAdmin] = useState(false);
@@ -27,6 +27,8 @@ export default function AdminQuestionsPage() {
   const [answering, setAnswering] = useState(false);
 
   useEffect(() => {
+    if (authLoading) return;
+
     if (!user) {
       router.push('/login');
       return;
@@ -40,13 +42,13 @@ export default function AdminQuestionsPage() {
         loadQuestions();
       }
     });
-  }, [user, router]);
+  }, [user, authLoading, router]);
 
   const loadQuestions = async () => {
     try {
       const questionsRef = ref(database, 'questions');
       const snapshot = await get(questionsRef);
-      
+
       if (snapshot.exists()) {
         const questionsData = snapshot.val();
         const questionsList = Object.values(questionsData) as Question[];
@@ -87,11 +89,11 @@ export default function AdminQuestionsPage() {
       if (question.userId) {
         const userRef = ref(database, `users/${question.userId}`);
         const userSnapshot = await get(userRef);
-        
+
         if (userSnapshot.exists()) {
           const userData = userSnapshot.val();
           const notifications = userData.notifications || [];
-          
+
           notifications.push({
             id: `notif-${Date.now()}`,
             title: 'Відповідь на ваше питання',
@@ -135,7 +137,7 @@ export default function AdminQuestionsPage() {
             Питання користувачів
           </h1>
           <p className="text-gray-600">
-            Всього питань: {questions.length} | 
+            Всього питань: {questions.length} |
             Без відповіді: {questions.filter(q => !q.answered).length}
           </p>
         </div>
@@ -150,20 +152,17 @@ export default function AdminQuestionsPage() {
             questions.map((question) => (
               <div
                 key={question.id}
-                className={`bg-white rounded-xl shadow-md p-6 border-2 ${
-                  question.answered 
-                    ? 'border-green-200' 
-                    : 'border-orange-200'
-                }`}
+                className={`bg-white rounded-xl shadow-md p-6 border-2 ${question.answered
+                  ? 'border-green-200'
+                  : 'border-orange-200'
+                  }`}
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-start gap-3 flex-1">
-                    <div className={`p-2 rounded-lg ${
-                      question.answered ? 'bg-green-100' : 'bg-orange-100'
-                    }`}>
-                      <MessageCircle className={`w-5 h-5 ${
-                        question.answered ? 'text-green-600' : 'text-orange-600'
-                      }`} />
+                    <div className={`p-2 rounded-lg ${question.answered ? 'bg-green-100' : 'bg-orange-100'
+                      }`}>
+                      <MessageCircle className={`w-5 h-5 ${question.answered ? 'text-green-600' : 'text-orange-600'
+                        }`} />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">
@@ -184,7 +183,7 @@ export default function AdminQuestionsPage() {
                         </span>
                       </div>
                       <p className="text-gray-800 font-medium mb-3">{question.question}</p>
-                      
+
                       {question.answered && question.answer && (
                         <div className="bg-green-50 border border-green-200 rounded-lg p-4 mt-3">
                           <div className="flex items-center gap-2 mb-2">

@@ -11,6 +11,7 @@ const navigation = {
   main: [
     { name: "Головна", href: "/" },
     { name: "Програма навчання", href: "#program" },
+    { name: "Про школу", href: "/about" },
     { name: "Контакти", href: "/contacts" },
   ],
   support: [
@@ -39,6 +40,7 @@ export default function Footer() {
     main: [
       { name: t("nav.home"), href: "/" },
       { name: t("nav.lectures"), href: "/lectures" },
+      { name: t("nav.about"), href: "/about" },
       { name: t("nav.contacts"), href: "/contacts" },
     ],
     support: [
@@ -50,9 +52,9 @@ export default function Footer() {
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
-    
+
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch('/api/newsletter', {
         method: 'POST',
@@ -61,7 +63,7 @@ export default function Footer() {
         },
         body: JSON.stringify({ email }),
       });
-      
+
       if (response.ok) {
         setIsSubmitted(true);
         setEmail("");
@@ -173,43 +175,9 @@ export default function Footer() {
             <p className="text-slate-300 mb-4">
               {t("footer.newsletter.text")}
             </p>
-            {isSubmitted && (
-              <motion.div
-                className="mb-4 p-3 bg-green-600/20 border border-green-500/30 rounded-lg text-green-300 text-sm"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3 }}
-              >
-                {t("footer.newsletter.success")}
-              </motion.div>
-            )}
-            <form onSubmit={handleNewsletterSubmit} className="space-y-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t("footer.newsletter.email")}
-                required
-                disabled={isSubmitting}
-                className="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent disabled:opacity-50"
-              />
-              <motion.button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold py-3 rounded-lg hover:shadow-lg transition-shadow duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    {t("footer.newsletter.subscribing")}
-                  </>
-                ) : (
-                  t("footer.newsletter.subscribe")
-                )}
-              </motion.button>
-            </form>
+            <a href="https://t.me/uebschool" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 w-full">
+              Telegram
+            </a>
           </motion.div>
         </div>
 
@@ -245,7 +213,7 @@ export default function Footer() {
           <p className="text-slate-400 text-sm">
             © {new Date().getFullYear()} UEBSchool. Всі права захищені.
           </p>
-          
+
           <div className="flex flex-wrap gap-6 mt-4 md:mt-0">
             {navigation.legal.map((item) => (
               <Link

@@ -14,8 +14,8 @@ export default function LanguageSwitcher({ scrolled = false }: LanguageSwitcherP
   const [isOpen, setIsOpen] = useState(false);
 
   const languages = [
-    { code: "uk", name: "Українська", flag: "🇺🇦" },
-    { code: "en", name: "English", flag: "🇺🇸" }
+    { code: "uk", name: "Укр", flag: "🇺🇦" },
+    { code: "en", name: "Eng", flag: "🇺🇸" }
   ];
 
   const currentLanguage = languages.find(lang => lang.code === language);
@@ -24,11 +24,10 @@ export default function LanguageSwitcher({ scrolled = false }: LanguageSwitcherP
     <div className="relative">
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${
-          scrolled 
-            ? "text-slate-700 hover:bg-slate-100" 
+        className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-colors ${scrolled
+            ? "text-slate-700 hover:bg-slate-100"
             : "text-white hover:bg-white/10"
-        }`}
+          }`}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -51,9 +50,8 @@ export default function LanguageSwitcher({ scrolled = false }: LanguageSwitcherP
                 setLanguage(lang.code as "uk" | "en");
                 setIsOpen(false);
               }}
-              className={`w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors flex items-center gap-3 ${
-                language === lang.code ? "bg-blue-50 text-blue-600" : "text-gray-700"
-              }`}
+              className={`w-full px-4 py-3 text-left hover:bg-gray-50 transition-colors flex items-center gap-3 ${language === lang.code ? "bg-blue-50 text-blue-600" : "text-gray-700"
+                }`}
               whileHover={{ backgroundColor: "rgb(249 250 251)" }}
             >
               <span className="text-lg">{lang.flag}</span>

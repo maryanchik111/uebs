@@ -25,21 +25,21 @@ import {
 } from 'lucide-react';
 
 export default function CabinetPage() {
-  const { 
-    user, 
-    userProfile, 
-    loading, 
-    logout, 
-    updateUserProfile, 
+  const {
+    user,
+    userProfile,
+    loading,
+    logout,
+    updateUserProfile,
     sendVerificationEmail,
     uploadProfilePhoto,
     markNotificationAsRead,
     markHomeworkAsCompleted,
   } = useAuth();
-  
+
   const router = useRouter();
   const fileInputRef = useRef<HTMLInputElement>(null);
-  
+
   const [activeTab, setActiveTab] = useState<'profile' | 'notifications' | 'homework'>('profile');
   const [isEditing, setIsEditing] = useState(false);
   const [displayName, setDisplayName] = useState('');
@@ -67,7 +67,7 @@ export default function CabinetPage() {
 
   const handleSaveProfile = async () => {
     if (!displayName.trim()) return;
-    
+
     setSaving(true);
     try {
       await updateUserProfile({ displayName: displayName.trim() });
@@ -189,22 +189,20 @@ export default function CabinetPage() {
         <div className="bg-white rounded-lg shadow-md p-2 flex gap-2">
           <button
             onClick={() => setActiveTab('profile')}
-            className={`flex-1 py-3 px-4 rounded-md font-medium transition-all flex items-center justify-center gap-2 min-h-[48px] ${
-              activeTab === 'profile'
+            className={`flex-1 py-3 px-4 rounded-md font-medium transition-all flex items-center justify-center gap-2 min-h-[48px] ${activeTab === 'profile'
                 ? 'bg-blue-600 text-white shadow-md'
                 : 'text-gray-600 hover:bg-gray-100'
-            }`}
+              }`}
           >
             <User className="w-5 h-5 flex-shrink-0" />
             <span className="hidden sm:inline">Профіль</span>
           </button>
           <button
             onClick={() => setActiveTab('notifications')}
-            className={`flex-1 py-3 px-4 rounded-md font-medium transition-all flex items-center justify-center gap-2 relative min-h-[48px] ${
-              activeTab === 'notifications'
+            className={`flex-1 py-3 px-4 rounded-md font-medium transition-all flex items-center justify-center gap-2 relative min-h-[48px] ${activeTab === 'notifications'
                 ? 'bg-blue-600 text-white shadow-md'
                 : 'text-gray-600 hover:bg-gray-100'
-            }`}
+              }`}
           >
             <Bell className="w-5 h-5 flex-shrink-0" />
             <span className="hidden sm:inline">Повідомлення</span>
@@ -216,11 +214,10 @@ export default function CabinetPage() {
           </button>
           <button
             onClick={() => setActiveTab('homework')}
-            className={`flex-1 py-3 px-4 rounded-md font-medium transition-all flex items-center justify-center gap-2 relative min-h-[48px] ${
-              activeTab === 'homework'
+            className={`flex-1 py-3 px-4 rounded-md font-medium transition-all flex items-center justify-center gap-2 relative min-h-[48px] ${activeTab === 'homework'
                 ? 'bg-blue-600 text-white shadow-md'
                 : 'text-gray-600 hover:bg-gray-100'
-            }`}
+              }`}
           >
             <BookOpen className="w-5 h-5 flex-shrink-0" />
             <span className="hidden sm:inline">Домашнє завдання</span>
@@ -376,11 +373,10 @@ export default function CabinetPage() {
                       </p>
                     </div>
                     <div
-                      className={`px-3 py-1 rounded-full text-sm font-medium ${
-                        user.emailVerified
+                      className={`px-3 py-1 rounded-full text-sm font-medium ${user.emailVerified
                           ? 'bg-green-100 text-green-800'
                           : 'bg-yellow-100 text-yellow-800'
-                      }`}
+                        }`}
                     >
                       {user.emailVerified ? 'Підтверджено' : 'Не підтверджено'}
                     </div>
@@ -443,43 +439,41 @@ export default function CabinetPage() {
                 {[...userProfile.notifications]
                   .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
                   .map((notification) => (
-                  <div
-                    key={notification.id}
-                    onClick={() => handleNotificationClick(notification)}
-                    className={`p-4 rounded-lg border cursor-pointer transition-all ${
-                      notification.read
-                        ? 'bg-gray-50 border-gray-200'
-                        : 'bg-blue-50 border-blue-200 shadow-sm'
-                    }`}
-                  >
-                    <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h4 className={`font-semibold ${notification.read ? 'text-gray-700' : 'text-gray-900'}`}>
-                            {notification.title}
-                          </h4>
-                          {!notification.read && (
-                            <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
-                          )}
+                    <div
+                      key={notification.id}
+                      onClick={() => handleNotificationClick(notification)}
+                      className={`p-4 rounded-lg border cursor-pointer transition-all ${notification.read
+                          ? 'bg-gray-50 border-gray-200'
+                          : 'bg-blue-50 border-blue-200 shadow-sm'
+                        }`}
+                    >
+                      <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <h4 className={`font-semibold ${notification.read ? 'text-gray-700' : 'text-gray-900'}`}>
+                              {notification.title}
+                            </h4>
+                            {!notification.read && (
+                              <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
+                            )}
+                          </div>
+                          <p className="text-sm text-gray-600">{notification.message}</p>
+                          <p className="text-xs text-gray-500 mt-2">
+                            {formatDate(notification.createdAt)}
+                          </p>
                         </div>
-                        <p className="text-sm text-gray-600">{notification.message}</p>
-                        <p className="text-xs text-gray-500 mt-2">
-                          {formatDate(notification.createdAt)}
-                        </p>
-                      </div>
-                      <div className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap ${
-                        notification.type === 'success' ? 'bg-green-100 text-green-800' :
-                        notification.type === 'warning' ? 'bg-yellow-100 text-yellow-800' :
-                        notification.type === 'homework' ? 'bg-purple-100 text-purple-800' :
-                        'bg-blue-100 text-blue-800'
-                      }`}>
-                        {notification.type === 'homework' ? 'Завдання' :
-                         notification.type === 'success' ? 'Успіх' :
-                         notification.type === 'warning' ? 'Важливо' : 'Інфо'}
+                        <div className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap ${notification.type === 'success' ? 'bg-green-100 text-green-800' :
+                            notification.type === 'warning' ? 'bg-yellow-100 text-yellow-800' :
+                              notification.type === 'homework' ? 'bg-purple-100 text-purple-800' :
+                                'bg-blue-100 text-blue-800'
+                          }`}>
+                          {notification.type === 'homework' ? 'Завдання' :
+                            notification.type === 'success' ? 'Успіх' :
+                              notification.type === 'warning' ? 'Важливо' : 'Інфо'}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
               </div>
             )}
           </div>
@@ -502,60 +496,58 @@ export default function CabinetPage() {
                 {[...userProfile.homework]
                   .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
                   .map((hw) => (
-                  <div
-                    key={hw.id}
-                    className={`p-4 sm:p-6 rounded-lg border ${
-                      hw.completed
-                        ? 'bg-green-50 border-green-200'
-                        : 'bg-white border-gray-200 shadow-sm'
-                    }`}
-                  >
-                    <div className="flex items-start justify-between gap-4 mb-3">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <h4 className="text-lg font-semibold text-gray-900">{hw.title}</h4>
-                          {hw.completed && (
-                            <CheckCircle className="w-5 h-5 text-green-600" />
-                          )}
-                        </div>
-                        <p className="text-gray-600 mb-3">{hw.description}</p>
-                        <div className="flex flex-col sm:flex-row gap-2 text-sm text-gray-500">
-                          <span>Створено: {formatDate(hw.createdAt)}</span>
-                          <span className="hidden sm:inline">•</span>
-                          <span className={`font-medium ${
-                            new Date(hw.dueDate) < new Date() && !hw.completed
-                              ? 'text-red-600'
-                              : 'text-gray-700'
-                          }`}>
-                            Термін здачі: {formatDate(hw.dueDate)}
-                          </span>
+                    <div
+                      key={hw.id}
+                      className={`p-4 sm:p-6 rounded-lg border ${hw.completed
+                          ? 'bg-green-50 border-green-200'
+                          : 'bg-white border-gray-200 shadow-sm'
+                        }`}
+                    >
+                      <div className="flex items-start justify-between gap-4 mb-3">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-2">
+                            <h4 className="text-lg font-semibold text-gray-900">{hw.title}</h4>
+                            {hw.completed && (
+                              <CheckCircle className="w-5 h-5 text-green-600" />
+                            )}
+                          </div>
+                          <p className="text-gray-600 mb-3">{hw.description}</p>
+                          <div className="flex flex-col sm:flex-row gap-2 text-sm text-gray-500">
+                            <span>Створено: {formatDate(hw.createdAt)}</span>
+                            <span className="hidden sm:inline">•</span>
+                            <span className={`font-medium ${new Date(hw.dueDate) < new Date() && !hw.completed
+                                ? 'text-red-600'
+                                : 'text-gray-700'
+                              }`}>
+                              Термін здачі: {formatDate(hw.dueDate)}
+                            </span>
+                          </div>
                         </div>
                       </div>
+
+                      {hw.fileUrl && (
+                        <a
+                          href={hw.fileUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-all text-sm mb-3"
+                        >
+                          <FileText className="w-4 h-4" />
+                          Переглянути файл
+                        </a>
+                      )}
+
+                      {!hw.completed && (
+                        <button
+                          onClick={() => handleMarkHomeworkCompleted(hw.id)}
+                          className="w-full sm:w-auto px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all flex items-center justify-center gap-2"
+                        >
+                          <CheckCircle className="w-4 h-4" />
+                          Позначити як виконане
+                        </button>
+                      )}
                     </div>
-
-                    {hw.fileUrl && (
-                      <a
-                        href={hw.fileUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-all text-sm mb-3"
-                      >
-                        <FileText className="w-4 h-4" />
-                        Переглянути файл
-                      </a>
-                    )}
-
-                    {!hw.completed && (
-                      <button
-                        onClick={() => handleMarkHomeworkCompleted(hw.id)}
-                        className="w-full sm:w-auto px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all flex items-center justify-center gap-2"
-                      >
-                        <CheckCircle className="w-4 h-4" />
-                        Позначити як виконане
-                      </button>
-                    )}
-                  </div>
-                ))}
+                  ))}
               </div>
             )}
           </div>

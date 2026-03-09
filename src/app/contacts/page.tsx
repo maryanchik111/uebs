@@ -71,14 +71,14 @@ export default function ContactsPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     setIsSubmitting(false);
     setIsSubmitted(true);
     setFormData({ name: "", email: "", subject: "", message: "" });
-    
+
     // Reset success message after 3 seconds
     setTimeout(() => setIsSubmitted(false), 3000);
   };

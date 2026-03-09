@@ -17,7 +17,7 @@ export default function Hero() {
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
 
   // Generate consistent positions
-  const backgroundElements = useMemo(() => 
+  const backgroundElements = useMemo(() =>
     [...Array(20)].map((_, i) => ({
       id: i,
       left: (i * 17 + 23) % 100, // Consistent positions
@@ -100,7 +100,7 @@ export default function Hero() {
     >
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 gradient-hero"></div>
-      
+
       {/* Animated background elements */}
       {isMounted && (
         <div className="absolute inset-0 opacity-10">
@@ -173,7 +173,7 @@ export default function Hero() {
                     {t("hero.apply")}
                   </Link>
                 </motion.div>
-                
+
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
                     href="#program"
@@ -183,43 +183,6 @@ export default function Hero() {
                     {t("hero.learn")}
                   </Link>
                 </motion.div>
-
-                {/* Cabinet button on mobile */}
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="md:hidden relative inline-block">
-                  <Link
-                    href={user ? "/cabinet" : "/login"}
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    {user ? <User className="w-5 h-5" /> : <LogIn className="w-5 h-5" />}
-                    {user ? "Кабінет" : "Увійти"}
-                  </Link>
-                  {user && userProfile && (userProfile.notifications?.filter(n => !n.read).length > 0 || userProfile.homework?.filter(h => !h.completed).length > 0) && (
-                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full min-w-[24px] h-6 flex items-center justify-center px-2 z-10 shadow-lg">
-                      {(userProfile.notifications?.filter(n => !n.read).length || 0) + (userProfile.homework?.filter(h => !h.completed).length || 0)}
-                    </span>
-                  )}
-                </motion.div>
-
-                {/* PWA Install button on mobile */}
-                {deferredPrompt && (
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="md:hidden">
-                    <button
-                      onClick={async () => {
-                        if (deferredPrompt) {
-                          deferredPrompt.prompt();
-                          const { outcome } = await deferredPrompt.userChoice;
-                          if (outcome === 'accepted') {
-                            setDeferredPrompt(null);
-                          }
-                        }
-                      }}
-                      className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                    >
-                      <Download className="w-5 h-5" />
-                      Завантажити додаток
-                    </button>
-                  </motion.div>
-                )}
               </motion.div>
 
               {/* Key features */}

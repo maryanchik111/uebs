@@ -81,6 +81,18 @@ const lectures = [
     description: "Справжнє лідерство не народжується в тиші кабінетів — воно формується у вогні криз. Розгляд біблійних принципів лідерства в час викликів, через приклади Мойсея, Давида, Неемії та Ісуса.",
     descriptionEn: "True leadership is not born in the silence of offices — it is formed in the fire of crises. Examination of biblical principles of leadership in times of crisis through examples of Moses, David, Nehemiah and Jesus.",
     videoUrl: "https://www.youtube.com/embed/w0cRCx5i3OY"
+  },
+  {
+    id: "vessel-of-honor",
+    title: "«ЯК ПРИГОТОВИТИ СВОЮ ПОСУДИНУ ДЛЯ ЧЕСТІ В СЛАВІ БОЖІЙ?» — МУСЕВИЧ СЕРГІЙ",
+    titleEn: "«HOW TO PREPARE YOUR VESSEL FOR HONOR IN GOD'S GLORY?» — SERHIY MUSEVYCH",
+    speaker: "Мусевич Сергій",
+    speakerEn: "Serhiy Musevych",
+    date: "2026-02-13",
+    youtubeId: "EgcoEVfBUUw",
+    description: "Мета створення Біблійної школи uebs.com.ua — поглиблювати пізнання Божого Слово та формувати зрілих, відповідальних і духовно сильних учнів Христа. Лекція Сергія Мусевича про місію та цілі школи.",
+    descriptionEn: "The purpose of the Bible School uebs.com.ua is to deepen the knowledge of God's Word and form mature, responsible, and spiritually strong disciples of Christ. Lecture by Serhiy Musevych on the school's mission and goals.",
+    videoUrl: "https://www.youtube.com/embed/EgcoEVfBUUw"
   }
 ];
 
@@ -94,7 +106,8 @@ const getVideoDuration = (youtubeId: string) => {
     "XDRty1ClGjE": "1:33:31",
     "0ak_EHjpIYA": "1:12:25",
     "1DFuvUa-8NQ": "2:01:17",
-    "w0cRCx5i3OY": "1:25:02"
+    "w0cRCx5i3OY": "1:25:02",
+    "EgcoEVfBUUw": "59:40"
   };
   return durations[youtubeId] || "1:00:00";
 };
@@ -109,7 +122,7 @@ const getYoutubeThumbnail = (youtubeId: string) => {
 export default function LecturesPage() {
   const { t, language } = useLanguage();
   const [isMounted, setIsMounted] = useState(false);
-  const [lectureStats, setLectureStats] = useState<{[key: string]: {views: number, comments: number}}>({});
+  const [lectureStats, setLectureStats] = useState<{ [key: string]: { views: number, comments: number } }>({});
 
   useEffect(() => {
     setIsMounted(true);
@@ -117,26 +130,26 @@ export default function LecturesPage() {
   }, []);
 
   const loadLectureStats = async () => {
-    const stats: {[key: string]: {views: number, comments: number}} = {};
-    
+    const stats: { [key: string]: { views: number, comments: number } } = {};
+
     for (const lecture of lectures) {
       try {
         const viewsRef = ref(database, `lectures/${lecture.id}/views`);
         const viewsSnapshot = await get(viewsRef);
         const views = viewsSnapshot.val() || 0;
-        
+
         const commentsRef = ref(database, `lectures/${lecture.id}/comments`);
         const commentsSnapshot = await get(commentsRef);
         const commentsData = commentsSnapshot.val();
         const commentsCount = commentsData ? Object.keys(commentsData).length : 0;
-        
+
         stats[lecture.id] = { views, comments: commentsCount };
       } catch (error) {
         console.error(`Error loading stats for ${lecture.id}:`, error);
         stats[lecture.id] = { views: 0, comments: 0 };
       }
     }
-    
+
     setLectureStats(stats);
   };
 
@@ -148,7 +161,7 @@ export default function LecturesPage() {
       const year = date.getFullYear();
       return `${day}.${month.toString().padStart(2, '0')}.${year}`;
     }
-    
+
     const date = new Date(dateString);
     return date.toLocaleDateString(language === 'uk' ? 'uk-UA' : 'en-US', {
       year: 'numeric',
@@ -187,7 +200,7 @@ export default function LecturesPage() {
               whileHover={{ y: -5 }}
             >
               {/* Thumbnail */}
-              <div 
+              <div
                 className="relative aspect-video bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center bg-cover bg-center"
                 style={{ backgroundImage: `url(${getYoutubeThumbnail(lecture.youtubeId)})` }}
               >
@@ -205,7 +218,7 @@ export default function LecturesPage() {
                 <h3 className="text-xl font-bold text-slate-900 mb-3 line-clamp-2">
                   {language === 'uk' ? lecture.title : lecture.titleEn}
                 </h3>
-                
+
                 <p className="text-slate-600 mb-4 line-clamp-3">
                   {language === 'uk' ? lecture.description : lecture.descriptionEn}
                 </p>
@@ -219,16 +232,16 @@ export default function LecturesPage() {
                   <div className="flex items-center gap-2 text-sm text-slate-500">
                     <Calendar className="w-4 h-4" />
                     {formatDate(lecture.date)}
-                                    <div className="flex items-center gap-4 text-sm text-slate-500">
-                                      <div className="flex items-center gap-1">
-                                        <Eye className="w-4 h-4" />
-                                        {lectureStats[lecture.id]?.views || 0}
-                                      </div>
-                                      <div className="flex items-center gap-1">
-                                        <MessageCircle className="w-4 h-4" />
-                                        {lectureStats[lecture.id]?.comments || 0}
-                                      </div>
-                                    </div>
+                    <div className="flex items-center gap-4 text-sm text-slate-500">
+                      <div className="flex items-center gap-1">
+                        <Eye className="w-4 h-4" />
+                        {lectureStats[lecture.id]?.views || 0}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <MessageCircle className="w-4 h-4" />
+                        {lectureStats[lecture.id]?.comments || 0}
+                      </div>
+                    </div>
                   </div>
                 </div>
 

@@ -8,12 +8,14 @@ import { isUserAdmin } from '@/lib/user-utils';
 import { Bell, BookOpen, Mail, Users, BarChart3, Shield, Loader2, MessageCircle } from 'lucide-react';
 
 export default function AdminPage() {
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [admin, setAdmin] = useState(false);
 
   useEffect(() => {
+    if (authLoading) return;
+
     if (!user) {
       router.push('/login');
       return;
@@ -27,7 +29,7 @@ export default function AdminPage() {
         setLoading(false);
       }
     });
-  }, [user, router]);
+  }, [user, authLoading, router]);
 
   if (loading) {
     return (

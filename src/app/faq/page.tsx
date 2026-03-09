@@ -88,7 +88,7 @@ export default function FAQ() {
                   <ChevronDown className="w-5 h-5 text-slate-500" />
                 </motion.div>
               </button>
-              
+
               {openFaq === faq.id && (
                 <motion.div
                   initial={{ height: 0, opacity: 0 }}

@@ -20,7 +20,8 @@ const translations = {
     "nav.contacts": "Контакти",
     "nav.lectures": "Лекції",
     "nav.apply": "Записатися",
-    
+    "nav.about": "Про школу",
+
     // Hero Section
     "hero.title": "UEBSchool — <span class=\"bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent\">Біблійна школа</span> в Рівному",
     "hero.subtitle": "Духовно‑освітнє середовище, де Слово Боже, молитва та спільність формують зрілих служителів — носіїв світла, правди й благодаті. Заняття вечорами, 2 рази на місяць.",
@@ -40,7 +41,7 @@ const translations = {
     "hero.schedule": "50 зустрічей · 19:00-22:00",
     "hero.format.desc": "Формат — очний / змішаний",
     "hero.program.desc": "Програма: Основи віри, служіння, лідерство та практика. Підготовка для служіння в церкві й громаді.",
-    
+
     // Format Section
     "format.title": "Формати навчання",
     "format.subtitle": "Оберіть зручний для вас формат участі в UEBSchool",
@@ -50,24 +51,24 @@ const translations = {
     "format.online.desc": "Участь через відеозв'язок з будь-якої точки",
     "format.mixed": "Змішаний формат",
     "format.mixed.desc": "Комбінація очного та онлайн навчання",
-    
+
     // Format Features
     "format.feature1.title": "2 рази на місяць",
     "format.feature1.desc": "Заняття кожні два тижні у п'ятницю",
-    "format.feature2.title": "Вечірній час", 
+    "format.feature2.title": "Вечірній час",
     "format.feature2.desc": "19:00 - 22:00, зручно після роботи",
     "format.feature3.title": "Місто Рівне",
     "format.feature3.desc": "Очні заняття в центрі міста",
     "format.feature4.title": "Змішаний формат",
     "format.feature4.desc": "Можливість онлайн підключення",
-    
+
     // Program Section
     "program.title": "Повна програма навчання",
     "program.subtitle": "Програма розрахована на 1 рік навчання - 50 зустрічей по 3 години. Кожна зустріч: тема, біблійний текст, практична дискусія, молитва та застосування.",
     "program.meetings": "Зустрічей",
     "program.hours": "Годин навчання",
     "program.sections": "Розділів програми",
-    
+
     // Program Sections
     "program.faith.title": "ОСНОВИ ВІРИ ТА СПАСІННЯ",
     "program.faith.subtitle": "Заняття 1-10",
@@ -89,7 +90,7 @@ const translations = {
     "format.additional.mentoring.description": "Індивідуальне наставництво від досвідчених викладачів та можливість особистих консультацій.",
     "format.additional.resources.title": "Ресурси для навчання",
     "format.additional.resources.description": "Доступ до бібліотеки, навчальних матеріалів та онлайн-ресурсів для поглибленого вивчення.",
-    
+
     // Apply Page
     "apply.title": "Подати заявку на навчання",
     "apply.subtitle": "Розпочніть свою духовну подорож з UEBSchool. Заповніть форму нижче, і ми зв'яжемося з вами.",
@@ -115,13 +116,13 @@ const translations = {
     "apply.info.education": "Комплексна біблійна освіта",
     "apply.info.certificate": "Після завершення курсу - сертифікат",
     "apply.privacy": "Натискаючи \"Подати заявку\", ви погоджуєтеся з обробкою персональних даних",
-    
+
     // Contacts Page (old keys - removed)
     "contacts.class.schedule": "П'ятниця: 19:00-22:00",
     "contacts.frequency": "2 рази на місяць",
     "contacts.faq": "Інфо",
     "contacts.contact.address": "Адреса",
-    "contacts.contact.phone": "Телефон", 
+    "contacts.contact.phone": "Телефон",
     "contacts.contact.email": "Email",
     "contacts.contact.schedule": "Розклад занять",
     "contacts.city": "м. Рівне, Україна",
@@ -146,7 +147,7 @@ const translations = {
     "contacts.form.select.other": "Інше",
     "contacts.location.title": "Наше розташування",
     "contacts.location.note": "Точна адреса буде надана після підтвердження заявки",
-    
+
     // FAQ Page
     "faq.title": "Інфо",
     "faq.subtitle": "Відповіді на найпоширеніші запитання про навчання в UEBSchool",
@@ -163,7 +164,16 @@ const translations = {
     "faq.a5": "Після успішного завершення курсу студенти отримують сертифікат про закінчення UEBSchool, який підтверджує отримання базової біблійної освіти.",
     "faq.q6": "Як подати заявку на навчання?",
     "faq.a6": "Заповніть форму заявки на нашому сайті або зв'яжіться з нами за телефоном +380 63 344 4555 чи email: uebs0633444555@gmail.com. Ми зв'яжемося з вами для уточнення деталей.",
-    
+
+    "faq.cost.question": "Скільки коштує навчання в UEBSchool?",
+    "faq.cost.answer": "Навчання в UEBSchool є безкоштовним. Ми віримо, що біблійна освіта має бути доступною для всіх, хто прагне глибше пізнати Бога та Його Слово.",
+    "faq.experience.question": "Чи потрібен попередній досвід для вступу?",
+    "faq.experience.answer": "Ні, попередній досвід не потрібен. Наша програма розрахована на людей з різним рівнем біблійних знань - від початківців до тих, хто вже має певний досвід.",
+    "faq.online.question": "Чи можна навчатися онлайн?",
+    "faq.online.answer": "Так, ми пропонуємо змішаний формат навчання. Ви можете відвідувати заняття очно в Рівному або підключатися онлайн через відеозв'язок.",
+    "faq.duration.question": "Як довго триває курс?",
+    "faq.duration.answer": "Повний курс триває 1 рік і включає 50 занять. Заняття проходять 2 рази на місяць по п'ятницях з 19:00 до 22:00.",
+
     // Footer
     "footer.about": "Про UEBSchool",
     "footer.about.text": "Духовно-освітнє середовище для підготовки зрілих служителів Божих.",
@@ -176,7 +186,7 @@ const translations = {
     "footer.newsletter.success": "Дякуємо за підписку! Ми надішлемо вам новини.",
     "footer.social": "Соціальні мережі",
     "footer.rights": "Всі права захищені.",
-    
+
     // Lectures
     "lectures.title": "Онлайн лекції",
     "lectures.subtitle": "Перегляньте попередні лекції та навчальні матеріали",
@@ -189,9 +199,68 @@ const translations = {
     "lectures.next.title": "Наступна лекція",
     "lectures.next.join": "Приєднатися",
     "lectures.next.remind": "Нагадати",
-    "lectures.next.link.unavailable": "Посилання на трансляцію ще не доступне"
+    "lectures.next.link.unavailable": "Посилання на трансляцію ще не доступне",
+
+    // About Page
+    "about.title": "Про UEBSchool",
+    "about.subtitle": "Мета створення та місія Українсько-Європейської Біблійної Школи",
+    "about.goal.title": "Мета створення Біблійної школи",
+    "about.goal.description": "Біблійна школа uebs.com.ua створена для того, щоб поглиблювати пізнання Божого Слова та формувати зрілих, відповідальних і духовно сильних учнів Христа. Наша мета — не просто передати інформацію, але виховати мислення, характер і спосіб життя, які узгоджені з вченням Писання.",
+    "about.strive.title": "Ми прагнемо, щоб кожний студент:",
+    "about.strive.item1": "Зрозумів Біблію як цілісну історію Божого спасіння",
+    "about.strive.item2": "Навчився через вивчення писання тлумачити Слово Боже правильно, зріло та відповідально",
+    "about.strive.item3": "Ріс у духовній мудрості і Христоподібному характері",
+    "about.strive.item4": "Умів застосовувати істини Божого Слова у щоденному житті, служінні, сім’ї та професії",
+    "about.strive.item5": "Був здатним передавати почуте та пережите іншим, стаючи учнем, який робить учнів",
+    "about.importance.title": "Для чого це важливо?",
+    "about.importance.item1": "Бо віра зміцнюється від слухання Слова",
+    "about.importance.item2": "Бо церква покликана бути не просто спільнотою почуттів, а спільнотою істини",
+    "about.importance.item3": "Бо справжня сила служіння — в глибині пізнання Бога, а не в зовнішній активності",
+    "about.importance.item4": "Бо Біблія — це підстава нашого життя, віри, моральності і покликання",
+    "about.place.title": "UEBSchool — це місце духовного формування, де:",
+    "about.place.item1": "Слово Боже стає основою мислення",
+    "about.place.item2": "Дух Святий — джерелом розуміння",
+    "about.place.item3": "Христос — центром і сенсом життя",
+    "about.place.item4": "Церква — сім’єю, де ми ростемо разом",
+    "about.summary": "Ми відкрили Біблійну школу, щоб допомагати Божому народові бути глибоким, зрілим і здатним нести світло Євангелію іншим, живучи згідно з істиною Писання.",
+    "about.description.title": "Опис школи",
+    "about.description.text": "Українсько-Європейська Біблійна Школа (UEBS) — це сучасний християнський навчальний заклад, покликаний формувати нове покоління духовних лідерів, богословів, місіонерів та служителів для Церкви та суспільства в Україні, Європі та за її межами. Біблійна Школа, яка поєднує глибоке богослов’я, практичне служіння та європейську освітню модель. Ми готуємо лідерів, які зможуть трансформувати церкву і суспільство через Євангеліє Ісуса Христа.",
+    "about.quote.2tim22": "«І те, чого ти навчився від мене за багатьох свідків, передай вірним людям, які будуть здібні навчити й інших.» – 2 Тимофія 2:2",
+    "about.mission.title": "Місія",
+    "about.mission.text": "Формування зрілих, освічених і посвячених служителів, здатних тлумачити Боже Слово, проповідувати Євангеліє та впливати на суспільство згідно з Біблійними цінностями. Ми покликані формувати нове покоління посвячених, освічених і духовно зрілих лідерів, здатних нести Слово Боже в помісних церквах, освітніх установах, місіонерських проєктах та у сфері суспільного служіння.",
+    "about.quote.eph411": "«І поставив Він одних за апостолів, інших за пророків, інших за євангелістів, а інших за пастирів та вчителів, для приготування святих на діло служіння.» – Ефесян 4:11-12",
+    "about.goals.title": "Цілі",
+    "about.goals.item1": "Надання ґрунтовної біблійної, богословської та практичної освіти.",
+    "about.goals.item2": "Підготовка духовних лідерів до служіння в церкві, місіонерській праці, соціальних ініціативах та християнській освіті.",
+    "about.goals.item3": "Побудова міжцерковного, міжкультурного і міжнародного християнського партнерства.",
+    "about.goals.item4": "Формування християнського світогляду, що поєднує Біблійність і актуальність у сучасному світі.",
+    "about.values.title": "Цінності",
+    "about.values.item1.title": "Біблійність",
+    "about.values.item1.text": "Писання як найвищий авторитет у вірі та практиці.",
+    "about.values.item2.title": "Освіченість",
+    "about.values.item2.text": "Академічна чесність, науковий підхід і відкритість до діалогу.",
+    "about.values.item3.title": "Посвячення",
+    "about.values.item3.text": "Особиста духовна зрілість та практична посвята служінню.",
+    "about.values.item4.title": "Спільнота",
+    "about.values.item4.text": "Формування християнської культури взаємоповаги, підтримки й наставництва.",
+    "about.values.item5.title": "Місія",
+    "about.values.item5.text": "Орієнтація на служіння поза межами аудиторії: церква, суспільство, нація, світ.",
+    "about.context.title": "Контекст і бачення",
+    "about.context.text": "Школа об’єднує українську духовну традицію з європейськими освітніми стандартами. Вона є простором, де формується міст між Сходом і Заходом; готується церква майбутнього покоління; поширюється Євангеліє на академічному, соціальному та культурному рівнях.",
+    "about.vision.title": "Бачення",
+    "about.vision.text": "UEBSchool прагне стати центром богословської думки, духовного формування та практичного служіння, що базується на істинах Божого Слова та відкритості до Божого покликання в сучасному світі.",
+    "about.quote.col316": "«Нехай Слово Христове вселяється в вас рясно — у всякій премудрості.» – Колосян 3:16",
+    "about.keygoals.title": "Ключові цілі",
+    "about.keygoals.item1.title": "Біблійна освіта",
+    "about.keygoals.item1.text": "Поглиблене вивчення Писання в його історичному, богословському й практичному контексті. (Псалом 119:105)",
+    "about.keygoals.item2.title": "Лідерське формування",
+    "about.keygoals.item2.text": "Виховання духовних лідерів для церков, служінь, місій і соціальних ініціатив. (Матвія 28:19)",
+    "about.keygoals.item3.title": "Місіонерська спрямованість",
+    "about.keygoals.item3.text": "Підготовка служителів, здатних нести Євангеліє в Україну, Європу та до краю землі. (Дії 1:8)",
+    "about.keygoals.item4.title": "Міжкультурний зв’язок",
+    "about.keygoals.item4.text": "Поєднання української духовної традиції з європейськими та глобальними Біблійними ініціативами. (1 Коринтян 9:22)"
   },
-  
+
   en: {
     // Navigation
     "nav.home": "Home",
@@ -199,7 +268,8 @@ const translations = {
     "nav.contacts": "Contacts",
     "nav.lectures": "Lectures",
     "nav.apply": "Apply",
-    
+    "nav.about": "About",
+
     // Hero Section
     "hero.title": "UEBSchool — <span class=\"bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent\">Bible School</span> in Rivne",
     "hero.subtitle": "A spiritual-educational environment where God's Word, prayer, and fellowship shape mature ministers — bearers of light, truth, and grace. Evening classes, twice a month.",
@@ -219,7 +289,7 @@ const translations = {
     "hero.schedule": "50 meetings · 7:00-10:00 PM",
     "hero.format.desc": "Format — in-person / mixed",
     "hero.program.desc": "Program: Fundamentals of faith, ministry, leadership and practice. Preparation for service in church and community.",
-    
+
     // Format Section
     "format.title": "Learning Formats",
     "format.subtitle": "Choose a convenient format for your participation in UEBSchool",
@@ -229,24 +299,24 @@ const translations = {
     "format.online.desc": "Participate via video call from anywhere",
     "format.mixed": "Mixed Format",
     "format.mixed.desc": "Combination of in-person and online learning",
-    
+
     // Format Features
     "format.feature1.title": "Twice a month",
     "format.feature1.desc": "Classes every two weeks on Friday",
-    "format.feature2.title": "Evening time", 
+    "format.feature2.title": "Evening time",
     "format.feature2.desc": "7:00 - 10:00 PM, convenient after work",
     "format.feature3.title": "Rivne city",
     "format.feature3.desc": "In-person classes in the city center",
     "format.feature4.title": "Mixed format",
     "format.feature4.desc": "Online connection option",
-    
+
     // Program Section
     "program.title": "Complete Study Program",
     "program.subtitle": "The program is designed for 1 year of study - 50 meetings of 3 hours each. Each meeting: topic, biblical text, practical discussion, prayer and application.",
     "program.meetings": "Meetings",
     "program.hours": "Study Hours",
     "program.sections": "Program Sections",
-    
+
     // Program Sections
     "program.faith.title": "FUNDAMENTALS OF FAITH AND SALVATION",
     "program.faith.subtitle": "Classes 1-10",
@@ -268,7 +338,7 @@ const translations = {
     "format.additional.mentoring.description": "Individual guidance from experienced teachers and opportunity for personal consultations.",
     "format.additional.resources.title": "Learning Resources",
     "format.additional.resources.description": "Access to library, educational materials and online resources for in-depth study.",
-    
+
     // Apply Page
     "apply.title": "Apply for Studies",
     "apply.subtitle": "Begin your spiritual journey with UEBSchool. Fill out the form below and we'll contact you.",
@@ -294,15 +364,15 @@ const translations = {
     "apply.info.education": "Comprehensive biblical education",
     "apply.info.certificate": "Certificate upon course completion",
     "apply.privacy": "By clicking \"Submit Application\", you agree to personal data processing",
-    
+
     // Contacts Page (old keys - removed)
     "contacts.page.title": "Contacts",
     "contacts.class.schedule": "Friday: 7:00-10:00 PM",
-    "contacts.frequency": "2 times per month", 
+    "contacts.frequency": "2 times per month",
     "contacts.faq": "FAQ",
     "contacts.contact.address": "Address",
     "contacts.contact.phone": "Phone",
-    "contacts.contact.email": "Email", 
+    "contacts.contact.email": "Email",
     "contacts.contact.schedule": "Class Schedule",
     "contacts.city": "Rivne, Ukraine",
     "contacts.center": "City Center",
@@ -326,7 +396,7 @@ const translations = {
     "contacts.form.select.other": "Other",
     "contacts.location.title": "Our Location",
     "contacts.location.note": "Exact address will be provided after application confirmation",
-    
+
     // FAQ Page
     "faq.title": "Info",
     "faq.subtitle": "Answers to the most common questions about studying at UEBSchool",
@@ -343,7 +413,16 @@ const translations = {
     "faq.a5": "After successful completion of the course, students receive a certificate of completion from UEBSchool, which confirms receiving basic biblical education.",
     "faq.q6": "How to apply for studies?",
     "faq.a6": "Fill out the application form on our website or contact us at +380 63 344 4555 or email: uebs0633444555@gmail.com. We will contact you to clarify the details.",
-    
+
+    "faq.cost.question": "How much does studying at UEBSchool cost?",
+    "faq.cost.answer": "Education at UEBSchool is free. We believe that biblical education should be accessible to everyone who seeks to know God and His Word more deeply.",
+    "faq.experience.question": "Is prior experience required for admission?",
+    "faq.experience.answer": "No, prior experience is not required. Our program is designed for people with different levels of biblical knowledge - from beginners to those who already have some experience.",
+    "faq.online.question": "Can I study online?",
+    "faq.online.answer": "Yes, we offer a mixed learning format. You can attend classes in-person in Rivne or connect online via video call.",
+    "faq.duration.question": "How long does the course last?",
+    "faq.duration.answer": "The full course lasts 1 year and includes 50 classes. Classes are held twice a month on Fridays from 7:00 to 10:00 PM.",
+
     // Footer
     "footer.about": "About UEBSchool",
     "footer.about.text": "A spiritual-educational environment for training mature servants of God.",
@@ -356,7 +435,7 @@ const translations = {
     "footer.newsletter.success": "Thank you for subscribing! We'll send you news.",
     "footer.social": "Social Media",
     "footer.rights": "All rights reserved.",
-    
+
     // Lectures
     "lectures.title": "Online Lectures",
     "lectures.subtitle": "Watch previous lectures and educational materials",
@@ -369,7 +448,66 @@ const translations = {
     "lectures.next.title": "Next Lecture",
     "lectures.next.join": "Join",
     "lectures.next.remind": "Remind Me",
-    "lectures.next.link.unavailable": "Stream link not available yet"
+    "lectures.next.link.unavailable": "Stream link not available yet",
+
+    // About Page
+    "about.title": "About UEBSchool",
+    "about.subtitle": "Purpose and Mission of the Ukrainian-European Bible School",
+    "about.goal.title": "The Purpose of the Bible School",
+    "about.goal.description": "The Bible School uebs.com.ua was created to deepen the knowledge of God's Word and form mature, responsible, and spiritually strong disciples of Christ. Our goal is not just to convey information, but to cultivate thinking, character, and a lifestyle that are aligned with the teaching of Scripture.",
+    "about.strive.title": "We strive for every student to:",
+    "about.strive.item1": "Understand the Bible as a holistic story of God's salvation",
+    "about.strive.item2": "Learn through scripture study to interpret the Word of God correctly, maturely, and responsibly",
+    "about.strive.item3": "Grow in spiritual wisdom and Christ-like character",
+    "about.strive.item4": "Be able to apply the truths of God's Word in daily life, ministry, family, and profession",
+    "about.strive.item5": "Be capable of passing on what they have heard and experienced to others, becoming a disciple who makes disciples",
+    "about.importance.title": "Why is this important?",
+    "about.importance.item1": "Because faith is strengthened by hearing the Word",
+    "about.importance.item2": "Because the church is called to be not just a community of feelings, but a community of truth",
+    "about.importance.item3": "Because the true power of ministry is in the depth of knowing God, not in external activity",
+    "about.importance.item4": "Because the Bible is the foundation of our life, faith, morality, and calling",
+    "about.place.title": "UEBSchool is a place of spiritual formation where:",
+    "about.place.item1": "The Word of God becomes the foundation of thinking",
+    "about.place.item2": "The Holy Spirit is the source of understanding",
+    "about.place.item3": "Christ is the center and meaning of life",
+    "about.place.item4": "The Church is the family where we grow together",
+    "about.summary": "We opened the Bible School to help God's people be deep, mature, and capable of carrying the light of the Gospel to others, living according to the truth of Scripture.",
+    "about.description.title": "School Description",
+    "about.description.text": "The Ukrainian-European Bible School (UEBS) is a modern Christian educational institution designed to form a new generation of spiritual leaders, theologians, missionaries, and ministers for the Church and society in Ukraine, Europe, and beyond. A Bible School that combines deep theology, practical ministry, and a European educational model. We prepare leaders who can transform the church and society through the Gospel of Jesus Christ.",
+    "about.quote.2tim22": "\"And the things you have heard me say in the presence of many witnesses entrust to reliable people who will also be qualified to teach others.\" – 2 Timothy 2:2",
+    "about.mission.title": "Mission",
+    "about.mission.text": "The formation of mature, educated, and dedicated ministers capable of interpreting God's Word, preaching the Gospel, and influencing society according to Biblical values. We are called to form a new generation of dedicated, educated, and spiritually mature leaders capable of carrying the Word of God in local churches, educational institutions, missionary projects, and in the sphere of social service.",
+    "about.quote.eph411": "\"So Christ himself gave the apostles, the prophets, the evangelists, the pastors and teachers, to equip his people for works of service...\" – Ephesians 4:11-12",
+    "about.goals.title": "Goals",
+    "about.goals.item1": "Providing a solid biblical, theological, and practical education.",
+    "about.goals.item2": "Preparing spiritual leaders for service in the church, missionary work, social initiatives, and Christian education.",
+    "about.goals.item3": "Building inter-church, intercultural, and international Christian partnership.",
+    "about.goals.item4": "Forming a Christian worldview that combines Biblicality and relevance in the modern world.",
+    "about.values.title": "Values",
+    "about.values.item1.title": "Biblicality",
+    "about.values.item1.text": "Scripture as the highest authority in faith and practice.",
+    "about.values.item2.title": "Educatedness",
+    "about.values.item2.text": "Academic honesty, scientific approach, and openness to dialogue.",
+    "about.values.item3.title": "Dedication",
+    "about.values.item3.text": "Personal spiritual maturity and practical dedication to service.",
+    "about.values.item4.title": "Community",
+    "about.values.item4.text": "Formation of a Christian culture of mutual respect, support, and mentorship.",
+    "about.values.item5.title": "Mission",
+    "about.values.item5.text": "Orientation toward service beyond the classroom: church, society, nation, world.",
+    "about.context.title": "Context and Vision",
+    "about.context.text": "The school combines Ukrainian spiritual tradition with European educational standards. It is a space where a bridge between East and West is formed; the church of the next generation is prepared; the Gospel is spread on academic, social, and cultural levels.",
+    "about.vision.title": "Vision",
+    "about.vision.text": "UEBSchool strives to become a center of theological thought, spiritual formation, and practical ministry based on the truths of God's Word and openness to God's calling in the modern world.",
+    "about.quote.col316": "\"Let the message of Christ dwell among you richly... with all wisdom.\" – Colossians 3:16",
+    "about.keygoals.title": "Key Goals",
+    "about.keygoals.item1.title": "Biblical Education",
+    "about.keygoals.item1.text": "In-depth study of Scripture in its historical, theological, and practical context. (Psalm 119:105)",
+    "about.keygoals.item2.title": "Leadership Formation",
+    "about.keygoals.item2.text": "Cultivating spiritual leaders for churches, ministries, missions, and social initiatives. (Matthew 28:19)",
+    "about.keygoals.item3.title": "Missionary Orientation",
+    "about.keygoals.item3.text": "Preparing ministers capable of carrying the Gospel to Ukraine, Europe, and to the ends of the earth. (Acts 1:8)",
+    "about.keygoals.item4.title": "Intercultural Connection",
+    "about.keygoals.item4.text": "Combining Ukrainian spiritual tradition with European and global Biblical initiatives. (1 Corinthians 9:22)"
   }
 };
 

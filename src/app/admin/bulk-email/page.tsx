@@ -1,8 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useAuth } from '@/contexts/auth-context';
+import { isUserAdmin } from '@/lib/user-utils';
+import { useRouter } from 'next/navigation';
+import { Loader2 } from 'lucide-react';
 
 export default function BulkEmailPage() {
+  const { user, loading: authLoading } = useAuth();
+  const router = useRouter();
+  const [isAdmin, setIsAdmin] = useState(false);
   const [formData, setFormData] = useState({
     emails: '',
     subject: '',
@@ -16,6 +23,23 @@ export default function BulkEmailPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [results, setResults] = useState<any>(null);
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    if (authLoading) return;
+
+    if (!user) {
+      router.push('/login');
+      return;
+    }
+
+    isUserAdmin(user.uid).then((admin) => {
+      if (!admin) {
+        router.push('/');
+      } else {
+        setIsAdmin(true);
+      }
+    });
+  }, [user, authLoading, router]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -104,6 +128,16 @@ export default function BulkEmailPage() {
   </div>
 </body>
 </html>`;
+
+  if (authLoading || (!isAdmin && user)) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <Loader2 className="w-12 h-12 animate-spin text-blue-600" />
+      </div>
+    );
+  }
+
+  if (!isAdmin) return null;
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
@@ -265,7 +299,7 @@ export default function BulkEmailPage() {
                   <p className="text-sm text-gray-600">Помилки</p>
                 </div>
               </div>
-              
+
               {results.errors && results.errors.length > 0 && (
                 <div className="mt-4">
                   <h4 className="font-semibold text-red-800 mb-2">Помилки:</h4>

@@ -21,7 +21,7 @@ interface Student {
 }
 
 export default function StudentsPage() {
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const router = useRouter();
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -56,6 +56,8 @@ export default function StudentsPage() {
   });
 
   useEffect(() => {
+    if (authLoading) return;
+
     if (!user) {
       router.push('/login');
       return;
@@ -69,7 +71,7 @@ export default function StudentsPage() {
         loadStudents();
       }
     });
-  }, [user, router]);
+  }, [user, authLoading, router]);
 
   const loadStudents = () => {
     const studentsRef = ref(database, 'students');
@@ -80,7 +82,7 @@ export default function StudentsPage() {
           id: key,
           ...data[key]
         }));
-        setStudents(studentsList.sort((a, b) => 
+        setStudents(studentsList.sort((a, b) =>
           new Date(b.addedAt).getTime() - new Date(a.addedAt).getTime()
         ));
       } else {
@@ -92,7 +94,7 @@ export default function StudentsPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.firstName || !formData.lastName || !formData.email) {
       alert('Заповніть обов\'язкові поля');
       return;
@@ -153,8 +155,8 @@ export default function StudentsPage() {
   };
 
   const handleSelectStudent = (studentId: string) => {
-    setSelectedStudents(prev => 
-      prev.includes(studentId) 
+    setSelectedStudents(prev =>
+      prev.includes(studentId)
         ? prev.filter(id => id !== studentId)
         : [...prev, studentId]
     );
@@ -199,7 +201,7 @@ export default function StudentsPage() {
       });
 
       const result = await response.json();
-      
+
       if (response.ok) {
         alert(result.message);
         setShowMessageModal(false);
@@ -248,7 +250,7 @@ export default function StudentsPage() {
       });
 
       const result = await response.json();
-      
+
       if (response.ok) {
         alert(result.message);
         setShowHomeworkModal(false);
@@ -401,18 +403,16 @@ export default function StudentsPage() {
                           {student.firstName} {student.lastName}
                         </h3>
                         <div className="flex flex-wrap items-center gap-2 text-sm mt-1">
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                            student.format === 'очно' 
-                              ? 'bg-green-100 text-green-700' 
-                              : 'bg-blue-100 text-blue-700'
-                          }`}>
+                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${student.format === 'очно'
+                            ? 'bg-green-100 text-green-700'
+                            : 'bg-blue-100 text-blue-700'
+                            }`}>
                             {student.format}
                           </span>
-                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                            student.source === 'manual' 
-                              ? 'bg-gray-100 text-gray-700' 
-                              : 'bg-amber-100 text-amber-700'
-                          }`}>
+                          <span className={`px-2 py-1 rounded-full text-xs font-medium ${student.source === 'manual'
+                            ? 'bg-gray-100 text-gray-700'
+                            : 'bg-amber-100 text-amber-700'
+                            }`}>
                             {student.source === 'manual' ? 'Вручну' : 'Заявка'}
                           </span>
                         </div>
@@ -458,7 +458,7 @@ export default function StudentsPage() {
                     </button>
                   </div>
                 </div>
-                
+
                 {/* Mobile buttons */}
                 <div className="flex flex-col sm:hidden gap-2 pt-2 border-t border-slate-100">
                   <button

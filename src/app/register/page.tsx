@@ -14,7 +14,7 @@ export default function RegisterPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
-  
+
   const { register } = useAuth();
   const router = useRouter();
 
