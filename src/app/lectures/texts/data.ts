@@ -104,6 +104,82 @@ God forms people who are ready to say:
 
 God is not looking for ideal people. God is looking for purified vessels.
 The question is not whether God has glory. The question is whether there is a vessel capable of carrying it.`
+    },
+    {
+        id: "charisma-and-character",
+        title: "ХАРИЗМА І ХАРАКТЕР СЛУЖИТЕЛЯ",
+        titleEn: "CHARISMA AND CHARACTER OF A MINISTER",
+        author: "Сергій Мусевич",
+        authorEn: "Serhiy Musevych",
+        date: "2026-02-13",
+        description: "Роздуми про різницю між харизмою і характером служителя. Харизма — це дар, а характер — це плід.",
+        descriptionEn: "Reflections on the difference between charisma and character of a minister. Charisma is a gift, and character is a fruit.",
+        text: `Дякую Богу за честь ділитися в БІБЛІЙНА ШКОЛА при Спільноті Скинія Любови-Істини роздумами про різницю між харизмою і характером служителя.
+#Харизма — це дар. #Характер — це плід.
+📖 1 Коринтян 12:4 — «Є різні дари, але Дух один».
+📖 Галатів 5:22–23 — «Плід Духа: любов, радість, мир…»
+
+Харизму #Бог дає. #Характер #Бог формує. #Дар може з’явитися миттєво, #характер формується роками через #хрест, випробування і послух.
+#Харизма привертає людей. #Характер утримує помазання.
+Люди часто йдуть за харизматичним голосом, але #Бог дивиться на серце служителя.
+📖 1 Самуїла 16:7 —«Людина дивиться на лице, а Господь дивиться на серце».
+
+#Харизма може збирати натовпи,
+але тільки #характер може нести відповідальність перед Богом.
+#Харизма може вразити. #Характер може врятувати.
+
+📖 Матвія 7:22-23 —«Господи! Хіба не Твоїм ім’ям ми пророкували…?»
+А Ісус відповів: «Я ніколи не знав вас».
+
+Можна мати сильні дари, але втратити стосунки з Богом.
+#Харизма робить служителя популярним. #Характер робить його вірним.
+📖 Луки 16:10 —«Вірний у малому — і у великому вірний».
+
+Бог шукає не яскравих,
+а вірних.
+#Харизма може підняти на сцену. #Характер тримає на висоті.
+Багато служителів впали не через відсутність дарів, а через слабкий #характер.
+
+📖 Приповісті 16:32«Кращий довготерпеливий від хороброго,
+і той, хто володіє собою — від завойовника міста».
+
+#Самовладання — більша сила, ніж завоювання міст.
+#Харизма — це те, що люди бачать. #Характер — це те, що #Бог знає.
+#Харизма відкриває двері служіння. Характер вирішує, чи ти там залишишся. #Дар може зробити тебе відомим. #Характер робить тебе Божим. #Бог використовує дари, але довіряє тим, у кого є #характер.
+#Бог не шукає просто харизматичних служителів. #Бог піднімає людей із характером Царства обдаровуючи їх харизмою дарів.`,
+        textEn: `I thank God for the honor of sharing at the BIBLE SCHOOL at the Tabernacle of Love-Truth Community reflections on the difference between the charisma and the character of a minister.
+#Charisma is a gift. #Character is a fruit.
+📖 1 Corinthians 12:4 — "There are different kinds of gifts, but the same Spirit distributes them."
+📖 Galatians 5:22–23 — "But the fruit of the Spirit is love, joy, peace..."
+
+#God gives charisma. #God forms #character. A #gift can appear instantly, #character is formed over years through the #cross, trials, and obedience.
+#Charisma attracts people. #Character sustains the anointing.
+People often follow a charismatic voice, but #God looks at the heart of the minister.
+📖 1 Samuel 16:7 — "The Lord does not look at the things people look at. People look at the outward appearance, but the Lord looks at the heart."
+
+#Charisma can gather crowds,
+but only #character can bear responsibility before God.
+#Charisma can impress. #Character can save.
+
+📖 Matthew 7:22-23 — "Lord, Lord, did we not prophesy in your name...?"
+Then I will tell them plainly, "I never knew you."
+
+You can have strong gifts but lose your relationship with God.
+#Charisma makes a minister popular. #Character makes him faithful.
+📖 Luke 16:10 — "Whoever can be trusted with very little can also be trusted with much."
+
+God is not looking for the bright,
+but the faithful.
+#Charisma can lift you onto the stage. #Character keeps you at the height.
+Many ministers have fallen not because of a lack of gifts, but because of a weak #character.
+
+📖 Proverbs 16:32 — "Better a patient person than a warrior,
+one with self-control than one who takes a city."
+
+#Self-control is a greater power than conquering cities.
+#Charisma is what people see. #Character is what #God knows.
+#Charisma opens the doors of ministry. Character decides whether you stay there. A #gift can make you famous. #Character makes you God's. #God uses gifts, but trusts those who have #character.
+#God is not just looking for charismatic ministers. #God raises people with the character of the Kingdom, gifting them with the charisma of gifts.`
     }
 ];
 
