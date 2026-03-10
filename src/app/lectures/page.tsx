@@ -1,12 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { Play, Clock, Calendar, User, Eye, MessageCircle } from "lucide-react";
+import { Play, Clock, Calendar, User, Eye, MessageCircle, Video, BookOpen } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 import { useState, useEffect } from "react";
 import { ref, get } from "firebase/database";
 import { database } from "@/lib/firebase";
+import { texts } from "./texts/data";
 
 // Real lectures data
 const lectures = [
@@ -78,8 +79,8 @@ const lectures = [
     speakerEn: "Timonishin Anton",
     date: "2025-12-05",
     youtubeId: "w0cRCx5i3OY",
-    description: "Справжнє лідерство не народжується в тиші кабінетів — воно формується у вогні криз. Розгляд біблійних принципів лідерства в час викликів, через приклади Мойсея, Давида, Неемії та Ісуса.",
-    descriptionEn: "True leadership is not born in the silence of offices — it is formed in the fire of crises. Examination of biblical principles of leadership in times of crisis through examples of Moses, David, Nehemiah and Jesus.",
+    description: "Справжнє лідерство не народжується в тиші кабінетів — воно формується у вогні криз. Розгляд біблійних принципів лідерства в час викликів.",
+    descriptionEn: "True leadership is not born in the silence of offices — it is formed in the fire of crises. Biblical principles of leadership in times of crisis.",
     videoUrl: "https://www.youtube.com/embed/w0cRCx5i3OY"
   },
   {
@@ -90,17 +91,15 @@ const lectures = [
     speakerEn: "Serhiy Musevych",
     date: "2026-02-13",
     youtubeId: "EgcoEVfBUUw",
-    description: "Мета створення Біблійної школи uebs.com.ua — поглиблювати пізнання Божого Слово та формувати зрілих, відповідальних і духовно сильних учнів Христа. Лекція Сергія Мусевича про місію та цілі школи.",
-    descriptionEn: "The purpose of the Bible School uebs.com.ua is to deepen the knowledge of God's Word and form mature, responsible, and spiritually strong disciples of Christ. Lecture by Serhiy Musevych on the school's mission and goals.",
+    description: "Мета Біблійної школи — формувати зрілих, відповідальних і духовно сильних учнів Христа. Лекція про місію та цілі школи.",
+    descriptionEn: "The purpose of the Bible School is to form mature, responsible, and spiritually strong disciples of Christ. Lecture on the school's mission and goals.",
     videoUrl: "https://www.youtube.com/embed/EgcoEVfBUUw"
   }
 ];
 
-// Function to get video duration from YouTube thumbnail (placeholder)
+// Helper: video duration map
 const getVideoDuration = (youtubeId: string) => {
-  // In a real app, you would use YouTube API to get duration
-  // For now, return placeholder durations
-  const durations: { [key: string]: string } = {
+  const durations: Record<string, string> = {
     "d1fM8Fl52qc": "2:25:38",
     "DN7ZAsYSq2s": "2:27:57",
     "XDRty1ClGjE": "1:33:31",
@@ -112,17 +111,14 @@ const getVideoDuration = (youtubeId: string) => {
   return durations[youtubeId] || "1:00:00";
 };
 
-// Function to get YouTube thumbnail with fallback
-const getYoutubeThumbnail = (youtubeId: string) => {
-  // Try different quality levels in order of preference
-  // maxresdefault (best) -> sddefault -> hqdefault (fallback)
-  return `https://img.youtube.com/vi/${youtubeId}/sddefault.jpg`;
-};
+const getYoutubeThumbnail = (youtubeId: string) =>
+  `https://img.youtube.com/vi/${youtubeId}/sddefault.jpg`;
 
 export default function LecturesPage() {
   const { t, language } = useLanguage();
   const [isMounted, setIsMounted] = useState(false);
-  const [lectureStats, setLectureStats] = useState<{ [key: string]: { views: number, comments: number } }>({});
+  const [activeTab, setActiveTab] = useState<"videos" | "texts">("videos");
+  const [lectureStats, setLectureStats] = useState<Record<string, { views: number; comments: number }>>({});
 
   useEffect(() => {
     setIsMounted(true);
@@ -130,52 +126,49 @@ export default function LecturesPage() {
   }, []);
 
   const loadLectureStats = async () => {
-    const stats: { [key: string]: { views: number, comments: number } } = {};
-
+    const stats: Record<string, { views: number; comments: number }> = {};
     for (const lecture of lectures) {
       try {
-        const viewsRef = ref(database, `lectures/${lecture.id}/views`);
-        const viewsSnapshot = await get(viewsRef);
-        const views = viewsSnapshot.val() || 0;
-
-        const commentsRef = ref(database, `lectures/${lecture.id}/comments`);
-        const commentsSnapshot = await get(commentsRef);
-        const commentsData = commentsSnapshot.val();
-        const commentsCount = commentsData ? Object.keys(commentsData).length : 0;
-
-        stats[lecture.id] = { views, comments: commentsCount };
-      } catch (error) {
-        console.error(`Error loading stats for ${lecture.id}:`, error);
+        const viewsSnap = await get(ref(database, `lectures/${lecture.id}/views`));
+        const commentsSnap = await get(ref(database, `lectures/${lecture.id}/comments`));
+        const commentsData = commentsSnap.val();
+        stats[lecture.id] = {
+          views: viewsSnap.val() || 0,
+          comments: commentsData ? Object.keys(commentsData).length : 0,
+        };
+      } catch {
         stats[lecture.id] = { views: 0, comments: 0 };
       }
     }
-
     setLectureStats(stats);
   };
 
   const formatDate = (dateString: string) => {
-    if (!isMounted) {
-      const date = new Date(dateString);
-      const day = date.getDate();
-      const month = date.getMonth() + 1;
-      const year = date.getFullYear();
-      return `${day}.${month.toString().padStart(2, '0')}.${year}`;
-    }
-
     const date = new Date(dateString);
-    return date.toLocaleDateString(language === 'uk' ? 'uk-UA' : 'en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
+    if (!isMounted) {
+      return `${date.getDate()}.${String(date.getMonth() + 1).padStart(2, "0")}.${date.getFullYear()}`;
+    }
+    return date.toLocaleDateString(language === "uk" ? "uk-UA" : "en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
     });
   };
+
+  const sortedLectures = [...lectures].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+  const sortedTexts = [...texts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-24">
       <div className="max-w-7xl mx-auto px-6">
+
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -188,78 +181,161 @@ export default function LecturesPage() {
           </p>
         </motion.div>
 
-        {/* Lectures Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[...lectures].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((lecture, index) => (
-            <motion.div
-              key={lecture.id}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-            >
-              {/* Thumbnail */}
-              <div
-                className="relative aspect-video bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center bg-cover bg-center"
-                style={{ backgroundImage: `url(${getYoutubeThumbnail(lecture.youtubeId)})` }}
+        {/* Tab Pills */}
+        <motion.div
+          className="flex justify-center mb-12"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+        >
+          <div className="inline-flex bg-white rounded-2xl shadow border border-slate-100 p-1.5 gap-1">
+            {(["videos", "texts"] as const).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`relative flex items-center gap-2 px-6 py-2.5 rounded-xl font-semibold text-sm transition-colors duration-200 ${activeTab === tab ? "text-white" : "text-slate-500 hover:text-slate-800"
+                  }`}
               >
-                <div className="absolute inset-0 bg-black/30 flex items-center justify-center hover:bg-black/20 transition-colors">
-                  <Play className="w-16 h-16 text-white drop-shadow-lg" />
-                </div>
-                <div className="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-sm flex items-center gap-1">
-                  <Clock className="w-4 h-4" />
-                  {getVideoDuration(lecture.youtubeId)}
-                </div>
-              </div>
+                {activeTab === tab && (
+                  <motion.span
+                    layoutId="tab-pill"
+                    className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl"
+                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10 flex items-center gap-2">
+                  {tab === "videos" ? <Video className="w-4 h-4" /> : <BookOpen className="w-4 h-4" />}
+                  {tab === "videos"
+                    ? language === "uk" ? "Відео" : "Videos"
+                    : language === "uk" ? "Тексти" : "Texts"}
+                </span>
+              </button>
+            ))}
+          </div>
+        </motion.div>
 
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-slate-900 mb-3 line-clamp-2">
-                  {language === 'uk' ? lecture.title : lecture.titleEn}
-                </h3>
-
-                <p className="text-slate-600 mb-4 line-clamp-3">
-                  {language === 'uk' ? lecture.description : lecture.descriptionEn}
-                </p>
-
-                {/* Meta Info */}
-                <div className="space-y-2 mb-6">
-                  <div className="flex items-center gap-2 text-sm text-slate-500">
-                    <User className="w-4 h-4" />
-                    {language === 'uk' ? lecture.speaker : lecture.speakerEn}
-                  </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-500">
-                    <Calendar className="w-4 h-4" />
-                    {formatDate(lecture.date)}
-                    <div className="flex items-center gap-4 text-sm text-slate-500">
-                      <div className="flex items-center gap-1">
-                        <Eye className="w-4 h-4" />
-                        {lectureStats[lecture.id]?.views || 0}
+        {/* Content */}
+        <AnimatePresence mode="wait">
+          {activeTab === "videos" ? (
+            <motion.div
+              key="videos"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.25 }}
+            >
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {sortedLectures.map((lecture, index) => (
+                  <motion.div
+                    key={lecture.id}
+                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.07 }}
+                    whileHover={{ y: -4 }}
+                  >
+                    {/* Thumbnail */}
+                    <div
+                      className="relative aspect-video bg-gradient-to-br from-blue-500 to-purple-600 bg-cover bg-center"
+                      style={{ backgroundImage: `url(${getYoutubeThumbnail(lecture.youtubeId)})` }}
+                    >
+                      <div className="absolute inset-0 bg-black/30 flex items-center justify-center hover:bg-black/20 transition-colors">
+                        <Play className="w-14 h-14 text-white drop-shadow-lg" />
                       </div>
-                      <div className="flex items-center gap-1">
-                        <MessageCircle className="w-4 h-4" />
-                        {lectureStats[lecture.id]?.comments || 0}
+                      <div className="absolute top-3 right-3 bg-black/60 text-white px-2 py-0.5 rounded text-xs flex items-center gap-1">
+                        <Clock className="w-3 h-3" />
+                        {getVideoDuration(lecture.youtubeId)}
                       </div>
                     </div>
-                  </div>
-                </div>
 
-                {/* Watch Button */}
-                <Link href={`/lectures/${lecture.id}`}>
-                  <motion.button
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 rounded-lg hover:shadow-lg transition-shadow duration-300 flex items-center justify-center gap-2"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Play className="w-5 h-5" />
-                    {t("lectures.watch")}
-                  </motion.button>
-                </Link>
+                    {/* Body */}
+                    <div className="p-6 flex flex-col gap-3">
+                      <h3 className="text-lg font-bold text-slate-900 line-clamp-2">
+                        {language === "uk" ? lecture.title : lecture.titleEn}
+                      </h3>
+                      <p className="text-slate-600 text-sm line-clamp-3">
+                        {language === "uk" ? lecture.description : lecture.descriptionEn}
+                      </p>
+                      <div className="flex flex-col gap-1 text-xs text-slate-500">
+                        <span className="flex items-center gap-1.5"><User className="w-3.5 h-3.5" />{language === "uk" ? lecture.speaker : lecture.speakerEn}</span>
+                        <div className="flex items-center justify-between">
+                          <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" />{formatDate(lecture.date)}</span>
+                          <span className="flex items-center gap-3">
+                            <span className="flex items-center gap-1"><Eye className="w-3.5 h-3.5" />{lectureStats[lecture.id]?.views || 0}</span>
+                            <span className="flex items-center gap-1"><MessageCircle className="w-3.5 h-3.5" />{lectureStats[lecture.id]?.comments || 0}</span>
+                          </span>
+                        </div>
+                      </div>
+                      <Link href={`/lectures/${lecture.id}`} className="mt-1">
+                        <motion.button
+                          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-2.5 rounded-lg flex items-center justify-center gap-2 text-sm hover:shadow-lg transition-shadow"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <Play className="w-4 h-4" />
+                          {t("lectures.watch")}
+                        </motion.button>
+                      </Link>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
-          ))}
-        </div>
+          ) : (
+            <motion.div
+              key="texts"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -16 }}
+              transition={{ duration: 0.25 }}
+            >
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {sortedTexts.map((text, index) => (
+                  <motion.div
+                    key={text.id}
+                    className="bg-white rounded-2xl shadow-lg border border-slate-100 overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.07 }}
+                    whileHover={{ y: -4 }}
+                  >
+                    <div className="p-6 flex flex-col gap-4 flex-1">
+                      {/* Icon */}
+                      <div className="w-11 h-11 rounded-xl bg-purple-100 flex items-center justify-center">
+                        <BookOpen className="w-5 h-5 text-purple-600" />
+                      </div>
+
+                      <h3 className="text-lg font-bold text-slate-900 line-clamp-3">
+                        {language === "uk" ? text.title : text.titleEn}
+                      </h3>
+
+                      <p className="text-slate-600 text-sm line-clamp-4 flex-1">
+                        {language === "uk" ? text.description : text.descriptionEn}
+                      </p>
+
+                      <div className="flex flex-col gap-1 text-xs text-slate-500">
+                        <span className="flex items-center gap-1.5"><User className="w-3.5 h-3.5" />{language === "uk" ? text.author : text.authorEn}</span>
+                        <span className="flex items-center gap-1.5"><Calendar className="w-3.5 h-3.5" />{formatDate(text.date)}</span>
+                      </div>
+
+                      <Link href={`/lectures/texts/${text.id}`}>
+                        <motion.button
+                          className="w-full bg-slate-50 text-slate-700 font-semibold py-2.5 rounded-xl border border-slate-200 hover:bg-purple-50 hover:border-purple-200 hover:text-purple-700 transition-colors flex items-center justify-center gap-2 text-sm"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <BookOpen className="w-4 h-4" />
+                          {language === "uk" ? "Читати" : "Read"}
+                        </motion.button>
+                      </Link>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
       </div>
     </div>
   );
