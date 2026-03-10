@@ -4,7 +4,17 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '@/contexts/auth-context';
 import { isUserAdmin } from '@/lib/user-utils';
 import { useRouter } from 'next/navigation';
-import { Loader2 } from 'lucide-react';
+import { Loader2, Users, ChevronDown, ChevronUp, Check, Search, X } from 'lucide-react';
+import { ref, onValue } from 'firebase/database';
+import { database } from '@/lib/firebase';
+
+interface Student {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  format: 'очно' | 'онлайн';
+}
 
 export default function BulkEmailPage() {
   const { user, loading: authLoading } = useAuth();
@@ -24,6 +34,13 @@ export default function BulkEmailPage() {
   const [results, setResults] = useState<any>(null);
   const [error, setError] = useState('');
 
+  // Students state
+  const [students, setStudents] = useState<Student[]>([]);
+  const [studentsLoading, setStudentsLoading] = useState(true);
+  const [showStudentPicker, setShowStudentPicker] = useState(false);
+  const [selectedStudentIds, setSelectedStudentIds] = useState<Set<string>>(new Set());
+  const [studentSearch, setStudentSearch] = useState('');
+
   useEffect(() => {
     if (authLoading) return;
 
@@ -37,9 +54,54 @@ export default function BulkEmailPage() {
         router.push('/');
       } else {
         setIsAdmin(true);
+        // Load students from Firebase
+        const studentsRef = ref(database, 'students');
+        onValue(studentsRef, (snapshot) => {
+          const data = snapshot.val();
+          if (data) {
+            const list = Object.keys(data).map(key => ({ id: key, ...data[key] })) as Student[];
+            setStudents(list.sort((a, b) => `${a.firstName} ${a.lastName}`.localeCompare(`${b.firstName} ${b.lastName}`)));
+          } else {
+            setStudents([]);
+          }
+          setStudentsLoading(false);
+        });
       }
     });
   }, [user, authLoading, router]);
+
+  const filteredStudents = students.filter(s => {
+    const q = studentSearch.toLowerCase();
+    return (
+      s.firstName.toLowerCase().includes(q) ||
+      s.lastName.toLowerCase().includes(q) ||
+      s.email.toLowerCase().includes(q)
+    );
+  });
+
+  const handleToggleStudent = (id: string) => {
+    setSelectedStudentIds(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  };
+
+  const handleSelectAllStudents = () => {
+    if (selectedStudentIds.size === filteredStudents.length && filteredStudents.length > 0) {
+      setSelectedStudentIds(new Set());
+    } else {
+      setSelectedStudentIds(new Set(filteredStudents.map(s => s.id)));
+    }
+  };
+
+  const applySelectedStudents = () => {
+    const selected = students.filter(s => selectedStudentIds.has(s.id));
+    const emails = selected.map(s => s.email).join('\n');
+    setFormData(prev => ({ ...prev, emails }));
+    setShowStudentPicker(false);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -139,8 +201,11 @@ export default function BulkEmailPage() {
 
   if (!isAdmin) return null;
 
+  const allFilteredSelected =
+    filteredStudents.length > 0 && filteredStudents.every(s => selectedStudentIds.has(s.id));
+
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gray-50 py-8 mt-12">
       <div className="max-w-4xl mx-auto px-4">
         <div className="bg-white rounded-lg shadow-md p-6">
           <h1 className="text-3xl font-bold text-gray-800 mb-6">
@@ -183,12 +248,128 @@ export default function BulkEmailPage() {
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Email адреси * (по одному на рядок)
               </label>
+
+              {/* Student Picker Button */}
+              <div className="mb-3">
+                <button
+                  type="button"
+                  onClick={() => setShowStudentPicker(prev => !prev)}
+                  className="flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg hover:bg-blue-100 transition-colors text-sm font-medium"
+                >
+                  <Users className="w-4 h-4" />
+                  Обрати студентів з бази
+                  {showStudentPicker ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                </button>
+              </div>
+
+              {/* Student Picker Panel */}
+              {showStudentPicker && (
+                <div className="mb-3 border border-gray-200 rounded-lg overflow-hidden shadow-sm">
+                  {/* Panel Header */}
+                  <div className="bg-gray-50 px-4 py-3 border-b border-gray-200 flex items-center justify-between">
+                    <span className="text-sm font-semibold text-gray-700">
+                      Студенти ({students.length})
+                      {selectedStudentIds.size > 0 && (
+                        <span className="ml-2 px-2 py-0.5 bg-blue-100 text-blue-700 rounded-full text-xs">
+                          Вибрано: {selectedStudentIds.size}
+                        </span>
+                      )}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={handleSelectAllStudents}
+                      className="text-xs text-blue-600 hover:underline font-medium"
+                    >
+                      {allFilteredSelected ? 'Зняти всіх' : 'Вибрати всіх'}
+                    </button>
+                  </div>
+
+                  {/* Search */}
+                  <div className="px-4 py-2 border-b border-gray-100 relative">
+                    <Search className="absolute left-7 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    <input
+                      type="text"
+                      value={studentSearch}
+                      onChange={e => setStudentSearch(e.target.value)}
+                      placeholder="Пошук студента..."
+                      className="w-full pl-8 pr-8 py-1.5 text-sm border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    />
+                    {studentSearch && (
+                      <button
+                        type="button"
+                        onClick={() => setStudentSearch('')}
+                        className="absolute right-7 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Student List */}
+                  <div className="max-h-56 overflow-y-auto divide-y divide-gray-50">
+                    {studentsLoading ? (
+                      <div className="flex items-center justify-center py-6">
+                        <Loader2 className="w-5 h-5 animate-spin text-blue-500" />
+                      </div>
+                    ) : filteredStudents.length === 0 ? (
+                      <p className="text-center text-sm text-gray-500 py-6">Студентів не знайдено</p>
+                    ) : (
+                      filteredStudents.map(student => {
+                        const checked = selectedStudentIds.has(student.id);
+                        return (
+                          <label
+                            key={student.id}
+                            className={`flex items-center gap-3 px-4 py-2.5 cursor-pointer hover:bg-gray-50 transition-colors ${checked ? 'bg-blue-50' : ''}`}
+                          >
+                            <div className={`w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0 transition-colors ${checked ? 'bg-blue-600 border-blue-600' : 'border-gray-300'}`}>
+                              {checked && <Check className="w-3 h-3 text-white" />}
+                            </div>
+                            <input
+                              type="checkbox"
+                              className="sr-only"
+                              checked={checked}
+                              onChange={() => handleToggleStudent(student.id)}
+                            />
+                            <div className="min-w-0 flex-1">
+                              <p className="text-sm font-medium text-gray-800 truncate">
+                                {student.firstName} {student.lastName}
+                              </p>
+                              <p className="text-xs text-gray-500 truncate">{student.email}</p>
+                            </div>
+                            <span className={`text-xs px-2 py-0.5 rounded-full flex-shrink-0 ${student.format === 'очно' ? 'bg-green-100 text-green-700' : 'bg-blue-100 text-blue-700'}`}>
+                              {student.format}
+                            </span>
+                          </label>
+                        );
+                      })
+                    )}
+                  </div>
+
+                  {/* Apply Button */}
+                  <div className="px-4 py-3 bg-gray-50 border-t border-gray-200 flex items-center justify-between gap-3">
+                    <span className="text-xs text-gray-500">
+                      {selectedStudentIds.size === 0
+                        ? 'Оберіть студентів'
+                        : `${selectedStudentIds.size} email(и) будуть додані`}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={applySelectedStudents}
+                      disabled={selectedStudentIds.size === 0}
+                      className="px-4 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                    >
+                      Застосувати
+                    </button>
+                  </div>
+                </div>
+              )}
+
               <textarea
                 value={formData.emails}
                 onChange={(e) => setFormData({ ...formData, emails: e.target.value })}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 h-32"
                 required
-                placeholder="user1@example.com&#10;user2@example.com&#10;user3@example.com"
+                placeholder={"user1@example.com\nuser2@example.com\nuser3@example.com"}
               />
               <p className="text-sm text-gray-500 mt-1">
                 Всього email адрес: {formData.emails.split('\n').filter(e => e.trim()).length}
