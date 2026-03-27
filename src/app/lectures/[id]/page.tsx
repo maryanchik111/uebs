@@ -952,6 +952,552 @@ The school combines Ukrainian spiritual tradition with European educational stan
 4. Intercultural Connection: Combining Ukrainian spiritual tradition with European and global Biblical initiatives. (1 Corinthians 9:22)`,
     thumbnail: `https://img.youtube.com/vi/EgcoEVfBUUw/maxresdefault.jpg`,
     videoUrl: "https://www.youtube.com/embed/EgcoEVfBUUw"
+  },
+  {
+    id: "how-to-convey-gods-vision",
+    title: "«ЯК ПЕРЕДАВАТИ БАЧЕННЯ БОГА ЛЮДЯМ?» — ІВАН ГАЙДУК",
+    titleEn: "«HOW TO CONVEY GOD'S VISION TO PEOPLE?» — IVAN HAYDUK",
+    speaker: "Іван Гайдук",
+    speakerEn: "Ivan Hayduk",
+    date: "2026-03-06",
+    youtubeId: "jEPRYcjtZSo",
+    description: "🎓 МЕТА СТВОРЕННЯ БІБЛІЙНОЇ ШКОЛИ #UEBSchool ПРИ НАШІЙ СПІЛЬНОТІ slti-church.com. Біблійна школа uebs.com.ua створена для того, щоб поглиблювати пізнання Божого Слова та формувати зрілих, відповідальних і духовно сильних учнів Христа.",
+    descriptionEn: "🎓 THE PURPOSE OF CREATING THE BIBLE SCHOOL #UEBSchool AT OUR COMMUNITY slti-church.com. The Bible school uebs.com.ua was created to deepen the knowledge of God's Word and form mature, responsible and spiritually strong disciples of Christ.",
+    fullDescription: `🎓 **МЕТА СТВОРЕННЯ БІБЛІЙНОЇ ШКОЛИ #UEBSchool ПРИ НАШІЙ СПІЛЬНОТІ slti-church.com #Skyniya_Lyubovi_Istyny**
+
+Біблійна школа uebs.com.ua створена для того, щоб поглиблювати пізнання Божого Слова та формувати зрілих, відповідальних і духовно сильних учнів Христа. Наша мета — не просто передати інформацію, але виховати мислення, характер і спосіб життя, які узгоджені з вченням Писання.
+
+Ми прагнемо, щоб кожний студент:
+ • Зрозумів Біблію як цілісну історію Божого спасіння
+ • Навчився через #ВИВЧЕННЯ_ПИСАННЯ тлумачити Слово Боже правильно, зріло та відповідально
+ • Ріс у духовній мудрості і Христоподібному характері
+ • Умів застосовувати істини Божого Слова у щоденному житті, служінні, сім’ї та професії
+ • Був здатним передавати почуте та пережите іншим, стаючи учнем, який робить учнів
+
+✝️ **Для чого це важливо?**
+
+➡️ Бо #віра зміцнюється від слухання Слова  
+➡️ Бо #церква покликана бути не просто спільнотою почуттів, а спільнотою істини  
+➡️ Бо справжня сила служіння — в глибині пізнання Бога, а не в зовнішній активності  
+➡️ Бо #Біблія — це підстава нашого життя, віри, моральності і покликання  
+
+Біблійна школа #UEBSchool — це місце духовного формування, де:
+ • #Слово_Боже стає основою мислення
+ • #Дух_Святий — джерелом розуміння
+ • #Христос — центром і сенсом життя
+ • #Церква — сім’єю, де we ростемо разом
+
+☝🏻Ми відкрили Біблійну школу, щоб допомагати Божому народові бути глибоким, зрілим і здатним нести світло Євангелія іншим, живучи згідно з істиною Писання.
+
+#UEBSchool 
+Українсько-Європейська Біблійна Школа (UEBS) — це сучасний християнський навчальний заклад, покликаний формувати нове покоління духовних лідерів, богословів, місіонерів та служителів для Церкви та суспільства в Україні, Європі та за її межами. Біблійна Школа, яка поєднує глибоке богослов’я, практичне служіння та європейську освітню модель. Ми готуємо лідерів, які зможуть трансформувати церкву і суспільство через Євангеліє Ісуса Христа.
+
+“І те, чого ти навчився від мене за багатьох свідків, передай вірним людям, які будуть здібні навчити й інших.”
+– 2 Тимофія 2:2
+
+#Місія
+Формування зрілих, освічених і посвячених служителів, здатних тлумачити Боже Слово, проповідувати Євангеліє та впливати на суспільство згідно з Біблійними цінностями. Ми покликані формувати нове покоління посвячених, освічених і духовно зрілих лідерів, здатних нести Слово Боже в помісних церквах, освітніх установах, місіонерських проєктах та у сфері суспільного служіння.
+
+“І поставив Він одних за апостолів, інших за пророків, інших за євангелістів, а інших за пастирів та вчителів, для приготування святих на діло служіння.”– Ефесян 4:11-12
+
+🧭 **Цілі**
+ • Надання ґрунтовної біблійної, богословської та практичної освіти.
+ • Підготовка духовних лідерів до служіння в церкві, місіонерській праці, social ініціативах та християнській освіті.
+ • Побудова міжцерковного, міжкультурного і міжнародного християнського партнерства.
+ • Формування християнського світогляду, що поєднує Біблійність і актуальність у сучасному світі.
+
+📚 **Цінності**
+ • **Біблійність** — Писання як найвищий авторитет у вірі та практиці.
+ • **Освіченість** — Академічна чесність, науковий підхід і відкритість до діалогу.
+ • **Посвячення** — Особиста духовна зрілість та практична посвята служінню.
+ • **Спільнота** — Формування християнської культури взаємоповаги, підтримки й наставництва.
+ • **Місія** — Орієнтація на служіння поза межами аудиторії: церква, суспільство, нація, світ.
+
+🌍 **Контекст і бачення**
+Школа об’єднує українську духовну традицію з європейськими освітніми стандартами. Вона є простором, де:
+ • формується мост між Сходом і Заходом;
+ • готується церква майбутнього покоління;
+ • поширюється Євангеліє на академічному, соціальному та культурному рівнях.
+
+🏛️ **Бачення**
+#UEBSchool прагне стати центром:
+ • богословської думки,
+ • духовного формування,
+ • і практичного служіння,
+що базується на істинах Божого Слова та відкритості до Божого покликання в сучасному світі.
+
+“Нехай Слово Христове вселяється в вас рясно — у всякій премудрості.”
+– Колосян 3:16
+
+**#вивчення_писання**`,
+    fullDescriptionEn: `🎓 **THE PURPOSE OF CREATING THE BIBLE SCHOOL #UEBSchool AT OUR COMMUNITY slti-church.com #Skyniya_Lyubovi_Istyny**
+
+The Bible school uebs.com.ua was created to deepen the knowledge of God's Word and form mature, responsible and spiritually strong disciples of Christ. Our goal is not just to pass on information, but to educate the thinking, character and way of life that are consistent with the teachings of Scripture.
+
+We strive for each student to:
+ • Understand the Bible as a holistic story of God's salvation
+ • Learn through #BIBLE_STUDY to interpret the Word of God correctly, maturely and responsibly
+ • Grow in spiritual wisdom and Christ-like character
+ • Be able to apply the truths of God's Word in daily life, ministry, family and profession
+ • Be able to pass on what they have heard and experienced to others, becoming a disciple who makes disciples
+
+✝️ **Why is this important?**
+
+➡️ Because #faith is strengthened by hearing the Word  
+➡️ Because the #church is called to be not just a community of feelings, but a community of truth  
+➡️ Because the true strength of ministry is in the depth of knowing God, not in outward activity  
+➡️ Because the #Bible is the foundation of our life, faith, morality and calling  
+
+The Bible school #UEBSchool is a place of spiritual formation where:
+ • #God's_Word becomes the basis of thinking
+ • #Holy_Spirit is the source of understanding
+ • #Christ is the center and meaning of life
+ • #Church is a family where we grow together
+
+☝🏻 We opened the Bible School to help God's people be deep, mature and able to carry the light of the Gospel to others, living according to the truth of Scripture.
+
+#UEBSchool 
+The Ukrainian-European Bible School (UEBS) is a modern Christian educational institution called to form a new generation of spiritual leaders, theologians, missionaries and ministers for the Church and society in Ukraine, Europe and beyond. A Bible School that combines deep theology, practical ministry and a European educational model. We prepare leaders who will be able to transform the church and society through the Gospel of Jesus Christ.
+
+"And the things you have heard me say in the presence of many witnesses entrust to reliable people who will also be qualified to teach others."
+– 2 Timothy 2:2
+
+#Mission
+Formation of mature, educated and dedicated ministers capable of interpreting God's Word, preaching the Gospel and influencing society according to Biblical values. We are called to form a new generation of dedicated, educated and spiritually mature leaders capable of carrying the Word of God in local churches, educational institutions, missionary projects and in the field of public service.
+
+"So Christ himself gave the apostles, the prophets, the evangelists, the pastors and teachers, to equip his people for works of service."
+– Ephesians 4:11-12
+
+🧭 **Goals**
+ • Providing thorough biblical, theological and practical education.
+ • Preparing spiritual leaders for ministry in the church, missionary work, social initiatives and Christian education.
+ • Building inter-church, intercultural and international Christian partnership.
+ • Forming a Christian worldview that combines Biblicality and relevance in the modern world.
+
+📚 **Values**
+ • **Biblical** — Scripture as the highest authority in faith and practice.
+ • **Educated** — Academic integrity, scientific approach and openness to dialogue.
+ • **Dedication** — Personal spiritual maturity and practical dedication to service.
+ • **Community** — Forming a Christian culture of mutual respect, support and mentorship.
+ • **Mission** — Orientation to ministry beyond the classroom: church, society, nation, world.
+
+🌍 **Context and Vision**
+The school combines Ukrainian spiritual tradition with European educational standards. It is a space where:
+ • a bridge is formed between East and West;
+ • the church of the future generation is prepared;
+ • the Gospel spreads at academic, social and cultural levels.
+
+🏛️ **Vision**
+#UEBSchool strives to become a center of:
+ • theological thought,
+ • spiritual formation,
+ • and practical ministry,
+based on the truths of God's Word and openness to God's calling in the modern world.
+
+"Let the message of Christ dwell among you richly as you teach and admonish one another with all wisdom."
+– Colossians 3:16
+
+**#bible_study**`,
+    thumbnail: `https://img.youtube.com/vi/jEPRYcjtZSo/maxresdefault.jpg`,
+    videoUrl: "https://www.youtube.com/embed/jEPRYcjtZSo"
+  },
+  {
+    id: "planning-and-strategy-of-vision",
+    title: "«ПЛАНУВАННЯ І СТРАТЕГІЯ ВТІЛЕННЯ БАЧЕННЯ» — ІВАН ГАЙДУК",
+    titleEn: "«PLANNING AND STRATEGY OF VISION REALIZATION» — IVAN HAYDUK",
+    speaker: "Іван Гайдук",
+    speakerEn: "Ivan Hayduk",
+    date: "2026-03-06",
+    youtubeId: "iBvOn4xcNHk",
+    description: "🎓 МЕТА СТВОРЕННЯ БІБЛІЙНОЇ ШКОЛИ #UEBSchool ПРИ НАШІЙ СПІЛЬНОТІ slti-church.com. Біблійна школа uebs.com.ua створена для того, щоб поглиблювати пізнання Божого Слова та формувати зрілих, відповідальних і духовно сильних учнів Христа.",
+    descriptionEn: "🎓 THE PURPOSE OF CREATING THE BIBLE SCHOOL #UEBSchool AT OUR COMMUNITY slti-church.com. The Bible school uebs.com.ua was created to deepen the knowledge of God's Word and form mature, responsible and spiritually strong disciples of Christ.",
+    fullDescription: `🎓 **МЕТА СТВОРЕННЯ БІБЛІЙНОЇ ШКОЛИ #UEBSchool ПРИ НАШІЙ СПІЛЬНОТІ slti-church.com #Skyniya_Lyubovi_Istyny**
+
+Біблійна школа uebs.com.ua створена для того, щоб поглиблювати пізнання Божого Слова та формувати зрілих, відповідальних і духовно сильних учнів Христа. Наша мета — не просто передати інформацію, але виховати мислення, характер і спосіб життя, які узгоджені з вченням Писання.
+
+Ми прагнемо, щоб кожний студент:
+ • Зрозумів Біблію як цілісну історію Божого спасіння
+ • Навчився через #ВИВЧЕННЯ_ПИСАННЯ тлумачити Слово Боже правильно, зріло та відповідально
+ • Ріс у духовній мудрості і Христоподібному характері
+ • Умів застосовувати істини Божого Слова у щоденному житті, служінні, сім’ї та професії
+ • Був здатним передавати почуте та пережите іншим, стаючи учнем, який робить учнів
+
+✝️ **Для чого це важливо?**
+
+➡️ Бо #віра зміцнюється від слухання Слова  
+➡️ Бо #церква покликана бути не просто спільнотою почуттів, а спільнотою істини  
+➡️ Бо справжня сила служіння — в глибині пізнання Бога, а не в зовнішній активності  
+➡️ Бо #Біблія — це підстава нашого життя, віри, моральності і покликання  
+
+Біблійна школа #UEBSchool — це місце духовного формування, де:
+ • #Слово_Боже стає основою мислення
+ • #Дух_Святий — джерелом розуміння
+ • #Христос — центром і сенсом життя
+ • #Церква — сім’єю, де we ростемо разом
+
+☝🏻Ми відкрили Біблійну школу, щоб допомагати Божому народові бути глибоким, зрілим і здатним нести світло Євангелія іншим, живучи згідно з істиною Писання.
+
+#UEBSchool 
+Українсько-Європейська Біблійна Школа (UEBS) — це сучасний християнський навчальний заклад, покликаний формувати нове покоління духовних лідерів, богословів, місіонерів та служителів для Церкви та суспільства в Україні, Європі та за її межами. Біблійна Школа, яка поєднує глибоке богослов’я, практичне служіння та європейську освітню модель. Ми готуємо лідерів, які зможуть трансформувати церкву і суспільство через Євангеліє Ісуса Христа.
+
+“І те, чого ти навчився від мене за багатьох свідків, передай вірним людям, які будуть здібні навчити й інших.”
+– 2 Тимофія 2:2
+
+#Місія
+Формування зрілих, освічених і посвячених служителів, здатних тлумачити Боже Слово, проповідувати Євангеліє та впливати на суспільство згідно з Біблійними цінностями. Ми покликані формувати нове покоління посвячених, освічених і духовно зрілих лідерів, здатних нести Слово Боже в помісних церквах, освітніх установах, місіонерських проєктах та у сфері суспільного служіння.
+
+“І поставив Він одних за апостолів, інших за пророків, інших за євангелістів, а інших за пастирів та вчителів, для приготування святих на діло служіння.”– Ефесян 4:11-12
+
+🧭 **Цілі**
+ • Надання ґрунтовної біблійної, богословської та практичної освіти.
+ • Підготовка духовних лідерів до служіння в церкві, місіонерській праці, social ініціативах та християнській освіті.
+ • Побудова міжцерковного, міжкультурного і міжнародного християнського партнерства.
+ • Формування християнського світогляду, що поєднує Біблійність і актуальність у сучасному світі.
+
+📚 **Цінності**
+ • **Біблійність** — Писання як найвищий авторитет у вірі та практиці.
+ • **Освіченість** — Академічна чесність, науковий підхід і відкритість до діалогу.
+ • **Посвячення** — Особиста духовна зрілість та практична посвята служінню.
+ • **Спільнота** — Формування християнської культури взаємоповаги, підтримки й наставництва.
+ • **Місія** — Орієнтація на служіння поза межами аудиторії: церква, суспільство, нація, світ.
+
+🌍 **Контекст і бачення**
+Школа об’єднує українську духовну традицію з європейськими освітніми стандартами. Вона є простором, де:
+ • формується мост між Сходом і Заходом;
+ • готується церква майбутнього покоління;
+ • поширюється Євангеліє на академічному, соціальному та культурному рівнях.
+
+🏛️ **Бачення**
+#UEBSchool прагне стати центром:
+ • богословської думки,
+ • духовного формування,
+ • і практичного служіння,
+що базується на істинах Божого Слова та відкритості до Божого покликання в сучасному світі.
+
+“Нехай Слово Христове вселяється в вас рясно — у всякій премудрості.”
+– Колосян 3:16
+
+**#вивчення_писання**`,
+    fullDescriptionEn: `🎓 **THE PURPOSE OF CREATING THE BIBLE SCHOOL #UEBSchool AT OUR COMMUNITY slti-church.com #Skyniya_Lyubovi_Istyny**
+
+The Bible school uebs.com.ua was created to deepen the knowledge of God's Word and form mature, responsible and spiritually strong disciples of Christ. Our goal is not just to pass on information, but to educate the thinking, character and way of life that are consistent with the teachings of Scripture.
+
+We strive for each student to:
+ • Understand the Bible as a holistic story of God's salvation
+ • Learn through #BIBLE_STUDY to interpret the Word of God correctly, maturely and responsibly
+ • Grow in spiritual wisdom and Christ-like character
+ • Be able to apply the truths of God's Word in daily life, ministry, family and profession
+ • Be able to pass on what they have heard and experienced to others, becoming a disciple who makes disciples
+
+✝️ **Why is this important?**
+
+➡️ Because #faith is strengthened by hearing the Word  
+➡️ Because the #church is called to be not just a community of feelings, but a community of truth  
+➡️ Because the true strength of ministry is in the depth of knowing God, not in outward activity  
+➡️ Because the #Bible is the foundation of our life, faith, morality and calling  
+
+The Bible school #UEBSchool is a place of spiritual formation where:
+ • #God's_Word becomes the basis of thinking
+ • #Holy_Spirit is the source of understanding
+ • #Christ is the center and meaning of life
+ • #Church is a family where we grow together
+
+☝🏻 We opened the Bible School to help God's people be deep, mature and able to carry the light of the Gospel to others, living according to the truth of Scripture.
+
+#UEBSchool 
+The Ukrainian-European Bible School (UEBS) is a modern Christian educational institution called to form a new generation of spiritual leaders, theologians, missionaries and ministers for the Church and society in Ukraine, Europe and beyond. A Bible School that combines deep theology, practical ministry and a European educational model. We prepare leaders who will be able to transform the church and society through the Gospel of Jesus Christ.
+
+"And the things you have heard me say in the presence of many witnesses entrust to reliable people who will also be qualified to teach others."
+– 2 Timothy 2:2
+
+#Mission
+Formation of mature, educated and dedicated ministers capable of interpreting God's Word, preaching the Gospel and influencing society according to Biblical values. We are called to form a new generation of dedicated, educated and spiritually mature leaders capable of carrying the Word of God in local churches, educational institutions, missionary projects and in the field of public service.
+
+"So Christ himself gave the apostles, the prophets, the evangelists, the pastors and teachers, to equip his people for works of service."
+– Ephesians 4:11-12
+
+🧭 **Goals**
+ • Providing thorough biblical, theological and practical education.
+ • Preparing spiritual leaders for ministry in the church, missionary work, social initiatives and Christian education.
+ • Building inter-church, intercultural and international Christian partnership.
+ • Forming a Christian worldview that combines Biblicality and relevance in the modern world.
+
+📚 **Values**
+ • **Biblical** — Scripture as the highest authority in faith and practice.
+ • **Educated** — Academic integrity, scientific approach and openness to dialogue.
+ • **Dedication** — Personal spiritual maturity and practical dedication to service.
+ • **Community** — Forming a Christian culture of mutual respect, support and mentorship.
+ • **Mission** — Orientation to ministry beyond the classroom: church, society, nation, world.
+
+🌍 **Context and Vision**
+The school combines Ukrainian spiritual tradition with European educational standards. It is a space where:
+ • a bridge is formed between East and West;
+ • the church of the future generation is prepared;
+ • the Gospel spreads at academic, social and cultural levels.
+
+🏛️ **Vision**
+#UEBSchool strives to become a center of:
+ • theological thought,
+ • spiritual formation,
+ • and practical ministry,
+based on the truths of God's Word and openness to God's calling in the modern world.
+
+"Let the message of Christ dwell among you richly as you teach and admonish one another with all wisdom."
+– Colossians 3:16
+
+**#bible_study**`,
+    thumbnail: `https://img.youtube.com/vi/iBvOn4xcNHk/maxresdefault.jpg`,
+    videoUrl: "https://www.youtube.com/embed/iBvOn4xcNHk"
+  },
+  {
+    id: "divine-and-human-nature-of-christ",
+    title: "«БОЖЕСТВЕННА ТА ЛЮДСЬКА ПРИРОДА ХРИСТА» — ДАНІЄЛ КУЧУРЯН",
+    titleEn: "«DIVINE AND HUMAN NATURE OF CHRIST» — DANIEL KUCHURYAN",
+    speaker: "Данієл Кучурян",
+    speakerEn: "Daniel Kuchuryan",
+    date: "2026-03-13",
+    youtubeId: "-hH2ahxUeuI",
+    description: "🎓 МЕТА СТВОРЕННЯ БІБЛІЙНОЇ ШКОЛИ #UEBSchool ПРИ НАШІЙ СПІЛЬНОТІ slti-church.com. Біблійна школа uebs.com.ua створена для того, щоб поглиблювати пізнання Божого Слова та формувати зрілих, відповідальних і духовно сильних учнів Христа.",
+    descriptionEn: "🎓 THE PURPOSE OF CREATING THE BIBLE SCHOOL #UEBSchool AT OUR COMMUNITY slti-church.com. The Bible school uebs.com.ua was created to deepen the knowledge of God's Word and form mature, responsible and spiritually strong disciples of Christ.",
+    fullDescription: `🎓 **МЕТА СТВОРЕННЯ БІБЛІЙНОЇ ШКОЛИ #UEBSchool ПРИ НАШІЙ СПІЛЬНОТІ slti-church.com #Skyniya_Lyubovi_Istyny**
+
+Біблійна школа uebs.com.ua створена для того, щоб поглиблювати пізнання Божого Слова та формувати зрілих, відповідальних і духовно сильних учнів Христа. Наша мета — не просто передати інформацію, але виховати мислення, характер і спосіб життя, які узгоджені з вченням Писання.
+
+Ми прагнемо, щоб кожний студент:
+ • Зрозумів Біблію як цілісну історію Божого спасіння
+ • Навчився через #ВИВЧЕННЯ_ПИСАННЯ тлумачити Слово Боже правильно, зріло та відповідально
+ • Ріс у духовній мудрості і Христоподібному характері
+ • Умів застосовувати істини Божого Слова у щоденному житті, служінні, сім’ї та професії
+ • Був здатним передавати почуте та пережите іншим, стаючи учнем, який робить учнів
+
+✝️ **Для чого це важливо?**
+
+➡️ Бо #віра зміцнюється від слухання Слова  
+➡️ Бо #церква покликана бути не просто спільнотою почуттів, а спільнотою істини  
+➡️ Бо справжня сила служіння — в глибині пізнання Бога, а не в зовнішній активності  
+➡️ Бо #Біблія — це підстава нашого життя, віри, моральності і покликання  
+
+Біблійна школа #UEBSchool — це місце духовного формування, де:
+ • #Слово_Боже стає основою мислення
+ • #Дух_Святий — джерелом розуміння
+ • #Христос — центром і сенсом життя
+ • #Церква — сім’єю, де we ростемо разом
+
+☝🏻Ми відкрили Біблійну школу, щоб допомагати Божому народові бути глибоким, зрілим і здатним нести світло Євангелія іншим, живучи згідно з істиною Писання.
+
+#UEBSchool 
+Українсько-Європейська Біблійна Школа (UEBS) — це сучасний християнський навчальний заклад, покликаний формувати нове покоління духовних лідерів, богословів, місіонерів та служителів для Церкви та суспільства в Україні, Європі та за її межами. Біблійна Школа, яка поєднує глибоке богослов’я, практичне служіння та європейську освітню модель. Ми готуємо лідерів, які зможуть трансформувати церкву і суспільство через Євангеліє Ісуса Христа.
+
+“І те, чого ти навчився від мене за багатьох свідків, передай вірним людям, які будуть здібні навчити й інших.”
+– 2 Тимофія 2:2
+
+#Місія
+Формування зрілих, освічених і посвячених служителів, здатних тлумачити Боже Слово, проповідувати Євангеліє та впливати на суспільство згідно з Біблійними цінностями. Ми покликані формувати нове покоління посвячених, освічених і духовно зрілих лідерів, здатних нести Слово Боже в помісних церквах, освітніх установах, місіонерських проєктах та у сфері суспільного служіння.
+
+“І поставив Він одних за апостолів, інших за пророків, інших за євангелістів, а інших за пастирів та вчителів, для приготування святих на діло служіння.”– Ефесян 4:11-12
+
+🧭 **Цілі**
+ • Надання ґрунтовної біблійної, богословської та практичної освіти.
+ • Підготовка духовних лідерів до служіння в церкві, місіонерській праці, social ініціативах та християнській освіті.
+ • Побудова міжцерковного, міжкультурного і міжнародного християнського партнерства.
+ • Формування християнського світогляду, що поєднує Біблійність і актуальність у сучасному світі.
+
+📚 **Цінності**
+ • **Біблійність** — Писання як найвищий авторитет у вірі та практиці.
+ • **Освіченість** — Академічна чесність, науковий підхід і відкритість до діалогу.
+ • **Посвячення** — Особиста духовна зрілість та практична посвята служінню.
+ • **Спільнота** — Формування християнської культури взаємоповаги, підтримки й наставництва.
+ • **Місія** — Орієнтація на служіння поза межами аудиторії: церква, суспільство, нація, світ.
+
+🌍 **Контекст і бачення**
+Школа об’єднує українську духовну tradition з європейськими освітніми стандартами. Вона є простором, де:
+ • формується мост між Сходом і Заходом;
+ • готується церква майбутнього покоління;
+ • поширюється Євангеліє на академічному, соціальному та культурному рівнях.
+
+🏛️ **Бачення**
+#UEBSchool прагне стати центром:
+ • богословської думки,
+ • духовного формування,
+ • і практичного служіння,
+що базується на істинах Божого Слова та відкритості до Божого покликання в сучасному світі.
+
+“Нехай Слово Христове вселяється в вас рясно — у всякій премудрості.”
+– Колосян 3:16
+
+**#вивчення_писання**`,
+    fullDescriptionEn: `🎓 **THE PURPOSE OF CREATING THE BIBLE SCHOOL #UEBSchool AT OUR COMMUNITY slti-church.com #Skyniya_Lyubovi_Istyny**
+
+The Bible school uebs.com.ua was created to deepen the knowledge of God's Word and form mature, responsible and spiritually strong disciples of Christ. Our goal is not just to pass on information, but to educate the thinking, character and way of life that are consistent with the teachings of Scripture.
+
+We strive for each student to:
+ • Understand the Bible as a holistic story of God's salvation
+ • Learn through #BIBLE_STUDY to interpret the Word of God correctly, maturely and responsibly
+ • Grow in spiritual wisdom and Christ-like character
+ • Be able to apply the truths of God's Word in daily life, ministry, family and profession
+ • Be able to pass on what they have heard and experienced to others, becoming a disciple who makes disciples
+
+✝️ **Why is this important?**
+
+➡️ Because #faith is strengthened by hearing the Word  
+➡️ Because the #church is called to be not just a community of feelings, but a community of truth  
+➡️ Because the true strength of ministry is in the depth of knowing God, not in outward activity  
+➡️ Because the #Bible is the foundation of our life, faith, morality and calling  
+
+The Bible school #UEBSchool is a place of spiritual formation where:
+ • #God's_Word becomes the basis of thinking
+ • #Holy_Spirit is the source of understanding
+ • #Christ is the center and meaning of life
+ • #Church is a family where we grow together
+
+☝🏻 We opened the Bible School to help God's people be deep, mature and able to carry the light of the Gospel to others, living according to the truth of Scripture.
+
+#UEBSchool 
+The Ukrainian-European Bible School (UEBS) is a modern Christian educational institution called to form a new generation of spiritual leaders, theologians, missionaries and ministers for the Church and society in Ukraine, Europe and beyond. A Bible School that combines deep theology, practical ministry and a European educational model. We prepare leaders who will be able to transform the church and society through the Gospel of Jesus Christ.
+
+"And the things you have heard me say in the presence of many witnesses entrust to reliable people who will also be qualified to teach others."
+– 2 Timothy 2:2
+
+#Mission
+Formation of mature, educated and dedicated ministers capable of interpreting God's Word, preaching the Gospel and influencing society according to Biblical values. We are called to form a new generation of dedicated, educated and spiritually mature leaders capable of carrying the Word of God in local churches, educational institutions, missionary projects and in the field of public service.
+
+"So Christ himself gave the apostles, the prophets, the evangelists, the pastors and teachers, to equip his people for works of service."
+– Ephesians 4:11-12
+
+🧭 **Goals**
+ • Providing thorough biblical, theological and practical education.
+ • Preparing spiritual leaders for ministry in the church, missionary work, social initiatives and Christian education.
+ • Building inter-church, intercultural and international Christian partnership.
+ • Forming a Christian worldview that combines Biblicality and relevance in the modern world.
+
+📚 **Values**
+ • **Biblical** — Scripture as the highest authority in faith and practice.
+ • **Educated** — Academic integrity, scientific approach and openness to dialogue.
+ • **Dedication** — Personal spiritual maturity and practical dedication to service.
+ • **Community** — Forming a Christian culture of mutual respect, support and mentorship.
+ • **Mission** — Orientation to ministry beyond the classroom: church, society, nation, world.
+
+🌍 **Context and Vision**
+The school combines Ukrainian spiritual tradition with European educational standards. It is a space where:
+ • a bridge is formed between East and West;
+ • the church of the future generation is prepared;
+ • the Gospel spreads at academic, social and cultural levels.
+
+🏛️ **Vision**
+#UEBSchool strives to become a center of:
+ • theological thought,
+ • spiritual formation,
+ • and practical ministry,
+based on the truths of God's Word and openness to God's calling in the modern world.
+
+"Let the message of Christ dwell among you richly as you teach and admonish one another with all wisdom."
+– Colossians 3:16
+
+**#bible_study**`,
+    thumbnail: `https://img.youtube.com/vi/-hH2ahxUeuI/maxresdefault.jpg`,
+    videoUrl: "https://www.youtube.com/embed/-hH2ahxUeuI"
+  },
+  {
+    id: "christology-two-natures-of-jesus-christ",
+    title: "«ХРИСТОЛОГІЯ - ДВІ ПРИРОДИ ІСУСА ХРИСТА» — ДАНІЄЛ КУЧУРЯН",
+    titleEn: "«CHRISTOLOGY - TWO NATURES OF JESUS CHRIST» — DANIEL KUCHURYAN",
+    speaker: "Данієл Кучурян",
+    speakerEn: "Daniel Kuchuryan",
+    date: "2026-03-13",
+    youtubeId: "5g2XqLyvSs4",
+    description: "🎓 МЕТА СТВОРЕННЯ БІБЛІЙНОЇ ШКОЛИ #UEBSchool ПРИ НАШІЙ СПІЛЬНОТІ slti-church.com. Біблійна школа uebs.com.ua створена для того, щоб поглиблювати пізнання Божого Слова та формувати зрілих, відповідальних і духовно сильних учнів Христа.",
+    descriptionEn: "🎓 THE PURPOSE OF CREATING THE BIBLE SCHOOL #UEBSchool AT OUR COMMUNITY slti-church.com. The Bible school uebs.com.ua was created to deepen the knowledge of God's Word and form mature, responsible and spiritually strong disciples of Christ.",
+    fullDescription: `🎓 **МЕТА СТВОРЕННЯ БІБЛІЙНОЇ ШКОЛИ #UEBSchool ПРИ НАШІЙ СПІЛЬНОТІ slti-church.com #Skyniya_Lyubovi_Iystyny**
+
+Біблійна школа uebs.com.ua створена для того, щоб поглиблювати пізнання Божого Слова та формувати зрілих, відповідальних і духовно сильних учнів Христа. Наша мета — не просто передати інформацію, але виховати мислення, характер і спосіб життя, які узгоджені з вченням Писання.
+
+Ми прагнемо, щоб кожний студент:
+ • Зрозумів Біблію як цілісну історію Божого спасіння
+ • Навчився через #ВИВЧЕННЯ_ПИСАННЯ тлумачити Слово Боже правильно, зріло та відповідально
+ • Ріс у духовній мудрості і Христоподібному характері
+ • Умів застосовувати істини Божого Слова у щоденному житті, служінні, сім’ї та професії
+ • Був здатним передавати почуте та пережите іншим, стаючи учнем, який робить учнів
+
+✝️ **Для чого це важливо?**
+
+➡️ Бо #віра зміцнюється від слухання Слова  
+➡️ Бо #церква покликана бути не просто спільнотою почуттів, а спільнотою істини  
+➡️ Бо справжня сила служіння — в глибині пізнання Бога, а не в зовнішній активності  
+➡️ Бо #Біблія — це підстава нашого життя, віри, моральності і покликання  
+
+Біблійна школа #UEBSchool — це місце духовного формування, де:
+ • #Слово_Боже стає основою мислення
+ • #Дух_Святий — джерелом розуміння
+ • #Христос — центром і сенсом життя
+ • #Церква — сім’єю, де we ростемо разом
+
+☝🏻Ми відкрили Біблійну школу, щоб допомагати Божому народові бути глибоким, зрілим і здатним нести світло Євангеліє іншим, живучи згідно з істиною Писання.
+
+#UEBSchool 
+Українсько-Європейська Біблійна Школа (UEBS) — це сучасний християнський навчальний заклад, покликаний формувати нове покоління духовних лідерів, богословів, місіонерів та служителів для Церкви та суспільства в Україні, Європі та за її межами. Біблійна Школа, яка поєднує глибоке богослов’я, практичне служіння та європейську освітню модель. Ми готуємо лідерів, які зможуть трансформувати церкву і суспільство через Євангеліє Ісуса Христа.
+
+“І те, чого ти навчився від мене за багатьох свідків, передай вірним людям, які будуть здібні навчити й інших.”
+– 2 Тимофія 2:2
+
+#Місія
+Формування зрілих, освічених і посвячених служителів, здатних тлумачити Боже Слово, проповідувати Євангеліє та впливати на суспільство згідно з Біблійними цінностями. Ми покликані формувати нове покоління посвячених, освічених і духовно зрілих лідерів, здатних нести Слово Боже в помісних церквах, освітніх установах, місіонерських проєктах та у сфері суспільного служіння.
+
+“І поставив Він одних за апостолів, інших за пророків, інших за євангелістів, а інших за пастирів та вчителів, для приготування святих на діло служіння.”– Ефесян 4:11-12
+
+🧭 **Цілі**
+ • Надання ґрунтовної біблійної, богословської та практичної освіти.
+ • Підготовка духовних лідерів до служіння в церкві, місіонерській праці, social ініціативах та християнській освіті.
+ • Побудова міжцерковного, міжкультурного і міжнародного християнського партнерства.
+ • Формування християнського світогляду, що поєднує Біблійність і актуальність у сучасному світі.
+
+**#вивчення_писання**`,
+    fullDescriptionEn: `🎓 **THE PURPOSE OF CREATING THE BIBLE SCHOOL #UEBSchool AT OUR COMMUNITY slti-church.com #Skyniya_Lyubovi_Istyny**
+
+The Bible school uebs.com.ua was created to deepen the knowledge of God's Word and form mature, responsible and spiritually strong disciples of Christ. Our goal is not just to pass on information, but to educate the thinking, character and way of life that are consistent with the teachings of Scripture.
+
+We strive for each student to:
+ • Understand the Bible as a holistic story of God's salvation
+ • Learn through #BIBLE_STUDY to interpret the Word of God correctly, maturely and responsibly
+ • Grow in spiritual wisdom and Christ-like character
+ • Be able to apply the truths of God's Word in daily life, ministry, family and profession
+ • Be able to pass on what they have heard and experienced to others, becoming a disciple who makes disciples
+
+✝️ **Why is this important?**
+
+➡️ Because #faith is strengthened by hearing the Word  
+➡️ Because the #church is called to be not just a community of feelings, but a community of truth  
+➡️ Because the true strength of ministry is in the depth of knowing God, not in outward activity  
+➡️ Because the #Bible is the foundation of our life, faith, morality and calling  
+
+The Bible school #UEBSchool is a place of spiritual formation where:
+ • #God's_Word becomes the basis of thinking
+ • #Holy_Spirit is the source of understanding
+ • #Christ is the center and meaning of life
+ • #Church is a family where we grow together
+
+☝🏻 We opened the Bible School to help God's people be deep, mature and able to carry the light of the Gospel to others, living according to the truth of Scripture.
+
+#UEBSchool 
+The Ukrainian-European Bible School (UEBS) is a modern Christian educational institution called to form a new generation of spiritual leaders, theologians, missionaries and ministers for the Church and society in Ukraine, Europe and beyond. A Bible School that combines deep theology, practical ministry and a European educational model. We prepare leaders who will be able to transform the church and society through the Gospel of Jesus Christ.
+
+"And the things you have heard me say in the presence of many witnesses entrust to reliable people who will also be qualified to teach others."
+– 2 Timothy 2:2
+
+#Mission
+Formation of mature, educated and dedicated ministers capable of interpreting God's Word, preaching the Gospel and influencing society according to Biblical values. We are called to form a new generation of dedicated, educated and spiritually mature leaders capable of carrying the Word of God in local churches, educational institutions, missionary projects and in the field of public service.
+
+"So Christ himself gave the apostles, the prophets, the evangelists, the pastors and teachers, to equip his people for works of service."
+– Ephesians 4:11-12
+
+🧭 **Goals**
+ • Providing thorough biblical, theological and practical education.
+ • Preparing spiritual leaders for ministry in the church, missionary work, social initiatives and Christian education.
+ • Building inter-church, intercultural and international Christian partnership.
+ • Forming a Christian worldview that combines Biblicality and relevance in the modern world.
+
+**#bible_study**`,
+    thumbnail: `https://img.youtube.com/vi/5g2XqLyvSs4/maxresdefault.jpg`,
+    videoUrl: "https://www.youtube.com/embed/5g2XqLyvSs4"
   }
 ];
 
@@ -964,7 +1510,11 @@ const getVideoDuration = (youtubeId: string) => {
     "0ak_EHjpIYA": "1:12:25",
     "1DFuvUa-8NQ": "2:01:17",
     "w0cRCx5i3OY": "1:25:02",
-    "EgcoEVfBUUw": "59:40"
+    "EgcoEVfBUUw": "59:40",
+    "jEPRYcjtZSo": "57:35",
+    "iBvOn4xcNHk": "1:29:45",
+    "-hH2ahxUeuI": "1:09:09",
+    "5g2XqLyvSs4": "1:15:25"
   };
   return durations[youtubeId] || "1:00:00";
 };

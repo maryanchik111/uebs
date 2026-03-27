@@ -94,6 +94,54 @@ const lectures = [
     description: "Мета Біблійної школи — формувати зрілих, відповідальних і духовно сильних учнів Христа. Лекція про місію та цілі школи.",
     descriptionEn: "The purpose of the Bible School is to form mature, responsible, and spiritually strong disciples of Christ. Lecture on the school's mission and goals.",
     videoUrl: "https://www.youtube.com/embed/EgcoEVfBUUw"
+  },
+  {
+    id: "how-to-convey-gods-vision",
+    title: "«ЯК ПЕРЕДАВАТИ БАЧЕННЯ БОГА ЛЮДЯМ?» — ІВАН ГАЙДУК",
+    titleEn: "«HOW TO CONVEY GOD'S VISION TO PEOPLE?» — IVAN HAYDUK",
+    speaker: "Іван Гайдук",
+    speakerEn: "Ivan Hayduk",
+    date: "2026-03-06",
+    youtubeId: "jEPRYcjtZSo",
+    description: "🎓 МЕТА СТВОРЕННЯ БІБЛІЙНОЇ ШКОЛИ #UEBSchool ПРИ НАШІЙ СПІЛЬНОТІ slti-church.com. Біблійна школа uebs.com.ua створена для того, щоб поглиблювати пізнання Божого Слова та формувати зрілих, відповідальних і духовно сильних учнів Христа.",
+    descriptionEn: "🎓 THE PURPOSE OF CREATING THE BIBLE SCHOOL #UEBSchool AT OUR COMMUNITY slti-church.com. The Bible school uebs.com.ua was created to deepen the knowledge of God's Word and form mature, responsible and spiritually strong disciples of Christ.",
+    videoUrl: "https://www.youtube.com/embed/jEPRYcjtZSo"
+  },
+  {
+    id: "planning-and-strategy-of-vision",
+    title: "«ПЛАНУВАННЯ І СТРАТЕГІЯ ВТІЛЕННЯ БАЧЕННЯ» — ІВАН ГАЙДУК",
+    titleEn: "«PLANNING AND STRATEGY OF VISION REALIZATION» — IVAN HAYDUK",
+    speaker: "Іван Гайдук",
+    speakerEn: "Ivan Hayduk",
+    date: "2026-03-06",
+    youtubeId: "iBvOn4xcNHk",
+    description: "🎓 МЕТА СТВОРЕННЯ БІБЛІЙНОЇ ШКОЛИ #UEBSchool ПРИ НАШІЙ СПІЛЬНОТІ slti-church.com. Біблійна школа uebs.com.ua створена для того, щоб поглиблювати пізнання Божого Слова та формувати зрілих, відповідальних і духовно сильних учнів Христа.",
+    descriptionEn: "🎓 THE PURPOSE OF CREATING THE BIBLE SCHOOL #UEBSchool AT OUR COMMUNITY slti-church.com. The Bible school uebs.com.ua was created to deepen the knowledge of God's Word and form mature, responsible and spiritually strong disciples of Christ.",
+    videoUrl: "https://www.youtube.com/embed/iBvOn4xcNHk"
+  },
+  {
+    id: "divine-and-human-nature-of-christ",
+    title: "«БОЖЕСТВЕННА ТА ЛЮДСЬКА ПРИРОДА ХРИСТА» — ДАНІЄЛ КУЧУРЯН",
+    titleEn: "«DIVINE AND HUMAN NATURE OF CHRIST» — DANIEL KUCHURYAN",
+    speaker: "Данієл Кучурян",
+    speakerEn: "Daniel Kuchuryan",
+    date: "2026-03-13",
+    youtubeId: "-hH2ahxUeuI",
+    description: "🎓 МЕТА СТВОРЕННЯ БІБЛІЙНОЇ ШКОЛИ #UEBSchool ПРИ НАШІЙ СПІЛЬНОТІ slti-church.com. Біблійна школа uebs.com.ua створена для того, щоб поглиблювати пізнання Божого Слова та формувати зрілих, відповідальних і духовно сильних учнів Христа.",
+    descriptionEn: "🎓 THE PURPOSE OF CREATING THE BIBLE SCHOOL #UEBSchool AT OUR COMMUNITY slti-church.com. The Bible school uebs.com.ua was created to deepen the knowledge of God's Word and form mature, responsible and spiritually strong disciples of Christ.",
+    videoUrl: "https://www.youtube.com/embed/-hH2ahxUeuI"
+  },
+  {
+    id: "christology-two-natures-of-jesus-christ",
+    title: "«ХРИСТОЛОГІЯ - ДВІ ПРИРОДИ ІСУСА ХРИСТА» — ДАНІЄЛ КУЧУРЯН",
+    titleEn: "«CHRISTOLOGY - TWO NATURES OF JESUS CHRIST» — DANIEL KUCHURYAN",
+    speaker: "Данієл Кучурян",
+    speakerEn: "Daniel Kuchuryan",
+    date: "2026-03-13",
+    youtubeId: "5g2XqLyvSs4",
+    description: "🎓 МЕТА СТВОРЕННЯ БІБЛІЙНОЇ ШКОЛИ #UEBSchool ПРИ НАШІЙ СПІЛЬНОТІ slti-church.com. Біблійна школа uebs.com.ua створена для того, щоб поглиблювати пізнання Божого Слова та формувати зрілих, відповідальних і духовно сильних учнів Христа.",
+    descriptionEn: "🎓 THE PURPOSE OF CREATING THE BIBLE SCHOOL #UEBSchool AT OUR COMMUNITY slti-church.com. The Bible school uebs.com.ua was created to deepen the knowledge of God's Word and form mature, responsible and spiritually strong disciples of Christ.",
+    videoUrl: "https://www.youtube.com/embed/5g2XqLyvSs4"
   }
 ];
 
@@ -106,7 +154,11 @@ const getVideoDuration = (youtubeId: string) => {
     "0ak_EHjpIYA": "1:12:25",
     "1DFuvUa-8NQ": "2:01:17",
     "w0cRCx5i3OY": "1:25:02",
-    "EgcoEVfBUUw": "59:40"
+    "EgcoEVfBUUw": "59:40",
+    "jEPRYcjtZSo": "57:35",
+    "iBvOn4xcNHk": "1:29:45",
+    "-hH2ahxUeuI": "1:09:09",
+    "5g2XqLyvSs4": "1:15:25"
   };
   return durations[youtubeId] || "1:00:00";
 };
