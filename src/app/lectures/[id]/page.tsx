@@ -1496,8 +1496,164 @@ Formation of mature, educated and dedicated ministers capable of interpreting Go
  • Forming a Christian worldview that combines Biblicality and relevance in the modern world.
 
 **#bible_study**`,
-    thumbnail: `https://img.youtube.com/vi/5g2XqLyvSs4/maxresdefault.jpg`,
-    videoUrl: "https://www.youtube.com/embed/5g2XqLyvSs4"
+  },
+  {
+    id: "marriage-by-creators-design",
+    title: "«ПОДРУЖЖЯ ЗА ЗАДУМОМ ТВОРЦЯ» — ЛЮБОМИР ТУРЧАК",
+    titleEn: "«MARRIAGE BY THE CREATOR'S DESIGN» — LYUBOMYR TURCHAK",
+    speaker: "Любомир Турчак",
+    speakerEn: "Lyubomyr Turchak",
+    date: "2026-05-01",
+    youtubeId: "8BEDpNaLaKo",
+    description: "Розгляд біблійної моделі подружжя, задуму Творця для чоловіка та жінки, а також засад щасливого сімейного життя.",
+    descriptionEn: "Examination of the biblical model of marriage, the Creator's design for man and woman, and the principles of a happy family life.",
+    fullDescription: `✝️ **Подружжя за задумом Творця**
+
+Сім'я — це перший інститут, встановлений Богом на землі. Це не просто людська домовленість, а священний союз, який відображає стосунки Христа та Церкви.
+
+В нашій Біблійній Школі uebs.com.ua відбулася особлива лекція на тему **"Подружжя за задумом Творця"** зі спікером **Любомиром Турчаком**.
+
+---
+
+📖 **Основні аспекти Божого задуму для сім'ї:**
+
+1️⃣ **Початок у Бозі**
+Подружжя було створене в Едемі як досконалий союз чоловіка та жінки. Бог є автором сім'ї, і тільки Його "інструкція" може зробити її щасливою.
+
+2️⃣ **Єдність і завіт**
+*"І стануть обоє вони одним тілом"* (Бут. 2:24). Це не тільки фізична близькість, а повна єдність духу, душі та тіла, заснована на завіті вірності.
+
+3️⃣ **Ролі в подружжі**
+Розгляд біблійних принципів ролі чоловіка як голови, що любить жертовно, та дружини як помічниці, що поважає та підтримує.
+
+4️⃣ **Дзеркало стосунків з Богом**
+Сім'я — це місце, де ми вчимося любити, прощати та служити так, як це робить Бог.
+
+---
+
+🙏 **Поради для міцної сім'ї:**
+
+✅ **Будуйте на Скелі** — нехай Слово Боже буде фундаментом вашого дому.
+✅ **Спілкуйтеся відкрито** — щирість і молитва разом долають будь-які кризи.
+✅ **Вчіться прощати** — немає ідеальних людей, але є ті, хто вміє милувати.
+
+---
+
+🌿 *"Сім'я — це не просто співіснування, а спільний шлях до Бога, де двоє стають силою для Його Царства."*`,
+    fullDescriptionEn: `✝️ **Marriage by the Creator's Design**
+
+The family is the first institution established by God on earth. It is not just a human agreement, but a sacred union that reflects the relationship between Christ and the Church.
+
+At our Bible School uebs.com.ua, there was a special lecture on the topic of **"Marriage by the Creator's Design"** with speaker **Lyubomyr Turchak**.
+
+---
+
+📖 **Key Aspects of God's Design for Family:**
+
+1️⃣ **Beginning in God**
+Marriage was created in Eden as a perfect union of man and woman. God is the author of the family, and only His "instruction" can make it happy.
+
+2️⃣ **Unity and Covenant**
+*"And the two will become one flesh"* (Gen. 2:24). This is not only physical closeness, but total unity of spirit, soul, and body, based on a covenant of faithfulness.
+
+3️⃣ **Roles in Marriage**
+Examination of biblical principles of the husband's role as a head who loves sacrificially, and the wife's role as a helper who respects and supports.
+
+4️⃣ **A Mirror of Relationship with God**
+The family is a place where we learn to love, forgive, and serve as God does.
+
+---
+
+🙏 **Tips for a Strong Family:**
+
+✅ **Build on the Rock** — let the Word of God be the foundation of your home.
+✅ **Communicate Openly** — sincerity and prayer together overcome any crises.
+✅ **Learn to Forgive** — there are no perfect people, but there are those who know how to show mercy.
+
+---
+
+🌿 *"Family is not just cohabitation, but a shared journey to God, where two become a force for His Kingdom."*`,
+    thumbnail: `https://img.youtube.com/vi/8BEDpNaLaKo/maxresdefault.jpg`,
+    videoUrl: "https://www.youtube.com/embed/8BEDpNaLaKo"
+  },
+  {
+    id: "choosing-a-life-partner",
+    title: "«ВИБІР СУПУТНИКА ЖИТТЯ» — ЛЮБОМИР ТУРЧАК",
+    titleEn: "«CHOOSING A LIFE PARTNER» — LYUBOMYR TURCHAK",
+    speaker: "Любомир Турчак",
+    speakerEn: "Lyubomyr Turchak",
+    date: "2026-05-01",
+    youtubeId: "Ia9CaAPlt5I",
+    description: "Роздуми про важливість правильного вибору супутника життя, біблійні критерії та духовну підготовку до шлюбу.",
+    descriptionEn: "Reflections on the importance of choosing the right life partner, biblical criteria, and spiritual preparation for marriage.",
+    fullDescription: `✝️ **Вибір супутника життя**
+
+Вибір супутника життя — це одне з найважливіших рішень, яке визначає майбутнє людини, її служіння та щастя. Як зробити цей вибір мудро, спираючись на Божі принципи?
+
+В нашій Біблійній Школі uebs.com.ua відбулася важлива лекція на тему **"Вибір супутника життя"** зі спікером **Любомиром Турчаком**.
+
+---
+
+📖 **Ключові аспекти вибору:**
+
+1️⃣ **Підготовка власного серця**
+Перш ніж шукати "того самого" або "ту саму", важливо самому стати людиною, яка готова до зрілих стосунків. Шлюб — це не пошук того, хто зробить тебе щасливим, а готовність зробити щасливим іншого.
+
+2️⃣ **Біблійні критерії**
+Розгляд духовних якостей, на які варто звертати увагу: вірність Богу, характер, спільні цінності та бачення майбутнього.
+
+3️⃣ **Роль молитви та Божого керівництва**
+Бог зацікавлений у нашому щасті. Важливо шукати Його волі та миру в серці при прийнятті рішення.
+
+4️⃣ **Уникнення емоційних пасток**
+Як розрізнити закоханість від справжньої любові та не поспішати з рішеннями, які мають вічне значення.
+
+---
+
+🙏 **Поради для молоді:**
+
+✅ **Не поспішайте** — Божий час завжди найкращий.
+✅ **Слухайте поради мудрих** — батьків, наставників та зрілих друзів.
+✅ **Дивіться на плоди** — характер проявляється в діях, а не в словах.
+
+---
+
+🌿 *"Правильний вибір супутника — це коли двоє дивляться не один на одного, а в одному напрямку — на Бога."*`,
+    fullDescriptionEn: `✝️ **Choosing a Life Partner**
+
+Choosing a life partner is one of the most important decisions that determines a person's future, their ministry, and happiness. How to make this choice wisely, based on God's principles?
+
+At our Bible School uebs.com.ua, there was an important lecture on the topic of **"Choosing a Life Partner"** with speaker **Lyubomyr Turchak**.
+
+---
+
+📖 **Key Aspects of Choice:**
+
+1️⃣ **Preparing Your Own Heart**
+Before looking for "the one," it's important to become a person who is ready for a mature relationship. Marriage is not about finding someone who will make you happy, but about being ready to make someone else happy.
+
+2️⃣ **Biblical Criteria**
+Examination of spiritual qualities to look for: faithfulness to God, character, shared values, and vision for the future.
+
+3️⃣ **The Role of Prayer and God's Guidance**
+God is interested in our happiness. It's important to seek His will and peace in the heart when making a decision.
+
+4️⃣ **Avoiding Emotional Traps**
+How to distinguish infatuation from true love and not rush decisions that have eternal significance.
+
+---
+
+🙏 **Advice for Youth:**
+
+✅ **Don't Rush** — God's timing is always the best.
+✅ **Listen to Wise Counsel** — parents, mentors, and mature friends.
+✅ **Look at the Fruits** — character is shown in actions, not words.
+
+---
+
+🌿 *"The right choice of a partner is when two look not at each other, but in one direction — at God."*`,
+    thumbnail: `https://img.youtube.com/vi/Ia9CaAPlt5I/maxresdefault.jpg`,
+    videoUrl: "https://www.youtube.com/embed/Ia9CaAPlt5I"
   }
 ];
 
@@ -1514,7 +1670,9 @@ const getVideoDuration = (youtubeId: string) => {
     "jEPRYcjtZSo": "57:35",
     "iBvOn4xcNHk": "1:29:45",
     "-hH2ahxUeuI": "1:09:09",
-    "5g2XqLyvSs4": "1:15:25"
+    "5g2XqLyvSs4": "1:15:25",
+    "8BEDpNaLaKo": "1:34:38",
+    "Ia9CaAPlt5I": "49:19"
   };
   return durations[youtubeId] || "1:00:00";
 };

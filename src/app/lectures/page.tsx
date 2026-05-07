@@ -141,7 +141,30 @@ const lectures = [
     youtubeId: "5g2XqLyvSs4",
     description: "🎓 МЕТА СТВОРЕННЯ БІБЛІЙНОЇ ШКОЛИ #UEBSchool ПРИ НАШІЙ СПІЛЬНОТІ slti-church.com. Біблійна школа uebs.com.ua створена для того, щоб поглиблювати пізнання Божого Слова та формувати зрілих, відповідальних і духовно сильних учнів Христа.",
     descriptionEn: "🎓 THE PURPOSE OF CREATING THE BIBLE SCHOOL #UEBSchool AT OUR COMMUNITY slti-church.com. The Bible school uebs.com.ua was created to deepen the knowledge of God's Word and form mature, responsible and spiritually strong disciples of Christ.",
-    videoUrl: "https://www.youtube.com/embed/5g2XqLyvSs4"
+  },
+  {
+    id: "marriage-by-creators-design",
+    title: "«ПОДРУЖЖЯ ЗА ЗАДУМОМ ТВОРЦЯ» — ЛЮБОМИР ТУРЧАК",
+    titleEn: "«MARRIAGE BY THE CREATOR'S DESIGN» — LYUBOMYR TURCHAK",
+    speaker: "Любомир Турчак",
+    speakerEn: "Lyubomyr Turchak",
+    date: "2026-05-01",
+    youtubeId: "8BEDpNaLaKo",
+    description: "Розгляд біблійної моделі подружжя, задуму Творця для чоловіка та жінки, а також засад щасливого сімейного життя.",
+    descriptionEn: "Examination of the biblical model of marriage, the Creator's design for man and woman, and the principles of a happy family life.",
+    videoUrl: "https://www.youtube.com/embed/8BEDpNaLaKo"
+  },
+  {
+    id: "choosing-a-life-partner",
+    title: "«ВИБІР СУПУТНИКА ЖИТТЯ» — ЛЮБОМИР ТУРЧАК",
+    titleEn: "«CHOOSING A LIFE PARTNER» — LYUBOMYR TURCHAK",
+    speaker: "Любомир Турчак",
+    speakerEn: "Lyubomyr Turchak",
+    date: "2026-05-01",
+    youtubeId: "Ia9CaAPlt5I",
+    description: "Роздуми про важливість правильного вибору супутника життя, біблійні критерії та духовну підготовку до шлюбу.",
+    descriptionEn: "Reflections on the importance of choosing the right life partner, biblical criteria, and spiritual preparation for marriage.",
+    videoUrl: "https://www.youtube.com/embed/Ia9CaAPlt5I"
   }
 ];
 
@@ -158,7 +181,9 @@ const getVideoDuration = (youtubeId: string) => {
     "jEPRYcjtZSo": "57:35",
     "iBvOn4xcNHk": "1:29:45",
     "-hH2ahxUeuI": "1:09:09",
-    "5g2XqLyvSs4": "1:15:25"
+    "5g2XqLyvSs4": "1:15:25",
+    "8BEDpNaLaKo": "1:34:38",
+    "Ia9CaAPlt5I": "49:19"
   };
   return durations[youtubeId] || "1:00:00";
 };
