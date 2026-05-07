@@ -1584,7 +1584,7 @@ The family is a place where we learn to love, forgive, and serve as God does.
     speakerEn: "Lyubomyr Turchak",
     date: "2026-05-01",
     youtubeId: "Ia9CaAPlt5I",
-    description: "Роздуми про важливість правильного вибору супутника життя, біблійні критерії та духовну підготовку до шлюбу.",
+    description: "Роздуми про  важливість правильного вибору супутника життя, біблійні критерії та духовну підготовку до шлюбу.",
     descriptionEn: "Reflections on the importance of choosing the right life partner, biblical criteria, and spiritual preparation for marriage.",
     fullDescription: `✝️ **Вибір супутника життя**
 
