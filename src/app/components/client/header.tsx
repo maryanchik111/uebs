@@ -125,14 +125,20 @@ export default function Header() {
                   <LogIn className="w-4 h-4" />
                   <span className="hidden sm:inline">Вхід</span>
                 </Link>
-                <Link
-                  href="/apply"
-                  className="bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  {t("nav.apply")}
-                </Link>
               </motion.div>
             )}
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link
+                href="/apply"
+                className="bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                {t("nav.apply")}
+              </Link>
+            </motion.div>
           </div>
 
           {/* Mobile Actions & Menu Button */}

@@ -1,7 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { Home, GraduationCap, User, Shield, Menu, X, Phone, MapPin, LogIn } from 'lucide-react';
+import { Home, GraduationCap, User, Shield, Menu, X, Phone, MapPin, LogIn, FileText } from 'lucide-react';
 import { useAuth } from '@/contexts/auth-context';
 import { isUserAdmin } from '@/lib/user-utils';
 import { useLanguage } from '@/contexts/language-context';
@@ -129,21 +129,7 @@ export default function MobileNav() {
                 </motion.div>
               )}
 
-              {!user && (
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: (navigation.length + 1) * 0.05 }}
-                >
-                  <Link
-                    href="/apply"
-                    onClick={() => setMenuOpen(false)}
-                    className="block w-full py-3 px-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white font-semibold rounded-lg text-center hover:shadow-lg transition-all"
-                  >
-                    {t("nav.apply")}
-                  </Link>
-                </motion.div>
-              )}
+
 
               <motion.div
                 className="pt-4 border-t border-slate-200"
@@ -192,6 +178,15 @@ export default function MobileNav() {
             >
               <GraduationCap className="w-6 h-6" />
               <span className="text-xs mt-1">Лекції</span>
+            </Link>
+
+            <Link
+              href="/apply"
+              className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${isActive('/apply') ? 'text-amber-600' : 'text-gray-600 hover:text-amber-600'
+                }`}
+            >
+              <FileText className="w-6 h-6" />
+              <span className="text-xs mt-1">Заявка</span>
             </Link>
 
             {user ? (
