@@ -43,26 +43,28 @@ export default function Hero() {
 
   return (
     <motion.section
-      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20"
       initial="hidden"
       animate={controls}
       variants={container}
     >
-      {/* ── Deep navy / charcoal background ── */}
-      <div className="absolute inset-0 bg-[#0f172a]" />
+      {/* ── Premium dark background with gradient ── */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-[#0f172a] to-indigo-950" />
 
-      {/* Subtle radial glows for depth */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full bg-amber-500/5 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none" />
+      {/* Dynamic radial glows for depth */}
+      <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-amber-500/10 blur-[120px] pointer-events-none mix-blend-screen" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-blue-600/15 blur-[150px] pointer-events-none mix-blend-screen" />
+      <div className="absolute top-[20%] right-[20%] w-[30vw] h-[30vw] rounded-full bg-purple-500/10 blur-[100px] pointer-events-none mix-blend-screen" />
 
       {/* Elegant texture pattern */}
       <div
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
-          backgroundImage: "radial-gradient(circle, #fff 1px, transparent 1px)",
-          backgroundSize: "40px 40px"
+          backgroundImage: "radial-gradient(circle, #ffffff 1.5px, transparent 1.5px)",
+          backgroundSize: "48px 48px"
         }}
       />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/50 to-slate-950 pointer-events-none" />
 
       {/* ── Content ── */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 w-full text-center">
@@ -90,14 +92,14 @@ export default function Hero() {
           </motion.div>
 
           {/* Main Headline */}
-          <div className="space-y-6">
+          <div className="space-y-8 relative">
             <motion.h1
-              className="text-5xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight"
+              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400 leading-[1.1] tracking-tighter drop-shadow-sm"
               variants={item}
               dangerouslySetInnerHTML={{ __html: t("hero.title") }}
             />
             <motion.p
-              className="text-xl text-slate-400 leading-relaxed max-w-3xl mx-auto font-medium"
+              className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto font-medium"
               variants={item}
             >
               {t("hero.subtitle")}
@@ -128,21 +130,24 @@ export default function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Stats Bar - Refined academic style */}
+          {/* Stats Bar - Premium Glassmorphism */}
           <motion.div
-            className="w-full grid grid-cols-2 md:grid-cols-4 gap-4 pt-12"
+            className="w-full grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 pt-16 relative"
             variants={item}
           >
+            {/* Soft backdrop blur container for all stats */}
+            <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-md rounded-3xl border border-white/10 -m-4 md:-m-6 hidden sm:block pointer-events-none" />
+            
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="flex flex-col items-center p-6 rounded-2xl bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.04] transition-colors group"
+                className="relative z-10 flex flex-col items-center p-6 rounded-2xl bg-white/[0.03] border border-white/[0.05] hover:bg-white/[0.08] hover:border-white/[0.1] hover:-translate-y-1 transition-all duration-300 group shadow-lg"
               >
-                <div className="p-3 rounded-xl bg-amber-400/10 mb-4 group-hover:scale-110 transition-transform">
-                  <stat.icon className="w-6 h-6 text-amber-400" />
+                <div className="p-4 rounded-2xl bg-gradient-to-br from-amber-400/10 to-amber-500/5 mb-4 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(251,191,36,0.3)] transition-all duration-300">
+                  <stat.icon className="w-7 h-7 text-amber-400" />
                 </div>
-                <div className="text-2xl font-bold text-white mb-1 tracking-tight">{stat.value}</div>
-                <div className="text-slate-500 text-xs font-semibold uppercase tracking-widest">{stat.label}</div>
+                <div className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400 mb-1 tracking-tight drop-shadow-md">{stat.value}</div>
+                <div className="text-slate-400 text-xs font-bold uppercase tracking-widest">{stat.label}</div>
               </div>
             ))}
           </motion.div>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Play, Clock, Calendar, User, Eye, MessageCircle, Video, BookOpen } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 import { useState, useEffect } from "react";
-import { ref, get } from "firebase/database";
+import { ref, get, onValue } from "firebase/database";
 import { database } from "@/lib/firebase";
 import { texts } from "./texts/data";
 
@@ -165,6 +165,30 @@ const lectures = [
     description: "Роздуми про важливість правильного вибору супутника життя, біблійні критерії та духовну підготовку до шлюбу.",
     descriptionEn: "Reflections on the importance of choosing the right life partner, biblical criteria, and spiritual preparation for marriage.",
     videoUrl: "https://www.youtube.com/embed/Ia9CaAPlt5I"
+  },
+  {
+    id: "how-to-pray-for-healing",
+    title: "«ЯК МОЛИТИСЯ ЗА ОЗДОРОВЛЕННЯ? ЯК КЛАСТИ РУКИ НА ХВОРИХ?» — ДЕМБОРИНСЬКИЙ БОГДАН",
+    titleEn: "«HOW TO PRAY FOR HEALING? HOW TO LAY HANDS ON THE SICK?» — BOHDAN DEMBORYNSKYI",
+    speaker: "Богдан Демборинський",
+    speakerEn: "Bohdan Demborynskyi",
+    date: "2026-06-13",
+    youtubeId: "GXStXwL7gHY",
+    description: "БІБЛІЙНА ШКОЛА: «БІБЛІЙНІ ОСНОВИ ДЛЯ ЗЦІЛЕННЯ СЬОГОДНІ». Біблія навчає, що Бог не змінився. Він був Цілителем у Старому Завіті, служив через Ісуса в Євангеліях і продовжує діяти через Святого Духа сьогодні.",
+    descriptionEn: "BIBLE SCHOOL: «BIBLICAL FOUNDATIONS FOR HEALING TODAY». The Bible teaches that God has not changed. He was the Healer in the Old Testament, ministered through Jesus in the Gospels, and continues to work through the Holy Spirit today.",
+    videoUrl: "https://www.youtube.com/embed/GXStXwL7gHY"
+  },
+  {
+    id: "prayer-for-healing-delegation",
+    title: "«МОЛИТВА ЗА ЗЦІЛЕННЯ / ПЕРЕВІРКА ОЗДОРОВЛЕННЯ / ДЕЛЕГУВАННЯ» — ДЕМБОРИНСЬКИЙ БОГДАН",
+    titleEn: "«PRAYER FOR HEALING / VERIFICATION OF HEALING / DELEGATION» — BOHDAN DEMBORYNSKYI",
+    speaker: "Богдан Демборинський",
+    speakerEn: "Bohdan Demborynskyi",
+    date: "2026-06-13",
+    youtubeId: "yT4ev1ypp6s",
+    description: "БІБЛІЙНА ШКОЛА: «БІБЛІЙНІ ОСНОВИ ДЛЯ ЗЦІЛЕННЯ СЬОГОДНІ». Біблія навчає, що Бог не змінився. Він був Цілителем у Старому Завіті, служив через Ісуса в Євангеліях і продовжує діяти через Святого Духа сьогодні.",
+    descriptionEn: "BIBLE SCHOOL: «BIBLICAL FOUNDATIONS FOR HEALING TODAY». The Bible teaches that God has not changed. He was the Healer in the Old Testament, ministered through Jesus in the Gospels, and continues to work through the Holy Spirit today.",
+    videoUrl: "https://www.youtube.com/embed/yT4ev1ypp6s"
   }
 ];
 
@@ -183,7 +207,9 @@ const getVideoDuration = (youtubeId: string) => {
     "-hH2ahxUeuI": "1:09:09",
     "5g2XqLyvSs4": "1:15:25",
     "8BEDpNaLaKo": "1:34:38",
-    "Ia9CaAPlt5I": "49:19"
+    "Ia9CaAPlt5I": "49:19",
+    "GXStXwL7gHY": "1:22:03",
+    "yT4ev1ypp6s": "53:20"
   };
   return durations[youtubeId] || "1:00:00";
 };
@@ -191,20 +217,64 @@ const getVideoDuration = (youtubeId: string) => {
 const getYoutubeThumbnail = (youtubeId: string) =>
   `https://img.youtube.com/vi/${youtubeId}/sddefault.jpg`;
 
+interface ArchiveLecture {
+  id: string;
+  title: string;
+  titleEn: string;
+  speaker: string;
+  speakerEn: string;
+  date: string;
+  youtubeId: string;
+  description: string;
+  descriptionEn: string;
+  fullDescription?: string;
+  fullDescriptionEn?: string;
+  videoUrl?: string;
+}
+
 export default function LecturesPage() {
   const { t, language } = useLanguage();
   const [isMounted, setIsMounted] = useState(false);
   const [activeTab, setActiveTab] = useState<"videos" | "texts">("videos");
   const [lectureStats, setLectureStats] = useState<Record<string, { views: number; comments: number }>>({});
+  const [dynamicLectures, setDynamicLectures] = useState<ArchiveLecture[]>([]);
 
   useEffect(() => {
     setIsMounted(true);
-    loadLectureStats();
+    
+    // Fetch dynamic archive lectures
+    const lecturesRef = ref(database, 'archive_lectures');
+    const unsubscribe = onValue(lecturesRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        const lecturesList: ArchiveLecture[] = Object.keys(data).map(key => ({
+          ...data[key],
+          id: key
+        }));
+        setDynamicLectures(lecturesList);
+      } else {
+        setDynamicLectures([]);
+      }
+    });
+
+    return () => unsubscribe();
   }, []);
 
-  const loadLectureStats = async () => {
-    const stats: Record<string, { views: number; comments: number }> = {};
-    for (const lecture of lectures) {
+  const combinedLectures = [...dynamicLectures, ...lectures].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+  useEffect(() => {
+    if (combinedLectures.length > 0) {
+      loadLectureStats(combinedLectures);
+    }
+  }, [dynamicLectures]);
+
+  const loadLectureStats = async (allLecs: any[]) => {
+    const stats: Record<string, { views: number; comments: number }> = { ...lectureStats };
+    let hasNewStats = false;
+    
+    for (const lecture of allLecs) {
+      if (stats[lecture.id]) continue; // Skip if already loaded
+      
       try {
         const viewsSnap = await get(ref(database, `lectures/${lecture.id}/views`));
         const commentsSnap = await get(ref(database, `lectures/${lecture.id}/comments`));
@@ -213,11 +283,15 @@ export default function LecturesPage() {
           views: viewsSnap.val() || 0,
           comments: commentsData ? Object.keys(commentsData).length : 0,
         };
+        hasNewStats = true;
       } catch {
         stats[lecture.id] = { views: 0, comments: 0 };
       }
     }
-    setLectureStats(stats);
+    
+    if (hasNewStats) {
+      setLectureStats(stats);
+    }
   };
 
   const formatDate = (dateString: string) => {
@@ -232,9 +306,7 @@ export default function LecturesPage() {
     });
   };
 
-  const sortedLectures = [...lectures].sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+
   const sortedTexts = [...texts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
@@ -302,7 +374,7 @@ export default function LecturesPage() {
               transition={{ duration: 0.25 }}
             >
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {sortedLectures.map((lecture, index) => (
+                {combinedLectures.map((lecture, index) => (
                   <motion.div
                     key={lecture.id}
                     className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
@@ -321,7 +393,7 @@ export default function LecturesPage() {
                       </div>
                       <div className="absolute top-3 right-3 bg-black/60 text-white px-2 py-0.5 rounded text-xs flex items-center gap-1">
                         <Clock className="w-3 h-3" />
-                        {getVideoDuration(lecture.youtubeId)}
+                        {(lecture as any).duration || getVideoDuration(lecture.youtubeId)}
                       </div>
                     </div>
 

@@ -15,6 +15,22 @@ export default function MobileNav() {
   const { t } = useLanguage();
   const [isAdmin, setIsAdmin] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolledDown, setScrolledDown] = useState(false);
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && currentScrollY > 50) {
+        setScrolledDown(true);
+      } else if (currentScrollY < lastScrollY) {
+        setScrolledDown(false);
+      }
+      lastScrollY = currentScrollY;
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (user) {
@@ -52,7 +68,7 @@ export default function MobileNav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden fixed inset-0 bg-black/50 z-40"
+            className="fixed inset-0 bg-black/50 z-40"
             onClick={() => setMenuOpen(false)}
           />
         )}
@@ -66,7 +82,7 @@ export default function MobileNav() {
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            className="md:hidden fixed bottom-16 left-0 right-0 bg-white rounded-t-2xl shadow-2xl z-50 max-h-[70vh] overflow-y-auto"
+            className="fixed bottom-24 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-md bg-white/60 backdrop-blur-3xl backdrop-saturate-150 border border-white/50 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.1)] z-50 max-h-[70vh] overflow-y-auto"
           >
             <div className="px-6 py-6 space-y-4">
               <div className="flex items-center justify-between mb-4">
@@ -152,72 +168,79 @@ export default function MobileNav() {
       </AnimatePresence>
 
       {/* Bottom Navbar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50 pb-safe">
-        <div className="flex justify-around items-center px-2 py-2">
-          <Link
-            href="/"
-            className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${isActive('/') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
-              }`}
-          >
-            <Home className="w-6 h-6" />
-            <span className="text-xs mt-1">Головна</span>
-          </Link>
-
-          <Link
-            href="/lectures"
-            className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${isActive('/lectures') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
-              }`}
-          >
-            <GraduationCap className="w-6 h-6" />
-            <span className="text-xs mt-1">Лекції</span>
-          </Link>
-
-          {user ? (
+      <div className="fixed bottom-4 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-lg z-50 pointer-events-none pb-safe">
+        <motion.div
+          className="pointer-events-auto bg-white/60 backdrop-blur-2xl backdrop-saturate-150 border border-white/50 shadow-[0_8px_32px_rgba(0,0,0,0.1)] rounded-full overflow-hidden"
+          animate={{ scale: scrolledDown ? 0.8 : 1 }}
+          transition={{ duration: 0.3 }}
+          style={{ transformOrigin: "bottom center" }}
+        >
+          <div className="flex justify-around items-center px-2 py-2">
             <Link
-              href="/cabinet"
-              className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${isActive('/cabinet') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+              href="/"
+              className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${isActive('/') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
                 }`}
             >
-              <div className="relative inline-block">
-                <User className="w-6 h-6" />
-                {userProfile && (userProfile.notifications?.filter(n => !n.read).length > 0 || userProfile.homework?.filter(h => !h.completed).length > 0) && (
-                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold rounded-full min-w-[16px] h-4 flex items-center justify-center px-1 z-10">
-                    {(userProfile.notifications?.filter(n => !n.read).length || 0) + (userProfile.homework?.filter(h => !h.completed).length || 0)}
-                  </span>
-                )}
-              </div>
-              <span className="text-xs mt-1 truncate max-w-[60px]">{user.displayName || user.email?.split('@')[0] || 'Кабінет'}</span>
+              <Home className="w-6 h-6" />
+              <span className="text-xs mt-1">Головна</span>
             </Link>
-          ) : (
-            <Link
-              href="/login"
-              className="flex flex-col items-center justify-center py-2 px-3 transition-colors text-gray-600 hover:text-blue-600"
-            >
-              <LogIn className="w-6 h-6" />
-              <span className="text-xs mt-1">Увійти</span>
-            </Link>
-          )}
 
-          {user && isAdmin && (
             <Link
-              href="/admin"
-              className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${isActive('/admin') || pathname.startsWith('/admin/') ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
+              href="/lectures"
+              className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${isActive('/lectures') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
                 }`}
             >
-              <Shield className="w-6 h-6" />
-              <span className="text-xs mt-1">Адмін</span>
+              <GraduationCap className="w-6 h-6" />
+              <span className="text-xs mt-1">Лекції</span>
             </Link>
-          )}
 
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${menuOpen ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
-              }`}
-          >
-            {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            <span className="text-xs mt-1">Меню</span>
-          </button>
-        </div>
+            {user ? (
+              <Link
+                href="/cabinet"
+                className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${isActive('/cabinet') ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+                  }`}
+              >
+                <div className="relative inline-block">
+                  <User className="w-6 h-6" />
+                  {userProfile && (userProfile.notifications?.filter(n => !n.read).length > 0 || userProfile.homework?.filter(h => !h.completed).length > 0) && (
+                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold rounded-full min-w-[16px] h-4 flex items-center justify-center px-1 z-10">
+                      {(userProfile.notifications?.filter(n => !n.read).length || 0) + (userProfile.homework?.filter(h => !h.completed).length || 0)}
+                    </span>
+                  )}
+                </div>
+                <span className="text-xs mt-1 truncate max-w-[60px]">{user.displayName || user.email?.split('@')[0] || 'Кабінет'}</span>
+              </Link>
+            ) : (
+              <Link
+                href="/login"
+                className="flex flex-col items-center justify-center py-2 px-3 transition-colors text-gray-600 hover:text-blue-600"
+              >
+                <LogIn className="w-6 h-6" />
+                <span className="text-xs mt-1">Увійти</span>
+              </Link>
+            )}
+
+            {user && isAdmin && (
+              <Link
+                href="/admin"
+                className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${isActive('/admin') || pathname.startsWith('/admin/') ? 'text-purple-600' : 'text-gray-600 hover:text-purple-600'
+                  }`}
+              >
+                <Shield className="w-6 h-6" />
+                <span className="text-xs mt-1">Адмін</span>
+              </Link>
+            )}
+
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className={`flex flex-col items-center justify-center py-2 px-3 transition-colors ${menuOpen ? 'text-blue-600' : 'text-gray-600 hover:text-blue-600'
+                }`}
+            >
+              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <span className="text-xs mt-1">Меню</span>
+            </button>
+          </div>
+        </motion.div>
       </div>
     </>
   );

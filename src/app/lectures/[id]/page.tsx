@@ -1654,6 +1654,176 @@ How to distinguish infatuation from true love and not rush decisions that have e
 🌿 *"The right choice of a partner is when two look not at each other, but in one direction — at God."*`,
     thumbnail: `https://img.youtube.com/vi/Ia9CaAPlt5I/maxresdefault.jpg`,
     videoUrl: "https://www.youtube.com/embed/Ia9CaAPlt5I"
+  },
+  {
+    id: "how-to-pray-for-healing",
+    title: "«ЯК МОЛИТИСЯ ЗА ОЗДОРОВЛЕННЯ? ЯК КЛАСТИ РУКИ НА ХВОРИХ?» — ДЕМБОРИНСЬКИЙ БОГДАН",
+    titleEn: "«HOW TO PRAY FOR HEALING? HOW TO LAY HANDS ON THE SICK?» — BOHDAN DEMBORYNSKYI",
+    speaker: "Богдан Демборинський",
+    speakerEn: "Bohdan Demborynskyi",
+    date: "2026-06-13",
+    youtubeId: "GXStXwL7gHY",
+    description: "БІБЛІЙНА ШКОЛА: «БІБЛІЙНІ ОСНОВИ ДЛЯ ЗЦІЛЕННЯ СЬОГОДНІ». Біблія навчає, що Бог не змінився. Він був Цілителем у Старому Завіті, служив через Ісуса в Євангеліях і продовжує діяти через Святого Духа сьогодні.",
+    descriptionEn: "BIBLE SCHOOL: «BIBLICAL FOUNDATIONS FOR HEALING TODAY». The Bible teaches that God has not changed. He was the Healer in the Old Testament, ministered through Jesus in the Gospels, and continues to work through the Holy Spirit today.",
+    fullDescription: `✝️ **Біблійні основи для зцілення сьогодні**
+
+Біблія навчає, що Бог не змінився. Він був Цілителем у Старому Завіті, служив через Ісуса в Євангеліях і продовжує діяти через Святого Духа сьогодні.
+
+В нашій Біблійній Школі uebs.com.ua відбулася важлива лекція на тему **"Як молитися за оздоровлення? Як класти руки на хворих?"** зі спікером **Богданом Демборинським**.
+
+---
+
+📖 **Основні істини про зцілення:**
+
+1️⃣ **Бог відкриває Себе як Цілитель**
+«Я Господь, Лікар твій» (Вихід 15:26). Зцілення — не людська ідея, а частина Божої природи. Бог не втратив Своєї сили — ми часто втрачаємо віру. Там, де медицина ставить крапку, Бог часто ставить кому.
+
+2️⃣ **Ісус поніс наші хвороби**
+«Він узяв на Себе наші немочі і поніс наші хвороби» (Матвія 8:16-17). Хрест Голгофи стосується не лише прощення гріхів, але й Божого співчуття до людських страждань. Там, де є рани Ісуса, є надія для людських ран.
+
+3️⃣ **Ісус Христос не змінився**
+«Ісус Христос учора, і сьогодні, і навіки Той Самий» (Євреїв 13:8). Той Самий Христос, Який відкривав очі сліпим, сьогодні відкриває шлях безнадійним. Проблема не в тому, що Христос перестав зціляти, а в тому, що люди перестали чекати Його втручання.
+
+4️⃣ **Віра є важливою умовою**
+«Нехай буде вам за вашою вірою» (Матвія 9:29). Невірство будує стіни там, де Бог відкриває двері. Віра бачить Божу відповідь ще до її появи.
+
+5️⃣ **Церква покликана молитися за хворих**
+«Нездужає хто між вами? Нехай покличе пресвітерів Церкви…» (Якова 5:14-15). Церква без молитви за хворих забуває частину свого покликання. Там, де люди схиляють коліна, Бог простягає руку.
+
+6️⃣ **Святому Духу належать дари зцілення**
+«Іншому дари зцілення тим Самим Духом» (1 Коринтян 12:9). Дар зцілення не для слави людини, а для слави Христа.
+
+---
+
+🙏 **Висновок:**
+
+Не кожен хворий отримує зцілення, але кожен віруючий має право просити про нього. Фізичне зцілення продовжує земне життя, але спасіння дарує життя вічне. Шукайте не лише руки Божої, а насамперед Його обличчя.
+
+**"Я прийшов, щоб ви мали життя, і подостатком щоб мали" (Івана 10:10)**
+#ВИВЧЕННЯ_ПИСАННЯ`,
+    fullDescriptionEn: `✝️ **Biblical Foundations for Healing Today**
+
+The Bible teaches that God has not changed. He was the Healer in the Old Testament, ministered through Jesus in the Gospels, and continues to work through the Holy Spirit today.
+
+At our Bible School uebs.com.ua, there was an important lecture on the topic of **"How to pray for healing? How to lay hands on the sick?"** with speaker **Bohdan Demborynskyi**.
+
+---
+
+📖 **Key Truths About Healing:**
+
+1️⃣ **God reveals Himself as Healer**
+"I am the Lord, who heals you" (Exodus 15:26). Healing is not a human idea, but part of God's nature. God has not lost His power — we often lose our faith. Where medicine puts a period, God often puts a comma.
+
+2️⃣ **Jesus bore our diseases**
+"He took up our infirmities and bore our diseases" (Matthew 8:16-17). The cross of Calvary concerns not only the forgiveness of sins, but also God's compassion for human suffering. Where there are wounds of Jesus, there is hope for human wounds.
+
+3️⃣ **Jesus Christ has not changed**
+"Jesus Christ is the same yesterday and today and forever" (Hebrews 13:8). The same Christ who opened the eyes of the blind today opens the way for the hopeless. The problem is not that Christ stopped healing, but that people stopped waiting for His intervention.
+
+4️⃣ **Faith is an important condition**
+"According to your faith let it be done to you" (Matthew 9:29). Unbelief builds walls where God opens doors. Faith sees God's answer even before it appears.
+
+5️⃣ **The Church is called to pray for the sick**
+"Is anyone among you sick? Let them call the elders of the church..." (James 5:14-15). A church without prayer for the sick forgets part of its calling. Where people bow their knees, God extends His hand.
+
+6️⃣ **The Holy Spirit has gifts of healing**
+"To another gifts of healing by that one Spirit" (1 Corinthians 12:9). The gift of healing is not for the glory of man, but for the glory of Christ.
+
+---
+
+🙏 **Conclusion:**
+
+Not every sick person is healed, but every believer has the right to ask for it. Physical healing prolongs earthly life, but salvation grants eternal life. Seek not only God's hand, but first of all His face.
+
+**"I have come that they may have life, and have it to the full" (John 10:10)**
+#BIBLE_STUDY`,
+    thumbnail: `https://img.youtube.com/vi/GXStXwL7gHY/maxresdefault.jpg`,
+    videoUrl: "https://www.youtube.com/embed/GXStXwL7gHY"
+  },
+  {
+    id: "prayer-for-healing-delegation",
+    title: "«МОЛИТВА ЗА ЗЦІЛЕННЯ / ПЕРЕВІРКА ОЗДОРОВЛЕННЯ / ДЕЛЕГУВАННЯ» — ДЕМБОРИНСЬКИЙ БОГДАН",
+    titleEn: "«PRAYER FOR HEALING / VERIFICATION OF HEALING / DELEGATION» — BOHDAN DEMBORYNSKYI",
+    speaker: "Богдан Демборинський",
+    speakerEn: "Bohdan Demborynskyi",
+    date: "2026-06-13",
+    youtubeId: "yT4ev1ypp6s",
+    description: "БІБЛІЙНА ШКОЛА: «БІБЛІЙНІ ОСНОВИ ДЛЯ ЗЦІЛЕННЯ СЬОГОДНІ». Біблія навчає, що Бог не змінився. Він був Цілителем у Старому Завіті, служив через Ісуса в Євангеліях і продовжує діяти через Святого Духа сьогодні.",
+    descriptionEn: "BIBLE SCHOOL: «BIBLICAL FOUNDATIONS FOR HEALING TODAY». The Bible teaches that God has not changed. He was the Healer in the Old Testament, ministered through Jesus in the Gospels, and continues to work through the Holy Spirit today.",
+    fullDescription: `✝️ **Біблійні основи для зцілення сьогодні**
+
+Біблія навчає, що Бог не змінився. Він був Цілителем у Старому Завіті, служив через Ісуса в Євангеліях і продовжує діяти через Святого Духа сьогодні.
+
+В нашій Біблійній Школі uebs.com.ua відбулася важлива лекція на тему **"Молитва за зцілення / Перевірка оздоровлення / Делегування"** зі спікером **Богданом Демборинським**.
+
+---
+
+📖 **Основні істини про зцілення:**
+
+1️⃣ **Бог відкриває Себе як Цілитель**
+«Я Господь, Лікар твій» (Вихід 15:26). Зцілення — не людська ідея, а частина Божої природи. Бог не втратив Своєї сили — ми часто втрачаємо віру. Там, де медицина ставить крапку, Бог часто ставить кому.
+
+2️⃣ **Ісус поніс наші хвороби**
+«Він узяв на Себе наші немочі і поніс наші хвороби» (Матвія 8:16-17). Хрест Голгофи стосується не лише прощення гріхів, але й Божого співчуття до людських страждань. Там, де є рани Ісуса, є надія для людських ран.
+
+3️⃣ **Ісус Христос не змінився**
+«Ісус Христос учора, і сьогодні, і навіки Той Самий» (Євреїв 13:8). Той Самий Христос, Який відкривав очі сліпим, сьогодні відкриває шлях безнадійним. Проблема не в тому, що Христос перестав зціляти, а в тому, що люди перестали чекати Його втручання.
+
+4️⃣ **Віра є важливою умовою**
+«Нехай буде вам за вашою вірою» (Матвія 9:29). Невірство будує стіни там, де Бог відкриває двері. Віра бачить Божу відповідь ще до її появи.
+
+5️⃣ **Церква покликана молитися за хворих**
+«Нездужає хто між вами? Нехай покличе пресвітерів Церкви…» (Якова 5:14-15). Церква без молитви за хворих забуває частину свого покликання. Там, де люди схиляють коліна, Бог простягає руку.
+
+6️⃣ **Святому Духу належать дари зцілення**
+«Іншому дари зцілення тим Самим Духом» (1 Коринтян 12:9). Дар зцілення не для слави людини, а для слави Христа.
+
+---
+
+🙏 **Висновок:**
+
+Не кожен хворий отримує зцілення, але кожен віруючий має право просити про нього. Фізичне зцілення продовжує земне життя, але спасіння дарує життя вічне. Шукайте не лише руки Божої, а насамперед Його обличчя.
+
+**"Я прийшов, щоб ви мали життя, і подостатком щоб мали" (Івана 10:10)**
+#ВИВЧЕННЯ_ПИСАННЯ`,
+    fullDescriptionEn: `✝️ **Biblical Foundations for Healing Today**
+
+The Bible teaches that God has not changed. He was the Healer in the Old Testament, ministered through Jesus in the Gospels, and continues to work through the Holy Spirit today.
+
+At our Bible School uebs.com.ua, there was an important lecture on the topic of **"Prayer for healing / Verification of healing / Delegation"** with speaker **Bohdan Demborynskyi**.
+
+---
+
+📖 **Key Truths About Healing:**
+
+1️⃣ **God reveals Himself as Healer**
+"I am the Lord, who heals you" (Exodus 15:26). Healing is not a human idea, but part of God's nature. God has not lost His power — we often lose our faith. Where medicine puts a period, God often puts a comma.
+
+2️⃣ **Jesus bore our diseases**
+"He took up our infirmities and bore our diseases" (Matthew 8:16-17). The cross of Calvary concerns not only the forgiveness of sins, but also God's compassion for human suffering. Where there are wounds of Jesus, there is hope for human wounds.
+
+3️⃣ **Jesus Christ has not changed**
+"Jesus Christ is the same yesterday and today and forever" (Hebrews 13:8). The same Christ who opened the eyes of the blind today opens the way for the hopeless. The problem is not that Christ stopped healing, but that people stopped waiting for His intervention.
+
+4️⃣ **Faith is an important condition**
+"According to your faith let it be done to you" (Matthew 9:29). Unbelief builds walls where God opens doors. Faith sees God's answer even before it appears.
+
+5️⃣ **The Church is called to pray for the sick**
+"Is anyone among you sick? Let them call the elders of the church..." (James 5:14-15). A church without prayer for the sick forgets part of its calling. Where people bow their knees, God extends His hand.
+
+6️⃣ **The Holy Spirit has gifts of healing**
+"To another gifts of healing by that one Spirit" (1 Corinthians 12:9). The gift of healing is not for the glory of man, but for the glory of Christ.
+
+---
+
+🙏 **Conclusion:**
+
+Not every sick person is healed, but every believer has the right to ask for it. Physical healing prolongs earthly life, but salvation grants eternal life. Seek not only God's hand, but first of all His face.
+
+**"I have come that they may have life, and have it to the full" (John 10:10)**
+#BIBLE_STUDY`,
+    thumbnail: `https://img.youtube.com/vi/yT4ev1ypp6s/maxresdefault.jpg`,
+    videoUrl: "https://www.youtube.com/embed/yT4ev1ypp6s"
   }
 ];
 
@@ -1672,7 +1842,9 @@ const getVideoDuration = (youtubeId: string) => {
     "-hH2ahxUeuI": "1:09:09",
     "5g2XqLyvSs4": "1:15:25",
     "8BEDpNaLaKo": "1:34:38",
-    "Ia9CaAPlt5I": "49:19"
+    "Ia9CaAPlt5I": "49:19",
+    "GXStXwL7gHY": "1:22:03",
+    "yT4ev1ypp6s": "53:20"
   };
   return durations[youtubeId] || "1:00:00";
 };
@@ -1687,48 +1859,10 @@ export default function LecturePage() {
   const [comments, setComments] = useState<any[]>([]);
   const [newComment, setNewComment] = useState("");
   const [submittingComment, setSubmittingComment] = useState(false);
+  const [dynamicLecture, setDynamicLecture] = useState<any>(null);
+  const [loadingDynamic, setLoadingDynamic] = useState(true);
 
-  useEffect(() => {
-    setIsMounted(true);
-    // Track views and load comments when lecture changes
-    trackView();
-    const unsubscribe = loadComments();
-    return () => {
-      if (typeof unsubscribe === "function") unsubscribe();
-    };
-  }, [lectureId]);
-
-  const lecture = lectures.find(l => l.id === lectureId);
-
-  if (!lecture) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-24 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-slate-900 mb-4">Лекцію не знайдено</h1>
-          <Link href="/lectures" className="text-blue-600 hover:text-blue-800">
-            Повернутися до списку лекцій
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  const formatDate = (dateString: string) => {
-    if (!isMounted) {
-      const date = new Date(dateString);
-      const day = date.getDate();
-      const month = date.getMonth() + 1;
-      const year = date.getFullYear();
-      return `${day}.${month.toString().padStart(2, '0')}.${year}`;
-    }
-
-    const date = new Date(dateString);
-    return date.toLocaleDateString(language === 'uk' ? 'uk-UA' : 'en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
+  const hardcodedLecture = lectures.find(l => l.id === lectureId);
 
   // Increments view count for the lecture; prevents double count per user via localStorage
   const trackView = async () => {
@@ -1769,6 +1903,71 @@ export default function LecturePage() {
     });
     return unsub;
   };
+
+  useEffect(() => {
+    setIsMounted(true);
+
+    if (!hardcodedLecture) {
+      const lectureRef = ref(database, `archive_lectures/${lectureId}`);
+      get(lectureRef).then((snapshot) => {
+        if (snapshot.exists()) {
+          setDynamicLecture({ id: lectureId, ...snapshot.val() });
+        }
+        setLoadingDynamic(false);
+      }).catch(() => setLoadingDynamic(false));
+    } else {
+      setLoadingDynamic(false);
+    }
+
+    // Track views and load comments when lecture changes
+    trackView();
+    const unsubscribe = loadComments();
+    return () => {
+      if (typeof unsubscribe === "function") unsubscribe();
+    };
+  }, [lectureId]); // Only depend on lectureId to avoid re-fetching on mount
+
+  const lecture = hardcodedLecture || dynamicLecture;
+
+  if (loadingDynamic) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-24 flex items-center justify-center">
+        <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (!lecture) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-24 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-slate-900 mb-4">Лекцію не знайдено</h1>
+          <Link href="/lectures" className="text-blue-600 hover:text-blue-800">
+            Повернутися до списку лекцій
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  const formatDate = (dateString: string) => {
+    if (!isMounted) {
+      const date = new Date(dateString);
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
+      return `${day}.${month.toString().padStart(2, '0')}.${year}`;
+    }
+
+    const date = new Date(dateString);
+    return date.toLocaleDateString(language === 'uk' ? 'uk-UA' : 'en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
+
 
   const handleSubmitComment = async () => {
     if (!user) return; // UI prevents, but double-guard
@@ -1880,7 +2079,7 @@ export default function LecturePage() {
             <div className="flex items-center gap-2">
               <Clock className="w-5 h-5" />
               <span className="font-medium">{t("lectures.duration")}:</span>
-              <span>{getVideoDuration(lecture.youtubeId)}</span>
+              <span>{lecture.duration || getVideoDuration(lecture.youtubeId)}</span>
             </div>
             <div className="flex items-center gap-2">
               <Eye className="w-5 h-5" />

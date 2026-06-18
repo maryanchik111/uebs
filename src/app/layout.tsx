@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "./components/client/header";
 import Footer from "./components/client/footer";
 import MobileNav from "./components/client/mobile-nav";
 import PWAInstallPrompt from "./components/client/pwa-install-prompt";
@@ -89,7 +88,6 @@ export default function RootLayout({
       >
         <AuthProvider>
           <LanguageProvider>
-            <Header />
             {children}
             <Footer />
             <MobileNav />

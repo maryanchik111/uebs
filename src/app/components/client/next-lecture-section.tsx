@@ -6,62 +6,45 @@ import Image from "next/image";
 import { Calendar, Clock, User, ArrowRight, Bell } from "lucide-react";
 import { useLanguage } from "@/contexts/language-context";
 import { useState, useEffect } from "react";
+import { database } from "@/lib/firebase";
+import { ref, onValue } from "firebase/database";
 
-// All lectures data
-const lectures = [
-  {
-    id: "character-of-god",
-    title: "«ХАРАКТЕР БОГА» — ЄВАНГЕЛІСТ-МУЗИКАНТ ОЛЕГ НАЗАРЧУК",
-    titleEn: "«CHARACTER OF GOD» — EVANGELIST-MUSICIAN OLEG NAZARCHUK",
-    speaker: "Олег Назарчук",
-    speakerEn: "Oleg Nazarchuk",
-    date: "2025-10-24",
-    youtubeId: "d1fM8Fl52qc",
-  },
-  {
-    id: "to-ephesians",
-    title: "«ОГЛЯД ПОСЛАННЯ ДО ЄФЕСЯН» — КРУКОВСЬКИЙ ВОЛОДИМИР",
-    titleEn: "«OVERVIEW OF EPHESIANS» — KRUKOVSKY VOLODYMYR",
-    speaker: "Володимир Круковський",
-    speakerEn: "Volodymyr Krukovsky",
-    date: "2025-11-07",
-    youtubeId: "DN7ZAsYSq2s",
-  },
-  {
-    id: "believers-political-participation",
-    title: "«УЧАСТЬ ВІРУЮЧИХ У ПОЛІТИЧНОМУ ПРОЦЕСІ ДЕРЖАВИ» — ІГОР ПЛОХОЙ",
-    titleEn: "«BELIEVERS' PARTICIPATION IN THE STATE'S POLITICAL PROCESS» — IGOR PLOKHY",
-    speaker: "Ігор Плохой",
-    speakerEn: "Igor Plokhy",
-    date: "2025-11-16",
-    youtubeId: "XDRty1ClGjE",
-  },
-  {
-    id: "civic-position-believers-power-functions",
-    title: "«ГРОМАДЯНСЬКА ПОЗИЦІЯ ВІРУЮЧИХ ТА ФУНКЦІЇ ВЛАДИ» — ІГОР ПЛОХОЙ",
-    titleEn: "«CIVIC POSITION OF BELIEVERS AND FUNCTIONS OF POWER» — IGOR PLOKHY",
-    speaker: "Ігор Плохой",
-    speakerEn: "Igor Plokhy",
-    date: "2025-11-16",
-    youtubeId: "0ak_EHjpIYA",
-  },
-  {
-    id: "called-to-be-leader",
-    title: "«ПОКЛИКАНИЙ БУТИ ЛІДЕРОМ» — ТИМОНІШИН АНТОН",
-    titleEn: "«CALLED TO BE A LEADER» — TIMONISHIN ANTON",
-    speaker: "Тимонішин Антон",
-    speakerEn: "Timonishin Anton",
-    date: "2025-11-22",
-    youtubeId: "1DFuvUa-8NQ",
-  }
-];
+interface ScheduledLecture {
+  id: string;
+  title: string;
+  titleEn: string;
+  speaker: string;
+  speakerEn: string;
+  date: string;
+  youtubeId?: string;
+}
 
 export default function NextLectureSection() {
   const { t, language } = useLanguage();
   const [isMounted, setIsMounted] = useState(false);
+  const [lectures, setLectures] = useState<ScheduledLecture[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setIsMounted(true);
+    
+    // Fetch scheduled lectures from Firebase
+    const lecturesRef = ref(database, 'scheduled_lectures');
+    const unsubscribe = onValue(lecturesRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        const lecturesList: ScheduledLecture[] = Object.keys(data).map(key => ({
+          id: key,
+          ...data[key]
+        }));
+        setLectures(lecturesList);
+      } else {
+        setLectures([]);
+      }
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
   }, []);
 
   const formatDate = (dateString: string) => {
@@ -96,13 +79,17 @@ export default function NextLectureSection() {
     <section className="py-16 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
-          className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 lg:p-12 border border-white/20"
+          className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 lg:p-12 border border-white/20 min-h-[300px] flex flex-col justify-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          {nextLecture ? (
+          {loading ? (
+             <div className="flex justify-center items-center py-12">
+               <div className="w-10 h-10 border-4 border-white/30 border-t-white rounded-full animate-spin"></div>
+             </div>
+          ) : nextLecture ? (
             // Next lecture exists
             <div className="grid lg:grid-cols-3 gap-8 items-center">
               {/* Content */}

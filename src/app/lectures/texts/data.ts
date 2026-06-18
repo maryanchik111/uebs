@@ -180,6 +180,142 @@ one with self-control than one who takes a city."
 #Charisma is what people see. #Character is what #God knows.
 #Charisma opens the doors of ministry. Character decides whether you stay there. A #gift can make you famous. #Character makes you God's. #God uses gifts, but trusts those who have #character.
 #God is not just looking for charismatic ministers. #God raises people with the character of the Kingdom, gifting them with the charisma of gifts.`
+    },
+    {
+        id: "healing-gods-will",
+        title: "«ЗЦІЛЕННЯ — БОЖА ВОЛЯ, ЯКА ВІДКРИВАЄТЬСЯ В ХРИСТІ»",
+        titleEn: "«HEALING — GOD'S WILL REVEALED IN CHRIST»",
+        author: "Сергій Мусевич",
+        authorEn: "Serhiy Musevych",
+        date: "2026-06-18",
+        description: "Роздуми про біблійні основи зцілення. Зцілення — це частина Євангелії та Божої природи, яка відкривається в Христі.",
+        descriptionEn: "Reflections on the biblical foundations of healing. Healing is part of the Gospel and God's nature revealed in Christ.",
+        text: `Я в захваті від уроків, що проходять у нашій Біблійній школі uebs.com.ua при Церкві Скинія Любови-Істини 
+Я завжди вірив, що  #ЗЦІЛЕННЯ — БОЖА ВОЛЯ, ЯКА ВІДКРИВАЄТЬСЯ В ХРИСТІ.
+
+1️⃣ #Хрест — це не лише #прощення, а й #зцілення.
+«Він узяв на Себе наші немочі й поніс наші хвороби… Його ж ранами нас уздоровлено» (Ісая 53:4–5).
+Його рани — моя і твоя надія. Його біль — твоє #оздоровлення.
+
+2️⃣ #Ісус не змінився.
+«Ісус Христос учора, і сьогодні, і навіки Той Самий» (Євреїв 13:8).
+Той, Хто відкривав очі сліпим у Галілеї, не втратив сили діяти сьогодні.
+
+3️⃣ #Зцілення — частина Євангелії.
+«Ходячи, Ісус… навчав… проповідував Євангелію Царства та вздоровляв усяку недугу й усяку хворобу в народі» (Матвія 4:23).
+Де проповідується #Христос як Цар — там Боже Царство атакує хворобу.
+
+4️⃣ #Ісус дав доручення Церкві.
+«На хворих будуть класти руки, і добре їм стане» (Марка 16:18).
+#Церква покликана не лише говорити про #зцілення, а й служити в ньому.
+
+5️⃣ #Молитва віри має силу.
+«Молитва віри вздоровить недужого, і Господь його підійме» (Якова 5:14–15).
+#Віра не заперечує реальність хвороби — вона проголошує вищу реальність Божої сили.
+
+6️⃣ #Дух_Святий продовжує діяти.
+«Одному дається… дари зцілення тим самим Духом» (1 Коринтян 12:9).
+Дари #зцілення — не музейні експонати першого століття, а зброя Церкви сьогодні.
+
+7️⃣ #Співчуття Боже не вичерпалось.
+«І змилосердився над ними та оздоровив їхніх недужих» (Матвія 14:14).
+#Бог не байдужий до твого болю. Співчуття рухає Його руку.
+
+8️⃣Для Бога немає безнадійних випадків.
+«Що неможливе людям, те можливе Богові» (Луки 18:27).
+#Лікар може сказати: “Немає надії”. Бог каже: “Чи є щось неможливе для Мене?”
+
+9️⃣ #Зцілення вказує на прихід Божого Царства.
+«…уздоровляйте хворих і кажіть їм: “Наблизилося до вас Царство Боже”» (Луки 10:9).
+#Зцілення — це знак того, що Цар уже прийшов.
+
+🔟Остаточне зцілення — у Божій присутності.
+«І витре Бог кожну сльозу з очей їхніх, і смерті не буде вже, ані смутку, ані крику, ані болю вже не буде» (Об’явлення 21:4).
+Ми молимося про чудеса сьогодні, але дивимося на день, коли хвороби не буде взагалі.
+
+✝️Біблійні основи для #оздоровлення сьогодні:
+➖Божа природа — зціляти. 
+«Я Господь, Цілитель твій» (Вихід 15:26).
+➖Христос поніс наші немочі.
+    Ісая 53:4–5; 1 Петра 2:24.
+➖Ісус зціляв усіх, хто приходив до Нього. Матвія 8:16–17.
+➖Учні були послані зціляти.
+    Луки 9:1–2.
+➖Церква покликана молитися за хворих. Якова 5:14–16.
+➖Дух Святий дає дари зцілення.
+    1 Коринтян 12:9.
+
+☝🏻#Хвороба може постукати в двері, але останнє слово належить Богові.
+Диявол приносить руйнування, #Христос приносить життя.
+#Віра не гарантує контроль над Богом, але відкриває серце для Його дії. Не кожне страждання пояснюється гріхом, але кожен біль можна принести до Христа.
+Молися і знай, що #Бог може все.
+Очікуй чуда, але люби Бога не лише за чудо, а за те, Хто Він є.
+«Улюблений! Молюся, щоб ти був здоровий та щоб велося тобі в усьому, як добре ведеться душі твоїй» (3 Івана 1:2).
+#Зцілення — це не поклоніння чуду. Це #поклоніння Христу, Який і сьогодні має владу над хворобою, гріхом і смертю.
+#вивчення_писання`,
+        textEn: `I am thrilled with the lessons held at our Bible School uebs.com.ua at the Tabernacle of Love-Truth Church
+I have always believed that #HEALING IS GOD'S WILL REVEALED IN CHRIST.
+
+1️⃣ #The_Cross is not only #forgiveness but also #healing.
+"He took up our pain and bore our suffering... by his wounds we are healed" (Isaiah 53:4-5).
+His wounds are my hope and yours. His pain is your #healing.
+
+2️⃣ #Jesus has not changed.
+"Jesus Christ is the same yesterday and today and forever" (Hebrews 13:8).
+He who opened the eyes of the blind in Galilee has not lost the power to act today.
+
+3️⃣ #Healing is part of the Gospel.
+"Jesus went throughout Galilee, teaching in their synagogues, proclaiming the good news of the kingdom, and healing every disease and sickness among the people" (Matthew 4:23).
+Where #Christ is preached as King — there the Kingdom of God attacks disease.
+
+4️⃣ #Jesus gave a commission to the Church.
+"They will place their hands on sick people, and they will get well" (Mark 16:18).
+The #Church is called not only to talk about #healing, but to serve in it.
+
+5️⃣ The #prayer of faith has power.
+"And the prayer offered in faith will make the sick person well; the Lord will raise them up" (James 5:14-15).
+#Faith does not deny the reality of illness — it proclaims the higher reality of God's power.
+
+6️⃣ The #Holy_Spirit continues to act.
+"To another gifts of healing by that one Spirit" (1 Corinthians 12:9).
+Gifts of #healing are not museum exhibits of the first century, but the weapon of the Church today.
+
+7️⃣ God's #compassion has not run out.
+"He had compassion on them and healed their sick" (Matthew 14:14).
+#God is not indifferent to your pain. Compassion moves His hand.
+
+8️⃣ There are no hopeless cases for God.
+"What is impossible with man is possible with God" (Luke 18:27).
+A #doctor may say: "There is no hope." God says: "Is anything too hard for me?"
+
+9️⃣ #Healing points to the coming of God's Kingdom.
+"...heal the sick who are there and tell them, 'The kingdom of God has come near to you'" (Luke 10:9).
+#Healing is a sign that the King has already come.
+
+🔟 Ultimate healing is in God's presence.
+"He will wipe every tear from their eyes. There will be no more death or mourning or crying or pain" (Revelation 21:4).
+We pray for miracles today, but we look to the day when there will be no illness at all.
+
+✝️ Biblical foundations for #healing today:
+➖ God's nature is to heal.
+"I am the Lord, who heals you" (Exodus 15:26).
+➖ Christ bore our infirmities.
+    Isaiah 53:4-5; 1 Peter 2:24.
+➖ Jesus healed all who came to Him. Matthew 8:16-17.
+➖ The disciples were sent to heal.
+    Luke 9:1-2.
+➖ The Church is called to pray for the sick. James 5:14-16.
+➖ The Holy Spirit gives gifts of healing.
+    1 Corinthians 12:9.
+
+☝🏻 #Illness may knock at the door, but the last word belongs to God.
+The devil brings destruction, #Christ brings life.
+#Faith does not guarantee control over God, but opens the heart to His action. Not every suffering is explained by sin, but every pain can be brought to Christ.
+Pray and know that #God can do all things.
+Expect a miracle, but love God not only for the miracle, but for who He is.
+"Dear friend, I pray that you may enjoy good health and that all may go well with you, even as your soul is getting along well" (3 John 1:2).
+#Healing is not worshipping a miracle. It is #worshipping Christ, who even today has authority over disease, sin, and death.
+#bible_study`
     }
 ];
 

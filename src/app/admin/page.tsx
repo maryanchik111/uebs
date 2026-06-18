@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/auth-context';
 import { isUserAdmin } from '@/lib/user-utils';
-import { Bell, BookOpen, Mail, Users, BarChart3, Shield, Loader2, MessageCircle } from 'lucide-react';
+import { Bell, BookOpen, Mail, Users, BarChart3, Shield, Loader2, MessageCircle, CalendarDays, Library } from 'lucide-react';
 
 export default function AdminPage() {
   const { user, loading: authLoading } = useAuth();
@@ -128,6 +128,36 @@ export default function AdminPage() {
               <div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-1">Студенти</h3>
                 <p className="text-gray-600 text-sm">Управління списком студентів</p>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            href="/admin/schedule"
+            className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 border-2 border-transparent hover:border-teal-200"
+          >
+            <div className="flex items-start gap-4">
+              <div className="p-3 bg-teal-100 rounded-lg group-hover:bg-teal-200 transition-colors">
+                <CalendarDays className="w-6 h-6 text-teal-600" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-1">Розклад лекцій</h3>
+                <p className="text-gray-600 text-sm">Управління запланованими лекціями</p>
+              </div>
+            </div>
+          </Link>
+
+          <Link
+            href="/admin/archive"
+            className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all p-6 border-2 border-transparent hover:border-purple-200"
+          >
+            <div className="flex items-start gap-4">
+              <div className="p-3 bg-purple-100 rounded-lg group-hover:bg-purple-200 transition-colors">
+                <Library className="w-6 h-6 text-purple-600" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-1">Архів лекцій</h3>
+                <p className="text-gray-600 text-sm">Додавання минулих лекцій</p>
               </div>
             </div>
           </Link>
